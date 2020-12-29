@@ -1,0 +1,29 @@
+@import "./sizing.scss";
+
+$roboto: "Roboto";
+$robotoSlab: "Roboto Slab";
+
+@mixin robotoLight {
+  font-family: $roboto, sans-serif;
+  font-weight: 300;
+}
+
+@mixin robotoRegular {
+  font-family: $roboto, sans-serif;
+  font-weight: 400;
+}
+
+@mixin robotoSlabLight {
+  font-family: $robotoSlab, serif;
+  font-weight: 300;
+}
+
+@mixin robotoSlabRegular {
+  font-family: $robotoSlab, serif;
+  font-weight: 400;
+}
+
+@mixin robotoSlabMedium {
+  font-family: $robotoSlab, serif;
+  font-weight: 500;
+}
