@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
     <header>
       <img src="@/assets/landing/images/logo.svg" />
     </header>
@@ -21,74 +21,80 @@
     <div class="menu-wrapper">
       <ul class="menu-grid">
         <!--extract into component for map -->
-        <li class="menu-item">
-          <span>
-            <GradientText theme="yellow-to-gold">I</GradientText>
-          </span>
-          <div class="item-inner">
-            <img
-              src="https://images.unsplash.com/photo-1508615039623-a25605d2b022?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2250&q=80"
-              alt="#"
-            />
-          </div>
-        </li>
+        <router-link to="/observatory/i"
+          ><li class="menu-item">
+            <span>
+              <GradientText theme="yellow-to-gold">I</GradientText>
+            </span>
+            <div class="item-inner">
+              <img
+                src="https://images.unsplash.com/photo-1508615039623-a25605d2b022?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2250&q=80"
+                alt="#"
+              />
+            </div></li
+        ></router-link>
         <!-- -->
 
-        <li class="menu-item">
-          <span>
-            <GradientText theme="yellow-to-gold">II</GradientText>
-          </span>
-          <div class="item-inner">
-            <img
-              src="https://images.unsplash.com/photo-1508615039623-a25605d2b022?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2250&q=80"
-              alt="#"
-            />
-          </div>
-        </li>
-        <li class="menu-item">
-          <span>
-            <GradientText theme="yellow-to-gold">III</GradientText>
-          </span>
-          <div class="item-inner">
-            <img
-              src="https://images.unsplash.com/photo-1508615039623-a25605d2b022?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2250&q=80"
-              alt="#"
-            />
-          </div>
-        </li>
-        <li class="menu-item">
-          <span>
-            <GradientText theme="yellow-to-gold">IV</GradientText>
-          </span>
-          <div class="item-inner">
-            <img
-              src="https://images.unsplash.com/photo-1508615039623-a25605d2b022?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2250&q=80"
-              alt="#"
-            />
-          </div>
-        </li>
-        <li class="menu-item">
-          <span>
-            <GradientText theme="yellow-to-gold">V</GradientText>
-          </span>
-          <div class="item-inner">
-            <img
-              src="https://images.unsplash.com/photo-1508615039623-a25605d2b022?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2250&q=80"
-              alt="#"
-            />
-          </div>
-        </li>
-        <li class="menu-item">
-          <span>
-            <GradientText theme="yellow-to-gold">VI</GradientText>
-          </span>
-          <div class="item-inner">
-            <img
-              src="https://images.unsplash.com/photo-1508615039623-a25605d2b022?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2250&q=80"
-              alt="#"
-            />
-          </div>
-        </li>
+        <router-link to="/observatory/ii"
+          ><li class="menu-item">
+            <span>
+              <GradientText theme="yellow-to-gold">II</GradientText>
+            </span>
+            <div class="item-inner">
+              <img
+                src="https://images.unsplash.com/photo-1508615039623-a25605d2b022?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2250&q=80"
+                alt="#"
+              />
+            </div></li
+        ></router-link>
+        <router-link to="/observatory/iii"
+          ><li class="menu-item">
+            <span>
+              <GradientText theme="yellow-to-gold">III</GradientText>
+            </span>
+            <div class="item-inner">
+              <img
+                src="https://images.unsplash.com/photo-1508615039623-a25605d2b022?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2250&q=80"
+                alt="#"
+              />
+            </div></li
+        ></router-link>
+        <router-link to="/observatory/iv">
+          <li class="menu-item">
+            <span>
+              <GradientText theme="yellow-to-gold">IV</GradientText>
+            </span>
+            <div class="item-inner">
+              <img
+                src="https://images.unsplash.com/photo-1508615039623-a25605d2b022?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2250&q=80"
+                alt="#"
+              />
+            </div></li
+        ></router-link>
+        <router-link to="/observatory/v">
+          <li class="menu-item">
+            <span>
+              <GradientText theme="yellow-to-gold">V</GradientText>
+            </span>
+            <div class="item-inner">
+              <img
+                src="https://images.unsplash.com/photo-1508615039623-a25605d2b022?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2250&q=80"
+                alt="#"
+              />
+            </div></li
+        ></router-link>
+        <router-link to="/observatory/vi"
+          ><li class="menu-item">
+            <span>
+              <GradientText theme="yellow-to-gold">VI</GradientText>
+            </span>
+            <div class="item-inner">
+              <img
+                src="https://images.unsplash.com/photo-1508615039623-a25605d2b022?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2250&q=80"
+                alt="#"
+              />
+            </div></li
+        ></router-link>
       </ul>
     </div>
   </div>
@@ -110,6 +116,10 @@ export default {
 @import "@/theme/media.scss";
 @import "@/theme/sizing.scss";
 @import "@/theme/typography.scss";
+
+.container {
+  margin: rem(2px);
+}
 
 header {
   display: flex;
@@ -154,25 +164,28 @@ header {
   width: 100vw;
   justify-content: center;
   margin: rem(30px) auto;
-}
 
-.menu-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: rem(50px);
-  list-style-type: none;
-  margin-block-start: 0;
-  margin-block-end: 0;
-  padding-inline-start: 0;
-
-  @include media(">=tablet") {
-    grid-template-columns: repeat(3, 1fr);
+  @include media(">desktop") {
+    width: 70vw;
   }
 }
 
+.menu-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  list-style-type: none;
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+  padding-inline-start: 0px;
+}
+
 .menu-item {
+  @include robotoSlabRegular;
   width: rem(320px);
   height: rem(320px);
+  margin: rem(24px);
   text-align: center;
   cursor: pointer;
 }
