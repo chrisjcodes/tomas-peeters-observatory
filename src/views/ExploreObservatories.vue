@@ -19,14 +19,14 @@
       </div>
     </div>
     <div class="menu-wrapper">
-      <ul class="menu-grid">
+      <ul class="menu">
         <!--extract into component for map -->
         <router-link to="/observatory/i"
           ><li class="menu-item">
             <span>
               <GradientText theme="yellow-to-gold">I</GradientText>
             </span>
-            <div class="item-inner">
+            <div class="menu-item-image">
               <img
                 src="https://images.unsplash.com/photo-1508615039623-a25605d2b022?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2250&q=80"
                 alt="#"
@@ -40,7 +40,7 @@
             <span>
               <GradientText theme="yellow-to-gold">II</GradientText>
             </span>
-            <div class="item-inner">
+            <div class="menu-item-image">
               <img
                 src="https://images.unsplash.com/photo-1508615039623-a25605d2b022?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2250&q=80"
                 alt="#"
@@ -52,7 +52,7 @@
             <span>
               <GradientText theme="yellow-to-gold">III</GradientText>
             </span>
-            <div class="item-inner">
+            <div class="menu-item-image">
               <img
                 src="https://images.unsplash.com/photo-1508615039623-a25605d2b022?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2250&q=80"
                 alt="#"
@@ -64,7 +64,7 @@
             <span>
               <GradientText theme="yellow-to-gold">IV</GradientText>
             </span>
-            <div class="item-inner">
+            <div class="menu-item-image">
               <img
                 src="https://images.unsplash.com/photo-1508615039623-a25605d2b022?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2250&q=80"
                 alt="#"
@@ -76,25 +76,25 @@
             <span>
               <GradientText theme="yellow-to-gold">V</GradientText>
             </span>
-            <div class="item-inner">
+            <div class="menu-item-image">
               <img
                 src="https://images.unsplash.com/photo-1508615039623-a25605d2b022?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2250&q=80"
                 alt="#"
               />
             </div></li
         ></router-link>
-        <router-link to="/observatory/vi"
+        <!-- <router-link to="/observatory/vi"
           ><li class="menu-item">
             <span>
               <GradientText theme="yellow-to-gold">VI</GradientText>
             </span>
-            <div class="item-inner">
+            <div class="menu-item-image">
               <img
                 src="https://images.unsplash.com/photo-1508615039623-a25605d2b022?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2250&q=80"
                 alt="#"
               />
             </div></li
-        ></router-link>
+        ></router-link> -->
       </ul>
     </div>
   </div>
@@ -118,18 +118,38 @@ export default {
 @import "@/theme/typography.scss";
 
 .container {
-  margin: rem(2px);
+  margin-top: rem(45px);
+  margin-right: rem(25px);
+  margin-left: rem(25px);
+  margin-bottom: rem(45px);
+
+  @include media(">desktop") {
+    max-width: rem(1200px);
+    margin-right: auto;
+    margin-left: auto;
+  }
 }
 
 header {
   display: flex;
   justify-content: center;
-  width: 100vw;
-  height: rem(150px);
   margin-bottom: rem(60px);
 
   img {
+    height: 100%;
     width: 100%;
+  }
+
+  @include media(">=tablet") {
+    img {
+      width: 80%;
+    }
+  }
+
+  @include media(">=desktop") {
+    img {
+      width: 60%;
+    }
   }
 }
 
@@ -141,8 +161,6 @@ header {
 }
 
 .copy-text {
-  width: 90vw;
-
   p {
     color: $silver;
     font-size: rem(16px);
@@ -153,32 +171,25 @@ header {
     margin-bottom: rem(50px);
   }
 
-  @include media(">=tablet") {
+  @include media(">=desktop") {
     width: 70vw;
-    font-size: rem(28px);
   }
 }
 
 .menu-wrapper {
   display: flex;
-  width: 100vw;
   justify-content: center;
   margin: rem(30px) auto;
-
-  @include media(">desktop") {
-    width: 70vw;
-  }
 }
 
-.menu-grid {
+.menu {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
   list-style-type: none;
-  margin-block-start: 0px;
-  margin-block-end: 0px;
-  padding-inline-start: 0px;
 
   a {
     color: inherit;
@@ -188,22 +199,24 @@ header {
 
 .menu-item {
   @include robotoSlabRegular;
-  width: rem(320px);
-  height: rem(320px);
   margin: rem(24px);
   text-align: center;
-  cursor: pointer;
 }
 
-.item-inner {
-  width: rem(300px);
-  height: rem(300px);
+.menu-item-image {
   margin: rem(10px) auto 0 auto;
   border: rem(2px) solid white;
+  width: rem(300px);
+  height: rem(300px);
 
   img {
     width: 100%;
     height: 100%;
+  }
+
+  @include media(">=desktop") {
+    width: rem(250px);
+    height: rem(250px);
   }
 }
 </style>
