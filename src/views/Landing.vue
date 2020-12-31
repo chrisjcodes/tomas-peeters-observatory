@@ -1,34 +1,30 @@
 <template>
-  <div>
-    <div class="logo">
+  <div class="container">
+    <header>
       <img src="@/assets/landing/images/logo.svg" />
-    </div>
+    </header>
     <div class="landing-copy">
-      <GradientText theme="gray-to-white">
+      <p>
         The Art Of Using Form To See Emptiness
-      </GradientText>
+      </p>
     </div>
     <div class="video-loop">
       <video src="@/assets/landing/videos/loop.mp4" autoplay loop muted />
     </div>
     <nav>
       <router-link to="explore-observatories">
-        <GradientText theme="gray-to-white">
+        <p>
           Explore The Observatories
-        </GradientText>
+        </p>
       </router-link>
     </nav>
   </div>
 </template>
 
 <script>
-import GradientText from "@/components/GradientText";
-
 export default {
   name: "Landing",
-  components: {
-    GradientText,
-  },
+  components: {},
 };
 </script>
 
@@ -38,63 +34,104 @@ export default {
 @import "@/theme/sizing.scss";
 @import "@/theme/typography.scss";
 
-.logo {
+.container {
+  margin-top: rem(45px);
+  margin-right: rem(25px);
+  margin-left: rem(25px);
+  margin-bottom: rem(45px);
+
+  @include media(">desktop") {
+    max-width: rem(1200px);
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+header {
   display: flex;
   justify-content: center;
-  width: 100vw;
-  height: rem(150px);
-  margin-bottom: rem(50px);
+  margin-bottom: rem(60px);
 
   img {
+    height: 100%;
     width: 100%;
+  }
+
+  @include media(">=tablet") {
+    img {
+      width: 80%;
+    }
+  }
+
+  @include media(">=desktop") {
+    img {
+      width: 60%;
+    }
   }
 }
 
 .landing-copy {
   @include robotoLight;
 
-  font-size: rem(26px);
+  font-size: rem(16px);
   text-transform: uppercase;
-  letter-spacing: rem(15px);
+  letter-spacing: rem(10px);
   text-align: center;
   margin-bottom: rem(50px);
+
+  @include media(">=tablet") {
+    font-size: rem(30px);
+  }
+
+  p {
+    color: $silver;
+  }
 }
 
 .video-loop {
   display: flex;
   justify-content: center;
   margin-bottom: rem(50px);
+  overflow: hidden;
+
+  video {
+    height: rem(400px);
+
+    @include media(">=tablet") {
+      height: rem(550px);
+    }
+
+    @include media(">=desktop") {
+      height: rem(500px);
+    }
+  }
 }
 
 nav {
   display: flex;
   justify-content: center;
+  text-align: center;
+  font-size: rem(16px);
+
+  @include media(">=tablet") {
+    font-size: rem(30px);
+  }
 
   a {
     position: relative;
-    font-size: rem(26px);
     text-transform: uppercase;
-    letter-spacing: rem(15px);
+    letter-spacing: rem(10px);
     text-decoration: none;
+    color: inherit;
+  }
 
-    &:after {
-      content: "";
-      position: absolute;
-      bottom: -12px;
-      left: -10px;
-      width: 100%;
-      height: 1px;
-      background-color: $white;
-      // transform: scale(0);
-      // transform-origin: center;
-      // transition: transform 500ms ease-in-out;
-    }
-
-    // &:hover {
-    //   &:after {
-    //     transform: scale(1);
-    //   }
-    // }
+  p {
+    margin: 0;
+    padding-top: 0;
+    padding-bottom: rem(10px);
+    padding-left: 0;
+    padding-right: 0;
+    border-bottom: 1px solid $silver;
   }
 }
 </style>
