@@ -10,12 +10,14 @@
 @import "./theme/media.scss";
 @import "./theme/typography.scss";
 @import "./theme/colors.scss";
+
+@include normalize();
+
 html {
   font-size: $baseFontSize;
 }
 
 body {
-  @include normalize();
   @include robotoLight;
 
   -webkit-font-smoothing: antialiased;
@@ -26,6 +28,10 @@ body {
 }
 
 #app {
-  margin-top: rem(40px);
+  margin-top: rem(10px);
+
+  @include media(">=tablet") {
+    margin-top: rem(40px);
+  }
 }
 </style>
