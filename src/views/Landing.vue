@@ -3,21 +3,23 @@
     <header>
       <img src="@/assets/landing/images/logo.svg" />
     </header>
-    <div class="landing-copy">
-      <p>
-        The Art Of Using Form To See Emptiness
-      </p>
-    </div>
-    <div class="video-loop">
-      <video src="@/assets/landing/videos/loop.mp4" autoplay loop muted />
-    </div>
-    <nav>
-      <router-link to="explore-observatories">
+    <div class="content">
+      <div class="landing-copy">
         <p>
-          Explore The Observatories
+          The Art Of Using Form To See Emptiness
         </p>
-      </router-link>
-    </nav>
+      </div>
+      <div class="video-loop">
+        <video src="@/assets/landing/videos/loop.mp4" autoplay loop muted />
+      </div>
+      <nav>
+        <router-link to="explore-observatories">
+          <p>
+            Explore The Observatories
+          </p>
+        </router-link>
+      </nav>
+    </div>
   </div>
 </template>
 
@@ -92,18 +94,10 @@ header {
   display: flex;
   justify-content: center;
   margin-bottom: rem(50px);
-  overflow: hidden;
 
   video {
-    height: rem(400px);
-
-    @include media(">=tablet") {
-      height: rem(550px);
-    }
-
-    @include media(">=desktop") {
-      height: rem(500px);
-    }
+    max-width: 100%;
+    height: auto;
   }
 }
 
