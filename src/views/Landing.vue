@@ -1,8 +1,5 @@
 <template>
-  <div class="container">
-    <header>
-      <img src="@/assets/landing/images/logo.svg" />
-    </header>
+  <Container headerImage="@/assets/landing/images/logo.svg">
     <div class="content">
       <div class="landing-copy">
         <p>
@@ -20,13 +17,16 @@
         </router-link>
       </nav>
     </div>
-  </div>
+  </Container>
 </template>
 
 <script>
+import Container from "../components/Container";
 export default {
   name: "Landing",
-  components: {},
+  components: {
+    Container,
+  },
 };
 </script>
 
@@ -35,42 +35,6 @@ export default {
 @import "@/theme/media.scss";
 @import "@/theme/sizing.scss";
 @import "@/theme/typography.scss";
-
-.container {
-  margin-top: rem(45px);
-  margin-right: rem(25px);
-  margin-left: rem(25px);
-  margin-bottom: rem(45px);
-
-  @include media(">desktop") {
-    max-width: rem(1200px);
-    margin-right: auto;
-    margin-left: auto;
-  }
-}
-
-header {
-  display: flex;
-  justify-content: center;
-  margin-bottom: rem(60px);
-
-  img {
-    height: 100%;
-    width: 100%;
-  }
-
-  @include media(">=tablet") {
-    img {
-      width: 80%;
-    }
-  }
-
-  @include media(">=desktop") {
-    img {
-      width: 60%;
-    }
-  }
-}
 
 .landing-copy {
   @include robotoLight;
