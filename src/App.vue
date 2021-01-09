@@ -10,6 +10,7 @@
 @import "./theme/media.scss";
 @import "./theme/typography.scss";
 @import "./theme/colors.scss";
+@import "node_modules/slick-carousel/slick/slick.scss";
 
 @include normalize();
 
