@@ -1,5 +1,8 @@
 <template>
-  <Container headerImage="@/assets/landing/images/logo.svg">
+  <Container>
+    <header>
+      <img src="@/assets/landing/images/logo.svg" />
+    </header>
     <div class="content">
       <p class="landing-copy">
         The Art Of Using Form To See Emptiness
@@ -17,8 +20,8 @@
 </template>
 
 <script>
-import Container from "../components/Container";
-import CustomLink from "../components/CustomLink";
+import Container from "@/components/Container";
+import CustomLink from "@/components/CustomLink";
 
 export default {
   name: "Landing",
@@ -33,6 +36,29 @@ export default {
 @import "@/theme/colors.scss";
 @import "@/theme/sizing.scss";
 @import "@/theme/typography.scss";
+
+header {
+  display: flex;
+  justify-content: center;
+  margin-bottom: rem(60px);
+
+  img {
+    height: 100%;
+    width: 100%;
+  }
+
+  @include media(">=tablet") {
+    img {
+      width: 80%;
+    }
+  }
+
+  @include media(">=desktop") {
+    img {
+      width: 60%;
+    }
+  }
+}
 
 .landing-copy {
   @include largeBody;
