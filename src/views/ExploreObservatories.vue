@@ -1,7 +1,7 @@
 <template>
   <Container>
     <header>
-      <img src="@/assets/landing/images/logo.svg" />
+      <img src="@/assets/observatories/all/images/logo.svg" />
     </header>
     <div class="explore-observatories-copy">
       <div class="copy-text">
