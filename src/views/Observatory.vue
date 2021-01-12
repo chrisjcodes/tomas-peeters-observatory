@@ -1,5 +1,8 @@
 <template>
-  <Container headerLogo="@/assets/landing/images/logo.svg">
+  <Container>
+    <header>
+      <img src="@/assets/landing/images/logo.svg" />
+    </header>
     <div class="observatory-copy">
       <p>
         The Art Of Using Form To See Emptiness
@@ -7,26 +10,31 @@
     </div>
     <div id="video-container"></div>
     <nav>
-      <router-link to="/observatory/I/sequence">
+      <CustomLink to="/observatory/I/sequence">
         <p>
           Genesis
         </p>
-      </router-link>
-      <router-link to="/#">
+      </CustomLink>
+      <CustomLink to="/#">
         <p>
           More
         </p>
-      </router-link>
+      </CustomLink>
     </nav>
   </Container>
 </template>
 
 <script>
 import Container from "../components/Container";
+import CustomLink from "../components/CustomLink";
 import Player from "@vimeo/player";
+
 export default {
   name: "Observatory",
-  components: { Container },
+  components: {
+    Container,
+    CustomLink,
+  },
   mounted() {
     const screenWidth = window.innerWidth;
     let videoOptions = {
@@ -47,6 +55,18 @@ export default {
 @import "@/theme/media.scss";
 @import "@/theme/sizing.scss";
 @import "@/theme/typography.scss";
+
+header {
+  display: flex;
+  justify-content: center;
+  margin-bottom: rem(60px);
+
+  img {
+    height: 100%;
+    width: 100%;
+  }
+}
+
 .observatory-copy {
   @include robotoLight;
   font-size: rem(16px);
@@ -61,6 +81,7 @@ export default {
     color: $silver;
   }
 }
+
 #video-container {
   margin-bottom: rem(50px);
   display: flex;
@@ -71,6 +92,7 @@ export default {
     border: 0;
   }
 }
+
 nav {
   display: flex;
   justify-content: center;
@@ -89,6 +111,7 @@ nav {
     margin: rem(10px);
     width: 50%;
   }
+
   p {
     padding-top: 0;
     padding-bottom: rem(10px);
