@@ -1,62 +1,68 @@
 <template>
-  <div>
-    <div class="logo">
+  <Container>
+    <header>
       <img src="@/assets/landing/images/logo.svg" />
-    </div>
-    <div class="landing-copy">
-      <GradientText theme="gray-to-white">
+    </header>
+    <div class="content">
+      <p class="landing-copy">
         The Art Of Using Form To See Emptiness
-      </GradientText>
-    </div>
-    <div class="video-loop">
-      <video src="@/assets/landing/videos/loop.mp4" autoplay loop muted />
-    </div>
-    <nav>
-      <router-link to="explore-observatories">
-        <GradientText theme="gray-to-white">
+      </p>
+      <div class="video-loop">
+        <video src="@/assets/landing/videos/loop.mp4" autoplay loop muted />
+      </div>
+      <nav>
+        <CustomLink to="/explore-observatories">
           Explore The Observatories
-        </GradientText>
-      </router-link>
-    </nav>
-  </div>
+        </CustomLink>
+      </nav>
+    </div>
+  </Container>
 </template>
 
 <script>
-import GradientText from "@/components/GradientText";
+import Container from "@/components/Container";
+import CustomLink from "@/components/CustomLink";
 
 export default {
   name: "Landing",
   components: {
-    GradientText,
+    Container,
+    CustomLink,
   },
 };
 </script>
 
 <style lang="scss" scoped>
 @import "@/theme/colors.scss";
-@import "@/theme/media.scss";
 @import "@/theme/sizing.scss";
 @import "@/theme/typography.scss";
 
-.logo {
+header {
   display: flex;
   justify-content: center;
-  width: 100vw;
-  height: rem(150px);
-  margin-bottom: rem(50px);
+  margin-bottom: rem(60px);
 
   img {
+    height: 100%;
     width: 100%;
+  }
+
+  @include media(">=tablet") {
+    img {
+      width: 80%;
+    }
+  }
+
+  @include media(">=desktop") {
+    img {
+      width: 60%;
+    }
   }
 }
 
 .landing-copy {
-  @include robotoLight;
-
-  font-size: rem(26px);
-  text-transform: uppercase;
-  letter-spacing: rem(15px);
-  text-align: center;
+  @include largeBody;
+  color: $silver;
   margin-bottom: rem(50px);
 }
 
@@ -64,37 +70,16 @@ export default {
   display: flex;
   justify-content: center;
   margin-bottom: rem(50px);
+
+  video {
+    max-width: 100%;
+    height: auto;
+  }
 }
 
 nav {
+  @include largeBody;
   display: flex;
   justify-content: center;
-
-  a {
-    position: relative;
-    font-size: rem(26px);
-    text-transform: uppercase;
-    letter-spacing: rem(15px);
-    text-decoration: none;
-
-    &:after {
-      content: "";
-      position: absolute;
-      bottom: -12px;
-      left: -10px;
-      width: 100%;
-      height: 1px;
-      background-color: $white;
-      // transform: scale(0);
-      // transform-origin: center;
-      // transition: transform 500ms ease-in-out;
-    }
-
-    // &:hover {
-    //   &:after {
-    //     transform: scale(1);
-    //   }
-    // }
-  }
 }
 </style>

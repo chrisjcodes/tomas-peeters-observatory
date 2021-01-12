@@ -1,3 +1,4 @@
+@import "./media.scss";
 @import "./sizing.scss";
 
 $roboto: "Roboto";
@@ -26,4 +27,18 @@ $robotoSlab: "Roboto Slab";
 @mixin robotoSlabMedium {
   font-family: $robotoSlab, serif;
   font-weight: 500;
+}
+
+@mixin largeBody {
+  @include robotoLight;
+
+  font-size: rem(16px);
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: rem(10px);
+  line-height: 1.5;
+
+  @include media(">=tablet") {
+    font-size: rem(30px);
+  }
 }
