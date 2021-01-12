@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <Container>
     <header>
       <img src="@/assets/landing/images/logo.svg" />
     </header>
@@ -97,15 +97,17 @@
         ></router-link> -->
       </ul>
     </div>
-  </div>
+  </Container>
 </template>
 
 <script>
+import Container from "@/components/Container";
 import GradientText from "@/components/GradientText";
 
 export default {
   name: "ExploreObservatories",
   components: {
+    Container,
     GradientText,
   },
 };
