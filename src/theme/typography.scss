@@ -4,6 +4,11 @@
 $roboto: "Roboto";
 $robotoSlab: "Roboto Slab";
 
+@mixin robotoThin {
+  font-family: $roboto, sans-serif;
+  font-weight: 100;
+}
+
 @mixin robotoLight {
   font-family: $roboto, sans-serif;
   font-weight: 300;

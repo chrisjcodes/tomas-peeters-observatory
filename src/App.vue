@@ -26,12 +26,4 @@ body {
   background-color: $black;
   color: $white;
 }
-
-#app {
-  margin-top: rem(10px);
-
-  @include media(">=tablet") {
-    margin-top: rem(40px);
-  }
-}
 </style>
