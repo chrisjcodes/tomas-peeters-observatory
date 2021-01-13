@@ -34,6 +34,10 @@ $robotoSlab: "Roboto Slab";
   font-weight: 500;
 }
 
+@mixin papyrus {
+  font-family: Papyrus;
+}
+
 @mixin largeBody {
   @include robotoLight;
 
