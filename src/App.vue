@@ -10,7 +10,6 @@
 @import "./theme/media.scss";
 @import "./theme/typography.scss";
 @import "./theme/colors.scss";
-@import "node_modules/slick-carousel/slick/slick.scss";
 
 @include normalize();
 
@@ -26,13 +25,5 @@ body {
   font-size: rem(22px);
   background-color: $black;
   color: $white;
-}
-
-#app {
-  margin-top: rem(10px);
-
-  @include media(">=tablet") {
-    margin-top: rem(40px);
-  }
 }
 </style>
