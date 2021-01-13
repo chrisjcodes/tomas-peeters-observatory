@@ -102,11 +102,12 @@ header {
 
   font-size: rem(16px);
   text-transform: uppercase;
-  letter-spacing: rem(10px);
+  letter-spacing: rem(4px);
   text-align: center;
 
   @include media(">=tablet") {
     font-size: rem(30px);
+    letter-spacing: rem(8px);
   }
   p {
     color: $silver;
