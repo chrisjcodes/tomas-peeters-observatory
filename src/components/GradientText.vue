@@ -17,6 +17,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "@/theme/colors.scss";
+
 .gradient-text-base {
   background-color: white;
   background-size: 100%;
@@ -30,12 +32,7 @@ export default {
 
 .gray-to-white {
   background-color: white;
-  background-image: linear-gradient(
-    to bottom,
-    rgb(50, 50, 50) 0%,
-    rgb(90, 90, 90) 50%,
-    rgb(200, 200, 200) 100%
-  );
+  background-image: linear-gradient(to top, $silver, $cod-gray);
 }
 
 .yellow-to-gold {

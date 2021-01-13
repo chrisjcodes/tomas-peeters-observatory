@@ -1,7 +1,7 @@
 <template>
   <Container>
     <header>
-      <img src="@/assets/landing/images/logo.svg" />
+      <img src="@/assets/observatories/logo.svg" />
     </header>
     <div class="explore-observatories-copy">
       <div class="copy-text">
@@ -27,10 +27,7 @@
               <GradientText theme="yellow-to-gold">I</GradientText>
             </span>
             <div class="menu-item-image">
-              <img
-                src="https://images.unsplash.com/photo-1508615039623-a25605d2b022?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2250&q=80"
-                alt="#"
-              />
+              <img src="@/assets/observatories/i/images/thumb.jpeg" alt="#" />
             </div></li
         ></router-link>
         <!-- -->
@@ -41,10 +38,7 @@
               <GradientText theme="yellow-to-gold">II</GradientText>
             </span>
             <div class="menu-item-image">
-              <img
-                src="https://images.unsplash.com/photo-1508615039623-a25605d2b022?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2250&q=80"
-                alt="#"
-              />
+              <img src="@/assets/observatories/ii/images/thumb.jpeg" alt="#" />
             </div></li
         ></router-link>
         <router-link to="/observatory/iii"
@@ -53,10 +47,7 @@
               <GradientText theme="yellow-to-gold">III</GradientText>
             </span>
             <div class="menu-item-image">
-              <img
-                src="https://images.unsplash.com/photo-1508615039623-a25605d2b022?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2250&q=80"
-                alt="#"
-              />
+              <img src="@/assets/observatories/iii/images/thumb.jpeg" alt="#" />
             </div></li
         ></router-link>
         <router-link to="/observatory/iv">
@@ -65,10 +56,7 @@
               <GradientText theme="yellow-to-gold">IV</GradientText>
             </span>
             <div class="menu-item-image">
-              <img
-                src="https://images.unsplash.com/photo-1508615039623-a25605d2b022?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2250&q=80"
-                alt="#"
-              />
+              <img src="@/assets/observatories/iv/images/thumb.jpeg" alt="#" />
             </div></li
         ></router-link>
         <router-link to="/observatory/v">
@@ -77,10 +65,7 @@
               <GradientText theme="yellow-to-gold">V</GradientText>
             </span>
             <div class="menu-item-image">
-              <img
-                src="https://images.unsplash.com/photo-1508615039623-a25605d2b022?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2250&q=80"
-                alt="#"
-              />
+              <img src="@/assets/observatories/v/images/thumb.jpeg" alt="#" />
             </div></li
         ></router-link>
         <!-- <router-link to="/observatory/vi"
