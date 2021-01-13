@@ -1,38 +1,47 @@
 <template>
   <Container>
     <header>
-      <img src="@/assets/landing/images/logo.svg" />
+      <img src="@/assets/observatories/i/images/logo.svg" />
     </header>
     <div class="observatory-copy">
       <p>
-        The Art Of Using Form To See Emptiness
+        <GradientText>
+          The Art Of Using Form
+        </GradientText>
+      </p>
+      <p>
+        <GradientText>
+          To See Emptiness
+        </GradientText>
       </p>
     </div>
     <div class="video-loop">
-      <video src="@/assets/landing/videos/loop.mp4" autoplay loop muted />
+      <video src="@/assets/observatories/i/videos/intro.mp4" controls />
+    </div>
+    <div class="observatory-copy">
+      <p>
+        <GradientText>
+          at zero distance from my center
+        </GradientText>
+      </p>
+      <p>
+        <GradientText>
+          my face is completely transparent
+        </GradientText>
+      </p>
     </div>
     <!-- video is injected into this div
     <div id="video-container"></div>
     -->
     <nav>
-      <ul>
-        <li>
-          <CustomLink to="/observatory/I/sequence">
-            Genesis
-          </CustomLink>
-        </li>
-        <li>
-          <CustomLink to="/#">
-            More
-          </CustomLink>
-        </li>
-      </ul>
+      <CustomLink to="i/sequence">Explore Further</CustomLink>
     </nav>
   </Container>
 </template>
 
 <script>
-import Container from "../components/Container";
+import Container from "@/components/Container";
+import GradientText from "@/components/GradientText";
 import CustomLink from "../components/CustomLink";
 // import Player from "@vimeo/player";
 
@@ -41,6 +50,7 @@ export default {
   components: {
     Container,
     CustomLink,
+    GradientText,
   },
   /* -- Allows to listen to on video end event
   mounted() {
@@ -67,22 +77,33 @@ export default {
 header {
   display: flex;
   justify-content: center;
-  margin-bottom: rem(60px);
+  margin-bottom: rem(120px);
 
   img {
     height: 100%;
     width: 100%;
   }
+
+  @include media(">=tablet") {
+    img {
+      width: 80%;
+    }
+  }
+
+  @include media(">=desktop") {
+    img {
+      width: 60%;
+    }
+  }
 }
 
 .observatory-copy {
-  @include robotoLight;
+  @include papyrus;
 
   font-size: rem(16px);
   text-transform: uppercase;
   letter-spacing: rem(10px);
   text-align: center;
-  margin-bottom: rem(80px);
 
   @include media(">=tablet") {
     font-size: rem(30px);
@@ -95,12 +116,18 @@ header {
 .video-loop {
   display: flex;
   justify-content: center;
-  margin-bottom: rem(50px);
+  margin-top: rem(80px);
+  margin-bottom: rem(80px);
 
   video {
     max-width: 100%;
     height: auto;
   }
+}
+
+nav {
+  @include largeBody;
+  margin-top: rem(80px);
 }
 
 /*
@@ -115,27 +142,4 @@ header {
   }
 }
 */
-
-nav {
-  display: flex;
-  justify-content: center;
-}
-
-nav ul {
-  display: table;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-nav ul li {
-  display: table-cell;
-  width: calc(100% / 2); /* calc(100% / numItems) */
-  text-align: center;
-  white-space: nowrap;
-
-  @include media(">=tablet") {
-    font-size: rem(44px);
-  }
-}
 </style>
