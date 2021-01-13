@@ -42,12 +42,13 @@ $robotoSlab: "Roboto Slab";
   @include robotoLight;
 
   font-size: rem(16px);
+  letter-spacing: rem(3px);
   text-align: center;
   text-transform: uppercase;
-  letter-spacing: rem(10px);
   line-height: 1.5;
 
   @include media(">=tablet") {
+    letter-spacing: rem(10px);
     font-size: rem(30px);
   }
 }
