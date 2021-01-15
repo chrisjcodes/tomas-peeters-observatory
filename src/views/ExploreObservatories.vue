@@ -20,66 +20,11 @@
     </div>
     <div class="menu-wrapper">
       <ul class="menu">
-        <!--extract into component for map -->
-        <router-link to="/observatory/i"
-          ><li class="menu-item">
-            <span>
-              <GradientText theme="yellow-to-gold">I</GradientText>
-            </span>
-            <div class="menu-item-image">
-              <img src="@/assets/observatories/i/images/thumb.jpeg" alt="#" />
-            </div></li
-        ></router-link>
-        <!-- -->
-
-        <router-link to="/observatory/ii"
-          ><li class="menu-item">
-            <span>
-              <GradientText theme="yellow-to-gold">II</GradientText>
-            </span>
-            <div class="menu-item-image">
-              <img src="@/assets/observatories/ii/images/thumb.jpeg" alt="#" />
-            </div></li
-        ></router-link>
-        <router-link to="/observatory/iii"
-          ><li class="menu-item">
-            <span>
-              <GradientText theme="yellow-to-gold">III</GradientText>
-            </span>
-            <div class="menu-item-image">
-              <img src="@/assets/observatories/iii/images/thumb.jpeg" alt="#" />
-            </div></li
-        ></router-link>
-        <router-link to="/observatory/iv">
-          <li class="menu-item">
-            <span>
-              <GradientText theme="yellow-to-gold">IV</GradientText>
-            </span>
-            <div class="menu-item-image">
-              <img src="@/assets/observatories/iv/images/thumb.jpeg" alt="#" />
-            </div></li
-        ></router-link>
-        <router-link to="/observatory/v">
-          <li class="menu-item">
-            <span>
-              <GradientText theme="yellow-to-gold">V</GradientText>
-            </span>
-            <div class="menu-item-image">
-              <img src="@/assets/observatories/v/images/thumb.jpeg" alt="#" />
-            </div></li
-        ></router-link>
-        <!-- <router-link to="/observatory/vi"
-          ><li class="menu-item">
-            <span>
-              <GradientText theme="yellow-to-gold">VI</GradientText>
-            </span>
-            <div class="menu-item-image">
-              <img
-                src="https://images.unsplash.com/photo-1508615039623-a25605d2b022?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2250&q=80"
-                alt="#"
-              />
-            </div></li
-        ></router-link> -->
+        <observatory-template
+          v-for="observatory in observatoryData"
+          :key="observatory.id"
+          :observatory="observatory"
+        />
       </ul>
     </div>
   </Container>
@@ -87,13 +32,19 @@
 
 <script>
 import Container from "@/components/Container";
-import GradientText from "@/components/GradientText";
+import ObservatoryTemplate from "@/components/ObservatoryTemplate";
+import observatoryData from "../observatoryData.js";
 
 export default {
   name: "ExploreObservatories",
   components: {
     Container,
-    GradientText,
+    ObservatoryTemplate,
+  },
+  data: () => {
+    return {
+      observatoryData,
+    };
   },
 };
 </script>
@@ -181,29 +132,6 @@ header {
   a {
     color: inherit;
     text-decoration: none;
-  }
-}
-
-.menu-item {
-  @include robotoSlabRegular;
-  margin: rem(24px);
-  text-align: center;
-}
-
-.menu-item-image {
-  margin: rem(10px) auto 0 auto;
-  border: rem(2px) solid white;
-  width: rem(300px);
-  height: rem(300px);
-
-  img {
-    width: 100%;
-    height: 100%;
-  }
-
-  @include media(">=desktop") {
-    width: rem(250px);
-    height: rem(250px);
   }
 }
 </style>
