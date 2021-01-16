@@ -20,7 +20,7 @@
     </div>
     <div class="menu-wrapper">
       <ul class="menu">
-        <observatory-template
+        <ObservatoryListItem
           v-for="observatory in observatoryData"
           :key="observatory.id"
           :observatory="observatory"
@@ -32,14 +32,14 @@
 
 <script>
 import Container from "@/components/Container";
-import ObservatoryTemplate from "@/components/ObservatoryTemplate";
+import ObservatoryListItem from "@/components/ObservatoryListItem";
 import observatoryData from "../observatoryData.js";
 
 export default {
   name: "ExploreObservatories",
   components: {
     Container,
-    ObservatoryTemplate,
+    ObservatoryListItem,
   },
   data: () => {
     return {
