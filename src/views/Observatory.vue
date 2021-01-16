@@ -1,7 +1,12 @@
 <template>
   <Container>
     <header>
-      <img src="@/assets/observatories/i/images/logo.svg" />
+      <img
+        :src="
+          getImgPath(`${observatoriesArray[currentIndex][1].logo_filename}`)
+        "
+        alt="#"
+      />
     </header>
     <div class="observatory-copy">
       <p>
@@ -15,9 +20,9 @@
         </GradientText>
       </p>
     </div>
-    <div class="video-loop">
-      <video src="@/assets/observatories/i/videos/intro.mp4" controls />
-    </div>
+    <VideoTemplate
+      :url_id="`${observatoriesArray[currentIndex][1].video_url_id}`"
+    />
     <div class="observatory-copy">
       <p>
         <GradientText>
@@ -30,9 +35,6 @@
         </GradientText>
       </p>
     </div>
-    <!-- video is injected into this div
-    <div id="video-container"></div>
-    -->
     <nav>
       <CustomLink to="i/sequence">Explore Further</CustomLink>
     </nav>
@@ -42,8 +44,9 @@
 <script>
 import Container from "@/components/Container";
 import GradientText from "@/components/GradientText";
-import CustomLink from "../components/CustomLink";
-// import Player from "@vimeo/player";
+import CustomLink from "@/components/CustomLink";
+import VideoTemplate from "@/components/VideoTemplate";
+import observatoryData from "../observatoryData";
 
 export default {
   name: "Observatory",
@@ -51,20 +54,28 @@ export default {
     Container,
     CustomLink,
     GradientText,
+    VideoTemplate,
   },
-  /* -- Allows to listen to on video end event
-  mounted() {
-    const screenWidth = window.innerWidth;
-    let videoOptions = {
-      id: "https://vimeo.com/82886396",
-      width: screenWidth,
-      background: 1,
+  data() {
+    const findObservatoryIndex = (observatory) =>
+      observatory[0] === this.$route.params.observatory;
+    const observatoriesArray = Object.entries(observatoryData);
+    const currentIndex = observatoriesArray.findIndex(findObservatoryIndex);
+    return {
+      observatoriesArray,
+      currentIndex,
     };
-    const player = new Player("video-container", videoOptions);
-    player.on("ended", () => {
-      console.log("video end");
-    });
-  }, */
+  },
+  methods: {
+    getImgPath(imgName) {
+      return imgName
+        ? require(`@/assets/observatories/${this.$route.params.observatory}/images/${imgName}`)
+        : "";
+    },
+    getVideoUrl(url_id) {
+      return url_id ? require(`${url_id}`) : "";
+    },
+  },
 };
 </script>
 
@@ -114,33 +125,8 @@ header {
   }
 }
 
-.video-loop {
-  display: flex;
-  justify-content: center;
-  margin-top: rem(80px);
-  margin-bottom: rem(80px);
-
-  video {
-    max-width: 100%;
-    height: auto;
-  }
-}
-
 nav {
   @include largeBody;
   margin-top: rem(80px);
 }
-
-/*
-#video-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  iframe {
-    position: absolute;
-    border: 0;
-  }
-}
-*/
 </style>

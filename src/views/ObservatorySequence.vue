@@ -156,6 +156,7 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: $silver;
 
   .copy {
     display: flex;
@@ -177,6 +178,7 @@ export default {
     margin-bottom: 15px;
     letter-spacing: rem(2px);
     line-height: 1.5;
+    color: $scorpion;
 
     @include media(">=tablet") {
       font-size: rem(18px);
@@ -216,22 +218,6 @@ export default {
         max-height: 65vh;
       }
     }
-  }
-}
-
-.slide-light {
-  background-image: linear-gradient(0deg, $scorpion, $silver);
-
-  p {
-    color: $scorpion;
-  }
-}
-
-.slide-dark {
-  background-image: linear-gradient(0deg, $gray, $cod-gray);
-
-  p {
-    color: $gray;
   }
 }
 </style>

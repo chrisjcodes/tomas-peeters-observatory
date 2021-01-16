@@ -3,7 +3,7 @@ const observatoryData = {
     id: "i",
     logo_filename: "logo.svg",
     thumb_filename: "thumb.jpeg",
-    video_url: "intro.mp4",
+    video_url_id: "288344114",
     sequence: {
       a: "a.jpg",
       b: "b.jpg",
@@ -17,7 +17,7 @@ const observatoryData = {
     id: "ii",
     logo_filename: "logo.svg",
     thumb_filename: "thumb.jpeg",
-    video_url: "intro.mp4",
+    video_url_id: "288344114",
     sequence: {
       a: "a.jpg",
       b: "b.jpg",
@@ -31,7 +31,7 @@ const observatoryData = {
     id: "iii",
     logo_filename: "logo.svg",
     thumb_filename: "thumb.jpeg",
-    video_url: "intro.mp4",
+    video_url_id: "288344114",
     sequence: {
       a: "a.jpg",
       b: "b.jpg",
@@ -45,7 +45,7 @@ const observatoryData = {
     id: "iv",
     logo_file: "logo.svg",
     thumb_filename: "thumb.jpeg",
-    video_url: "intro.mp4",
+    video_url_id: "288344114",
     sequence: {
       a: "a.jpg",
       b: "b.jpg",
@@ -60,7 +60,7 @@ const observatoryData = {
     id: "v",
     logo_filename: "logo.svg",
     thumb_filename: "thumb.jpeg",
-    video_url: "intro.mp4",
+    video_url_id: "288344114",
     sequence: {
       a: "a.jpg",
       b: "b.jpg",
