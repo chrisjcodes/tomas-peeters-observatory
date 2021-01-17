@@ -34,7 +34,6 @@
 import Container from "@/components/Container";
 import ObservatoryListItem from "@/components/ObservatoryListItem";
 import observatoryData from "../observatoryData.js";
-
 export default {
   name: "ExploreObservatories",
   components: {
@@ -54,50 +53,41 @@ export default {
 @import "@/theme/media.scss";
 @import "@/theme/sizing.scss";
 @import "@/theme/typography.scss";
-
 .container {
   margin-top: rem(45px);
   margin-right: rem(25px);
   margin-left: rem(25px);
   margin-bottom: rem(45px);
-
   @include media(">desktop") {
     max-width: rem(1200px);
     margin-right: auto;
     margin-left: auto;
   }
 }
-
 header {
   display: flex;
   justify-content: center;
   margin-bottom: rem(60px);
-
   img {
     height: 100%;
     width: 100%;
   }
-
   @include media(">=tablet") {
     img {
       width: 80%;
     }
   }
-
   @include media(">=desktop") {
     img {
       width: 60%;
     }
   }
 }
-
 .explore-observatories-copy {
   @include robotoLight;
-
   display: flex;
   justify-content: center;
 }
-
 .copy-text {
   p {
     color: $silver;
@@ -108,18 +98,15 @@ header {
     line-height: 1.8;
     margin-bottom: rem(50px);
   }
-
   @include media(">=desktop") {
     width: 70vw;
   }
 }
-
 .menu-wrapper {
   display: flex;
   justify-content: center;
   margin: rem(30px) auto;
 }
-
 .menu {
   display: flex;
   justify-content: center;
@@ -128,7 +115,6 @@ header {
   margin: 0;
   padding: 0;
   list-style-type: none;
-
   a {
     color: inherit;
     text-decoration: none;

@@ -19,7 +19,7 @@ const routes = [
       ),
   },
   {
-    path: "/observatory/:id",
+    path: "/observatory/:observatory",
     name: "Observatory",
     component: () =>
       import(/* webpackChunkName: "Observatory" */ "@/views/Observatory.vue"),
