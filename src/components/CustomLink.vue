@@ -20,6 +20,7 @@ export default {
 
 .base {
   text-decoration: none;
+  z-index: -1;
 }
 
 .theme-underlined-white {
@@ -35,5 +36,9 @@ export default {
     height: 1px;
     width: 100%;
   }
+}
+
+nav {
+  cursor: pointer;
 }
 </style>

@@ -4,6 +4,9 @@ const observatoryData = {
     logo_filename: "logo.svg",
     thumb_filename: "thumb.jpeg",
     video_url_id: "288344114",
+    text_top: "The Art Of Using Form To See Emptiness",
+    text_bottom:
+      "At Zero Distance From My Center My Face Is Completely Transparent",
     sequence: {
       slide_1: {
         id: "i",
@@ -48,6 +51,9 @@ const observatoryData = {
     logo_filename: "logo.svg",
     thumb_filename: "thumb.jpeg",
     video_url_id: "288344114",
+    text_top: "The Art Of Using Form To See Emptiness",
+    text_bottom:
+      "At Zero Distance From My Center My Face Is Completely Transparent",
     sequence: {
       slide_1: {
         id: "ii",
@@ -92,6 +98,9 @@ const observatoryData = {
     logo_filename: "logo.svg",
     thumb_filename: "thumb.jpeg",
     video_url_id: "288344114",
+    text_top: "The Art Of Using Form To See Emptiness",
+    text_bottom:
+      "At Zero Distance From My Center My Face Is Completely Transparent",
     sequence: {
       slide_1: {
         id: "iii",
@@ -136,6 +145,9 @@ const observatoryData = {
     logo_filename: "logo.svg",
     thumb_filename: "thumb.jpeg",
     video_url_id: "288344114",
+    text_top: "The Art Of Using Form To See Emptiness",
+    text_bottom:
+      "At Zero Distance From My Center My Face Is Completely Transparent",
     sequence: {
       slide_1: {
         id: "iv",
@@ -186,6 +198,9 @@ const observatoryData = {
     logo_filename: "logo.svg",
     thumb_filename: "thumb.jpeg",
     video_url_id: "288344114",
+    text_top: "The Art Of Using Form To See Emptiness",
+    text_bottom:
+      "At Zero Distance From My Center My Face Is Completely Transparent",
     sequence: {
       slide_1: {
         id: "v",

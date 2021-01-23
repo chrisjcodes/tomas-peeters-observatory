@@ -24,6 +24,8 @@ export default {
   overflow: hidden;
   width: 100%;
   padding-top: 56.25%;
+  z-index: -1;
+
   iframe {
     position: absolute;
     top: 0;

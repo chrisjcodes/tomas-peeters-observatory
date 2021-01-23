@@ -9,16 +9,13 @@
       />
     </header>
     <div class="observatory-copy">
-      <p>
-        <GradientText>
-          The Art Of Using Form
-        </GradientText>
-      </p>
-      <p>
-        <GradientText>
-          To See Emptiness
-        </GradientText>
-      </p>
+      <div class="text-top">
+        <p>
+          <GradientText>
+            {{ observatoriesArray[currentIndex][1].text_top }}
+          </GradientText>
+        </p>
+      </div>
     </div>
     <VideoTemplate
       :url_id="`${observatoriesArray[currentIndex][1].video_url_id}`"
@@ -26,12 +23,7 @@
     <div class="observatory-copy">
       <p>
         <GradientText>
-          at zero distance from my center
-        </GradientText>
-      </p>
-      <p>
-        <GradientText>
-          my face is completely transparent
+          {{ observatoriesArray[currentIndex][1].text_bottom }}
         </GradientText>
       </p>
     </div>
@@ -86,7 +78,7 @@ export default {
 header {
   display: flex;
   justify-content: center;
-  margin-bottom: rem(120px);
+  margin-bottom: rem(60px);
   img {
     height: 100%;
     width: 100%;
@@ -108,16 +100,32 @@ header {
   text-transform: uppercase;
   letter-spacing: rem(4px);
   text-align: center;
+
   @include media(">=tablet") {
     font-size: rem(30px);
     letter-spacing: rem(8px);
   }
   p {
     color: $silver;
+    line-height: rem(30px);
+
+    @include media(">=tablet") {
+      line-height: rem(40px);
+    }
   }
 }
 nav {
   @include largeBody;
   margin-top: rem(80px);
+}
+
+.text-top {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+
+  @include media(">=tablet") {
+    width: 85%;
+  }
 }
 </style>
