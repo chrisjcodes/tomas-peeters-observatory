@@ -6,24 +6,44 @@
       <div class="line"></div>
     </div>
     <ul class="nav-links">
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Explore The Observatories</a></li>
-      <li><a href="#">Writtings</a></li>
+      <Container :containOn="['l', 'r']">
+        <li>
+          <CustomLink to="/">
+            Home
+          </CustomLink>
+        </li>
+        <li>
+          <CustomLink to="/explore-observatories">
+            Explore The Observatories
+          </CustomLink>
+        </li>
+        <li>
+          <CustomLink>
+            Writtings
+          </CustomLink>
+        </li>
+      </Container>
     </ul>
   </nav>
 </template>
 
 <script>
-//import Container from "@/components/Container";
+import Container from "@/components/Container";
+import CustomLink from "@/components/CustomLink";
 export default {
   name: "Navigation",
   components: {
-    //Container,
+    Container,
+    CustomLink,
   },
   methods: {
     open: () => {
       const navLinks = document.querySelector(".nav-links");
+      const links = document.querySelectorAll(".nav-links li");
       navLinks.classList.toggle("open");
+      links.forEach((link) => {
+        link.classList.toggle("fade");
+      });
     },
   },
 };
@@ -60,22 +80,26 @@ nav {
   position: fixed;
   background: $silver;
   opacity: 0;
-  height: 100vh;
+  height: 100%;
   width: 100%;
   flex-direction: column;
   clip-path: circle(10px at 6% 5%);
   -webkit-clip-path: circle(10px at 6% 5%);
   transition: all 0.5s ease-out;
   overflow: hidden;
+  text-align: center;
+  padding: 0;
 
   a {
-    color: white;
+    color: black;
     text-decoration: none;
-    font-size: 16px;
+    font-size: rem(20px);
   }
 
   li {
     opacity: 0;
+    cursor: pointer;
+    margin-bottom: rem(100px);
   }
 }
 
