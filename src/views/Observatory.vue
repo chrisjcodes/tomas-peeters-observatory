@@ -1,29 +1,22 @@
 <template>
   <Container>
     <header>
-      <img
-        :src="
-          getImgPath(`${observatoriesArray[currentIndex][1].logo_filename}`)
-        "
-        alt="#"
-      />
+      <img :src="getImgPath(`${observatory.logoFileName}`)" alt="#" />
     </header>
     <div class="observatory-copy">
       <div class="text-top">
         <p>
           <GradientText>
-            {{ observatoriesArray[currentIndex][1].text_top }}
+            {{ observatory.copyTextTop }}
           </GradientText>
         </p>
       </div>
     </div>
-    <VideoTemplate
-      :url_id="`${observatoriesArray[currentIndex][1].video_url_id}`"
-    />
+    <VideoTemplate :url_id="`${observatory.videoUrlId}`" />
     <div class="observatory-copy">
       <p>
         <GradientText>
-          {{ observatoriesArray[currentIndex][1].text_bottom }}
+          {{ observatory.copyLineBottom }}
         </GradientText>
       </p>
     </div>
@@ -38,7 +31,9 @@ import Container from "@/components/Container";
 import GradientText from "@/components/GradientText";
 import CustomLink from "@/components/CustomLink";
 import VideoTemplate from "@/components/VideoTemplate";
-import observatoryData from "../observatoryData";
+
+import * as service from "../services";
+
 export default {
   name: "Observatory",
   components: {
@@ -48,13 +43,9 @@ export default {
     VideoTemplate,
   },
   data() {
-    const findObservatoryIndex = (observatory) =>
-      observatory[0] === this.$route.params.observatory;
-    const observatoriesArray = Object.entries(observatoryData);
-    const currentIndex = observatoriesArray.findIndex(findObservatoryIndex);
+    const observatory = service.fetchById(this.$route.params.observatory);
     return {
-      observatoriesArray,
-      currentIndex,
+      observatory,
     };
   },
   methods: {

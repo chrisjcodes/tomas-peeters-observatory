@@ -7,7 +7,7 @@
       <div class="menu-item-image">
         <img
           :src="
-            require(`@/assets/observatories/${observatory.id}/images/${observatory.thumb_filename}`)
+            require(`@/assets/observatories/${observatory.id}/images/${observatory.thumbFileName}`)
           "
           alt="#"
         />
