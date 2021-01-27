@@ -20,7 +20,6 @@ export default {
 
 .base {
   text-decoration: none;
-  z-index: -1;
 }
 
 .theme-underlined-white {
