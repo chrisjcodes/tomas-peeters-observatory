@@ -1,248 +1,236 @@
 const observatoryData = {
   i: {
     id: "i",
-    logo_filename: "logo.svg",
-    thumb_filename: "thumb.jpeg",
-    video_url_id: "288344114",
-    text_top: "The Art Of Using Form To See Emptiness",
-    text_bottom:
+    logoFileName: "logo.svg",
+    thumbFileName: "thumb.jpeg",
+    videoUrlId: "288344114",
+    copyLineTop: "The Art Of Using Form To See Emptiness",
+    copyLineBottom:
       "At Zero Distance From My Center My Face Is Completely Transparent",
     sequence: {
-      slide_1: {
+      slide1: {
         id: "i",
-        slide_image: "a.jpg",
-        text:
-          "in observatory i sunlight is radiating on an empty tunnel projecting a ring of light",
+        copyLine1: "in observatory i sunlight is radiating on an empty tunnel",
+        copyLine2: "projecting a ring of light",
+        image: "a.jpg",
       },
-      slide_2: {
+      slide2: {
         id: "i",
-        slide_image: "b.jpg",
-        text:
-          "this luminous ring ocilates between my face and the face on the other end of the tunnel",
+        copyLine1: "this luminous ring ocilates between my face ",
+        copyLine2: "and the face on the other end of the tunnel",
+        image: "b.jpg",
       },
-      slide_3: {
+      slide3: {
         id: "i",
-        slide_image: "c.jpg",
-        text:
-          "within this radiant ring i see the emptiness of space and the face on the other end of the tunnel",
+        copyLine1: "within this radiant ring i see the emptiness ",
+        copyLine2: "of space and the face on the other end of the tunnel",
+        image: "c.jpg",
       },
-      slide_4: {
+      slide4: {
         id: "i",
-        slide_image: "d.jpg",
-        text:
-          "within this radiant ring i see the emptiness of space flowing through my face",
+        copyLine1: "within this radiant ring i see the emptiness of ",
+        copyLine2: "space flowing through my face",
+        slideImage: "d.jpg",
       },
-      slide_5: {
+      slide5: {
         id: "i",
-        slide_image: "e.jpg",
-        text:
-          "suddenly i see that my end of the tunnel is utterly empty of my face",
+        copyLine1: "suddenly i see that my end of the",
+        copyLine2: "tunnel is utterly empty of my face",
+        slideImage: "e.jpg",
       },
-      slide_6: {
+      slide6: {
         id: "i",
-        slide_image: "f.jpg",
-        text:
-          "here at zero distance i am seeing the empty space i am looking out from",
+        copyLine1: "here at zero distance i am seeing the empty ",
+        copyLine2: "space i am looking out from",
+        slideImage: "f.jpg",
       },
     },
   },
   ii: {
     id: "ii",
-    logo_filename: "logo.svg",
-    thumb_filename: "thumb.jpeg",
-    video_url_id: "288344114",
-    text_top: "The Art Of Using Form To See Emptiness",
-    text_bottom:
+    logoFileName: "logo.svg",
+    thumbFileName: "thumb.jpeg",
+    videoUrlId: "288344114",
+    CopyLinetop: "The Art Of Using Form To See Emptiness",
+    CopyLineBottom:
       "At Zero Distance From My Center My Face Is Completely Transparent",
     sequence: {
-      slide_1: {
+      slide1: {
         id: "ii",
-        slide_image: "a.jpg",
-        text:
-          "in observatory i sunlight is radiating on an empty tunnel projecting a ring of light",
+        copyLine1: "in observatory i sunlight is radiating on an empty tunnel",
+        copyLine2: "projecting a ring of light",
+        image: "a.jpg",
       },
-      slide_2: {
+      slide2: {
         id: "ii",
-        slide_image: "b.jpg",
-        text:
-          "this luminous ring ocilates between my face and the face on the other end of the tunnel",
+        copyLine1: "this luminous ring ocilates between my face ",
+        copyLine2: "and the face on the other end of the tunnel",
+        image: "b.jpg",
       },
-      slide_3: {
+      slide3: {
         id: "ii",
-        slide_image: "c.jpg",
-        text:
-          "within this radiant ring i see the emptiness of space and the face on the other end of the tunnel",
+        copyLine1: "within this radiant ring i see the emptiness ",
+        copyLine2: "of space and the face on the other end of the tunnel",
+        image: "c.jpg",
       },
-      slide_4: {
+      slide4: {
         id: "ii",
-        slide_image: "d.jpg",
-        text:
-          "within this radiant ring i see the emptiness of space flowing through my face",
+        copyLine1: "within this radiant ring i see the emptiness of ",
+        copyLine2: "space flowing through my face",
+        slideImage: "d.jpg",
       },
-      slide_5: {
+      slide5: {
         id: "ii",
-        slide_image: "e.jpg",
-        text:
-          "suddenly i see that my end of the tunnel is utterly empty of my face",
+        copyLine1: "suddenly i see that my end of the",
+        copyLine2: "tunnel is utterly empty of my face",
+        slideImage: "e.jpg",
       },
-      slide_6: {
+      slide6: {
         id: "ii",
-        slide_image: "f.jpg",
-        text:
-          "here at zero distance i am seeing the empty space i am looking out from",
+        copyLine1: "here at zero distance i am seeing the empty ",
+        copyLine2: "space i am looking out from",
+        slideImage: "f.jpg",
       },
     },
   },
   iii: {
     id: "iii",
-    logo_filename: "logo.svg",
-    thumb_filename: "thumb.jpeg",
-    video_url_id: "288344114",
-    text_top: "The Art Of Using Form To See Emptiness",
-    text_bottom:
+    logoFileName: "logo.svg",
+    thumbFileName: "thumb.jpeg",
+    videoUrlId: "288344114",
+    copyLineTop: "The Art Of Using Form To See Emptiness",
+    copyLineBottom:
       "At Zero Distance From My Center My Face Is Completely Transparent",
     sequence: {
-      slide_1: {
+      slide1: {
         id: "iii",
-        slide_image: "a.jpg",
-        text:
-          "in observatory i sunlight is radiating on an empty tunnel projecting a ring of light",
+        copyLine1: "in observatory i sunlight is radiating on an empty tunnel",
+        copyLine2: "projecting a ring of light",
+        image: "a.jpg",
       },
-      slide_2: {
+      slide2: {
         id: "iii",
-        slide_image: "b.jpg",
-        text:
-          "this luminous ring ocilates between my face and the face on the other end of the tunnel",
+        copyLine1: "this luminous ring ocilates between my face ",
+        copyLine2: "and the face on the other end of the tunnel",
+        image: "b.jpg",
       },
-      slide_3: {
+      slide3: {
         id: "iii",
-        slide_image: "c.jpg",
-        text:
-          "within this radiant ring i see the emptiness of space and the face on the other end of the tunnel",
+        copyLine1: "within this radiant ring i see the emptiness ",
+        copyLine2: "of space and the face on the other end of the tunnel",
+        image: "c.jpg",
       },
-      slide_4: {
+      slide4: {
         id: "iii",
-        slide_image: "d.jpg",
-        text:
-          "within this radiant ring i see the emptiness of space flowing through my face",
+        copyLine1: "within this radiant ring i see the emptiness of ",
+        copyLine2: "space flowing through my face",
+        slideImage: "d.jpg",
       },
-      slide_5: {
+      slide5: {
         id: "iii",
-        slide_image: "e.jpg",
-        text:
-          "suddenly i see that my end of the tunnel is utterly empty of my face",
+        copyLine1: "suddenly i see that my end of the",
+        copyLine2: "tunnel is utterly empty of my face",
+        slideImage: "e.jpg",
       },
-      slide_6: {
+      slide6: {
         id: "iii",
-        slide_image: "f.jpg",
-        text:
-          "here at zero distance i am seeing the empty space i am looking out from",
+        copyLine1: "here at zero distance i am seeing the empty ",
+        copyLine2: "space i am looking out from",
+        slideImage: "f.jpg",
       },
     },
   },
   iv: {
     id: "iv",
-    logo_filename: "logo.svg",
-    thumb_filename: "thumb.jpeg",
-    video_url_id: "288344114",
-    text_top: "The Art Of Using Form To See Emptiness",
-    text_bottom:
+    logoFileName: "logo.svg",
+    thumbFileName: "thumb.jpeg",
+    videoUrlId: "288344114",
+    copyLineTop: "The Art Of Using Form To See Emptiness",
+    copyLineBottom:
       "At Zero Distance From My Center My Face Is Completely Transparent",
     sequence: {
-      slide_1: {
+      slide1: {
         id: "iv",
-        slide_image: "a.jpg",
-        text:
-          "in observatory i sunlight is radiating on an empty tunnel projecting a ring of light",
+        copyLine1: "in observatory i sunlight is radiating on an empty tunnel",
+        copyLine2: "projecting a ring of light",
+        image: "a.jpg",
       },
-      slide_2: {
+      slide2: {
         id: "iv",
-        slide_image: "b.jpg",
-        text:
-          "this luminous ring ocilates between my face and the face on the other end of the tunnel",
+        copyLine1: "this luminous ring ocilates between my face ",
+        copyLine2: "and the face on the other end of the tunnel",
+        image: "b.jpg",
       },
-      slide_3: {
+      slide3: {
         id: "iv",
-        slide_image: "c.jpg",
-        text:
-          "within this radiant ring i see the emptiness of space and the face on the other end of the tunnel",
+        copyLine1: "within this radiant ring i see the emptiness ",
+        copyLine2: "of space and the face on the other end of the tunnel",
+        image: "c.jpg",
       },
-      slide_4: {
+      slide4: {
         id: "iv",
-        slide_image: "d.jpg",
-        text:
-          "within this radiant ring i see the emptiness of space flowing through my face",
+        copyLine1: "within this radiant ring i see the emptiness of ",
+        copyLine2: "space flowing through my face",
+        slideImage: "d.jpg",
       },
-      slide_5: {
+      slide5: {
         id: "iv",
-        slide_image: "e.jpg",
-        text:
-          "suddenly i see that my end of the tunnel is utterly empty of my face",
+        copyLine1: "suddenly i see that my end of the",
+        copyLine2: "tunnel is utterly empty of my face",
+        slideImage: "e.jpg",
       },
-      slide_6: {
+      slide6: {
         id: "iv",
-        slide_image: "f.jpg",
-        text:
-          "here at zero distance i am seeing the empty space i am looking out from",
-      },
-      slide_7: {
-        id: "iv",
-        slide_image: "g.jpg",
-        text:
-          "here at zero distance i am seeing the empty space i am looking out from",
+        copyLine1: "here at zero distance i am seeing the empty ",
+        copyLine2: "space i am looking out from",
+        slideImage: "f.jpg",
       },
     },
   },
   v: {
     id: "v",
-    logo_filename: "logo.svg",
-    thumb_filename: "thumb.jpeg",
-    video_url_id: "288344114",
-    text_top: "The Art Of Using Form To See Emptiness",
-    text_bottom:
+    logoFileName: "logo.svg",
+    thumbFileName: "thumb.jpeg",
+    videoUrlId: "288344114",
+    copyLineTop: "The Art Of Using Form To See Emptiness",
+    copyLineBottom:
       "At Zero Distance From My Center My Face Is Completely Transparent",
     sequence: {
-      slide_1: {
+      slide1: {
         id: "v",
-        slide_image: "a.jpg",
-        text:
-          "in observatory i sunlight is radiating on an empty tunnel projecting a ring of light",
+        copyLine1: "in observatory i sunlight is radiating on an empty tunnel",
+        copyLine2: "projecting a ring of light",
+        image: "a.jpg",
       },
-      slide_2: {
+      slide2: {
         id: "v",
-        slide_image: "b.jpg",
-        text:
-          "this luminous ring ocilates between my face and the face on the other end of the tunnel",
+        copyLine1: "this luminous ring ocilates between my face ",
+        copyLine2: "and the face on the other end of the tunnel",
+        image: "b.jpg",
       },
-      slide_3: {
+      slide3: {
         id: "v",
-        slide_image: "c.jpg",
-        text:
-          "within this radiant ring i see the emptiness of space and the face on the other end of the tunnel",
+        copyLine1: "within this radiant ring i see the emptiness ",
+        copyLine2: "of space and the face on the other end of the tunnel",
+        image: "c.jpg",
       },
-      slide_4: {
+      slide4: {
         id: "v",
-        slide_image: "d.jpg",
-        text:
-          "within this radiant ring i see the emptiness of space flowing through my face",
+        copyLine1: "within this radiant ring i see the emptiness of ",
+        copyLine2: "space flowing through my face",
+        slideImage: "d.jpg",
       },
-      slide_5: {
+      slide5: {
         id: "v",
-        slide_image: "e.jpg",
-        text:
-          "suddenly i see that my end of the tunnel is utterly empty of my face",
+        copyLine1: "suddenly i see that my end of the",
+        copyLine2: "tunnel is utterly empty of my face",
+        slideImage: "e.jpg",
       },
-      slide_6: {
+      slide6: {
         id: "v",
-        slide_image: "f.jpg",
-        text:
-          "here at zero distance i am seeing the empty space i am looking out from",
-      },
-      slide_7: {
-        id: "v",
-        slide_image: "g.jpg",
-        text:
-          "here at zero distance i am seeing the empty space i am looking out from",
+        copyLine1: "here at zero distance i am seeing the empty ",
+        copyLine2: "space i am looking out from",
+        slideImage: "f.jpg",
       },
     },
   },
