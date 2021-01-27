@@ -2,9 +2,9 @@
   <div class="slick-container">
     <VueSlickCarousel v-bind="slickSettings">
       <SlickSlideTemplate
-        v-for="sequence in observatorySequence"
-        :key="sequence[1].slide_image"
-        :sequence="sequence"
+        v-for="slide in sequence"
+        :key="slide[1].id"
+        :slide="slide[1]"
       />
     </VueSlickCarousel>
   </div>
@@ -15,7 +15,8 @@ import VueSlickCarousel from "vue-slick-carousel";
 import "vue-slick-carousel/dist/vue-slick-carousel.css";
 import "vue-slick-carousel/dist/vue-slick-carousel-theme.css";
 import SlickSlideTemplate from "@/components/SlickSlideTemplate";
-import observatoryData from "../observatoryData";
+
+import * as service from "../services";
 
 export default {
   name: "ObservatorySequence",
@@ -24,17 +25,9 @@ export default {
     SlickSlideTemplate,
   },
   data() {
-    const findObservatoryIndex = (observatory) =>
-      observatory.id === this.$route.params.observatory;
-    const observatoriesArray = Object.entries(observatoryData);
-    const currentIndex = observatoriesArray.findIndex(findObservatoryIndex);
-    const currentObservatory = observatoriesArray[currentIndex];
-    const observatorySequence = Object.entries(
-      observatoriesArray[currentIndex][1].sequence
-    );
+    const sequence = service.fetchSequenceById(this.$route.params.id);
     return {
-      currentObservatory,
-      observatorySequence,
+      sequence,
       slickSettings: {
         arrows: false,
         dots: true,

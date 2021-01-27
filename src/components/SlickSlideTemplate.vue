@@ -2,10 +2,10 @@
   <div>
     <div class="slide-inner slide-light">
       <div class="copy">
-        <p>{{ sequence[1].text }}</p>
+        <p>{{ slide.copyTextTop }}</p>
       </div>
       <div class="image">
-        <img :src="getImgPath(`${sequence[1].slide_image}`)" />
+        <img :src="getImgPath(`${slide.image}`)" />
       </div>
     </div>
   </div>
@@ -15,12 +15,12 @@
 export default {
   name: "SlickSlideTemplate",
   props: {
-    sequence: Array,
+    slide: Object,
   },
   methods: {
     getImgPath(imgName) {
       return imgName
-        ? require(`@/assets/observatories/${this.sequence[1].id}/images/sequence/${imgName}`)
+        ? require(`@/assets/observatories/${this.slide.id}/images/sequence/${imgName}`)
         : "";
     },
   },
