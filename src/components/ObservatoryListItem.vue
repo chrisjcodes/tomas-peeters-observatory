@@ -18,7 +18,7 @@
 <script>
 import GradientText from "./GradientText";
 export default {
-  name: "ObservatoryTemplate",
+  name: "ObservatoryListItem",
   components: {
     GradientText,
   },
