@@ -9,7 +9,7 @@
         <p>{{ slide.copyA }} {{ slide.copyB }}</p>
       </div>
       <div class="image">
-        <img :src="getImgPath(`${slide.image}`)" />
+        <img :src="this.slideImageSrc" />
       </div>
     </div>
   </div>
@@ -22,10 +22,10 @@ export default {
     slide: Object,
     name: String,
   },
-  methods: {
-    getImgPath(imgName) {
-      return imgName
-        ? require(`@/assets/observatories/${this.$props.name}/images/sequence/${imgName}`)
+  computed: {
+    slideImageSrc() {
+      return this.slide.image
+        ? require(`@/assets/observatories/${this.$props.name}/images/sequence/${this.slide.image}`)
         : "";
     },
   },

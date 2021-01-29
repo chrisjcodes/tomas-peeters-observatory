@@ -1,7 +1,7 @@
 <template>
   <Container>
     <header>
-      <img :src="getImgPath(observatory.logoFileName)" alt="#" />
+      <img :src="this.logoSrc" :alt="`observatory ${observatory.name} logo`" />
     </header>
     <div class="observatory-copy">
       <div class="text-top">
@@ -12,7 +12,7 @@
         </p>
       </div>
     </div>
-    <VideoTemplate :urlId="`${observatory.videoUrlId}`" />
+    <VideoTemplate :urlId="observatory.videoUrlId || ''" />
     <div class="observatory-copy">
       <p>
         <GradientText>
@@ -51,6 +51,13 @@ export default {
       observatory: {},
     };
   },
+  computed: {
+    logoSrc() {
+      return this.observatory.logoFileName
+        ? require(`@/assets/observatories/${this.$route.params.name}/images/${this.observatory.logoFileName}`)
+        : "";
+    },
+  },
   created() {
     this.fetchObservatoryById();
   },
@@ -64,14 +71,6 @@ export default {
         .then((observatory) => {
           this.observatory = observatory;
         });
-    },
-    getImgPath(imgName) {
-      return imgName
-        ? require(`@/assets/observatories/${this.$route.params.name}/images/${imgName}`)
-        : "";
-    },
-    getVideoUrl(urlId) {
-      return urlId ? require(urlId) : "";
     },
   },
 };
