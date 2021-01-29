@@ -10,10 +10,13 @@
   "dependencies": {
     "@vimeo/player": "^2.14.1",
     "core-js": "^3.6.5",
+    "cuid": "^2.1.8",
     "gsap": "^3.5.1",
     "jquery": "^3.5.1",
     "normalize-scss": "^7.0.1",
+    "ramda": "^0.27.1",
     "vue": "^2.6.11",
+    "vue-body-class": "^3.0.2",
     "vue-router": "^3.4.9",
     "vue-slick-carousel": "^1.0.6"
   },

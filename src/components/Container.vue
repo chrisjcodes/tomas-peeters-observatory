@@ -50,6 +50,10 @@ export default {
   margin-left: rem(25px);
 }
 
+@mixin container-none {
+  margin: 0;
+}
+
 .container-t {
   @include container-t;
 }
@@ -64,6 +68,10 @@ export default {
 
 .container-l {
   @include container-l;
+}
+
+.container-none {
+  @include container-none;
 }
 
 .container-x {

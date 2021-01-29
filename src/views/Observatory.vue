@@ -1,40 +1,31 @@
 <template>
   <Container>
     <header>
-      <img src="@/assets/observatories/i/images/logo.svg" />
+      <img :src="this.logoSrc" :alt="`observatory ${observatory.name} logo`" />
     </header>
     <div class="observatory-copy">
-      <p>
-        <GradientText>
-          The Art Of Using Form
-        </GradientText>
-      </p>
-      <p>
-        <GradientText>
-          To See Emptiness
-        </GradientText>
-      </p>
+      <div class="text-top">
+        <p>
+          <GradientText>
+            {{ observatory.copyTop }}
+          </GradientText>
+        </p>
+      </div>
     </div>
-    <div class="video-loop">
-      <video src="@/assets/observatories/i/videos/intro.mp4" controls />
-    </div>
+    <VideoTemplate :urlId="observatory.videoUrlId || ''" />
     <div class="observatory-copy">
       <p>
         <GradientText>
-          at zero distance from my center
-        </GradientText>
-      </p>
-      <p>
-        <GradientText>
-          my face is completely transparent
+          {{ observatory.copyBottom }}
         </GradientText>
       </p>
     </div>
-    <!-- video is injected into this div
-    <div id="video-container"></div>
-    -->
     <nav>
-      <CustomLink to="i/sequence">Explore Further</CustomLink>
+      <CustomLink
+        theme="ul-scorpion"
+        :to="`${this.$route.params.name}/sequence`"
+        >Explore Further</CustomLink
+      >
     </nav>
   </Container>
 </template>
@@ -42,8 +33,10 @@
 <script>
 import Container from "@/components/Container";
 import GradientText from "@/components/GradientText";
-import CustomLink from "../components/CustomLink";
-// import Player from "@vimeo/player";
+import CustomLink from "@/components/CustomLink";
+import VideoTemplate from "@/components/VideoTemplate";
+
+import { observatoriesService } from "../services";
 
 export default {
   name: "Observatory",
@@ -51,20 +44,35 @@ export default {
     Container,
     CustomLink,
     GradientText,
+    VideoTemplate,
   },
-  /* -- Allows to listen to on video end event
-  mounted() {
-    const screenWidth = window.innerWidth;
-    let videoOptions = {
-      id: "https://vimeo.com/82886396",
-      width: screenWidth,
-      background: 1,
+  data() {
+    return {
+      observatory: {},
     };
-    const player = new Player("video-container", videoOptions);
-    player.on("ended", () => {
-      console.log("video end");
-    });
-  }, */
+  },
+  computed: {
+    logoSrc() {
+      return this.observatory.logoFileName
+        ? require(`@/assets/observatories/${this.$route.params.name}/images/${this.observatory.logoFileName}`)
+        : "";
+    },
+  },
+  created() {
+    this.fetchObservatoryById();
+  },
+  watch: {
+    $route: "fetchObservatoryById",
+  },
+  methods: {
+    fetchObservatoryById() {
+      observatoriesService
+        .fetchByName(this.$route.params.name)
+        .then((observatory) => {
+          this.observatory = observatory;
+        });
+    },
+  },
 };
 </script>
 
@@ -73,33 +81,27 @@ export default {
 @import "@/theme/media.scss";
 @import "@/theme/sizing.scss";
 @import "@/theme/typography.scss";
-
 header {
   display: flex;
   justify-content: center;
-  margin-bottom: rem(120px);
-
+  margin-bottom: rem(60px);
   img {
     height: 100%;
     width: 100%;
   }
-
   @include media(">=tablet") {
     img {
       width: 80%;
     }
   }
-
   @include media(">=desktop") {
     img {
       width: 60%;
     }
   }
 }
-
 .observatory-copy {
   @include papyrus;
-
   font-size: rem(16px);
   text-transform: uppercase;
   letter-spacing: rem(4px);
@@ -111,18 +113,11 @@ header {
   }
   p {
     color: $silver;
-  }
-}
+    line-height: rem(30px);
 
-.video-loop {
-  display: flex;
-  justify-content: center;
-  margin-top: rem(80px);
-  margin-bottom: rem(80px);
-
-  video {
-    max-width: 100%;
-    height: auto;
+    @include media(">=tablet") {
+      line-height: rem(40px);
+    }
   }
 }
 
@@ -131,16 +126,13 @@ nav {
   margin-top: rem(80px);
 }
 
-/*
-#video-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.text-top {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
 
-  iframe {
-    position: absolute;
-    border: 0;
+  @include media(">=tablet") {
+    width: 85%;
   }
 }
-*/
 </style>

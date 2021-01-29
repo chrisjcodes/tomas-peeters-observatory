@@ -4,6 +4,13 @@
   </div>
 </template>
 
+<script>
+export default {
+  name: "App",
+  components: {},
+};
+</script>
+
 <style lang="scss">
 @import "normalize-scss/sass/normalize.scss";
 @import "./theme/sizing.scss";
@@ -19,11 +26,15 @@ html {
 
 body {
   @include robotoLight;
-
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: rem(22px);
   background-color: $black;
   color: $white;
+}
+
+.light {
+  background-color: $silver;
+  color: $black;
 }
 </style>
