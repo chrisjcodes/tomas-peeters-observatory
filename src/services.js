@@ -1,14 +1,14 @@
-import observatoryData from "./observatoryData";
+import { allObservatories, observatoriesByName } from "./observatoryData";
 
-const observatories = Object.entries(observatoryData);
+function ObservatoriesService() {
+  return {
+    async fetchAll() {
+      return Promise.resolve(allObservatories);
+    },
+    async fetchByName(id) {
+      return Promise.resolve(observatoriesByName[id]);
+    },
+  };
+}
 
-export const fetchById = (id) => {
-  const result = observatories.filter((current) => current[1].id === id);
-  return result[0][1];
-};
-
-export const fetchSequenceById = (id) => {
-  const sequence = fetchById(id).sequence;
-  const result = Object.entries(sequence);
-  return result;
-};
+export const observatoriesService = ObservatoriesService();

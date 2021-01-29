@@ -21,7 +21,7 @@
     <div class="menu-wrapper">
       <ul class="menu">
         <ObservatoryListItem
-          v-for="observatory in observatoryData"
+          v-for="observatory in observatories"
           :key="observatory.id"
           :observatory="observatory"
         />
@@ -33,17 +33,28 @@
 <script>
 import Container from "@/components/Container";
 import ObservatoryListItem from "@/components/ObservatoryListItem";
-import observatoryData from "../observatoryData.js";
+import { observatoriesService } from "../services";
+
 export default {
   name: "ExploreObservatories",
   components: {
     Container,
     ObservatoryListItem,
   },
-  data: () => {
+  data() {
     return {
-      observatoryData,
+      observatories: [],
     };
+  },
+  created() {
+    this.fetchAllObservatories();
+  },
+  methods: {
+    fetchAllObservatories() {
+      observatoriesService.fetchAll().then((observatories) => {
+        this.observatories = observatories;
+      });
+    },
   },
 };
 </script>

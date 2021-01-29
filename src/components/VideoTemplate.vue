@@ -1,7 +1,7 @@
 <template>
   <div class="video-loop">
     <iframe
-      :src="`https://player.vimeo.com/video/${url_id}?background=1`"
+      :src="`https://player.vimeo.com/video/${urlId}?background=1`"
       frameborder="0"
       allow="autoplay; fullscreen; picture-in-picture"
       allowfullscreen
@@ -13,7 +13,7 @@
 export default {
   name: "VideoTemplate",
   props: {
-    url_id: { type: String, default: "" },
+    urlId: { type: String, default: "" },
   },
 };
 </script>

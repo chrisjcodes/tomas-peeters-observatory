@@ -9,7 +9,7 @@ export default {
   name: "CustomLink",
   props: {
     to: { type: String, default: "" },
-    theme: { type: String, default: "underlined-white" },
+    theme: { type: String, default: "ul-white" },
   },
 };
 </script>
@@ -22,18 +22,32 @@ export default {
   text-decoration: none;
 }
 
-.theme-underlined-white {
+%underline {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -15px;
+  height: 1px;
+  width: 100%;
+}
+
+.theme-ul-white {
   color: $white;
   position: relative;
 
   &:after {
-    content: "";
-    position: absolute;
-    background: white;
-    left: 0;
-    bottom: -15px;
-    height: 1px;
-    width: 100%;
+    @extend %underline;
+    background-color: white;
+  }
+}
+
+.theme-ul-scorpion {
+  color: $scorpion;
+  position: relative;
+
+  &:after {
+    @extend %underline;
+    background-color: $scorpion;
   }
 }
 

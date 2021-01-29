@@ -1,13 +1,15 @@
 <template>
-  <router-link :to="`/observatory/${observatory.id}`"
+  <router-link :to="`/observatory/${observatory.name}`"
     ><li class="menu-item">
       <span>
-        <GradientText theme="yellow-to-gold">{{ observatory.id }}</GradientText>
+        <GradientText theme="yellow-to-gold">{{
+          observatory.name
+        }}</GradientText>
       </span>
       <div class="menu-item-image">
         <img
           :src="
-            require(`@/assets/observatories/${observatory.id}/images/${observatory.thumbFileName}`)
+            require(`@/assets/observatories/${observatory.name}/images/${observatory.thumbFileName}`)
           "
           alt="#"
         />

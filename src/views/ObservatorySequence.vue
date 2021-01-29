@@ -1,10 +1,11 @@
 <template>
   <div class="slick-container">
-    <VueSlickCarousel v-bind="slickSettings">
-      <SlickSlideTemplate
+    <VueSlickCarousel v-if="sequence.length > 0" v-bind="slickSettings">
+      <SequenceSlide
         v-for="slide in sequence"
-        :key="slide[1].id"
-        :slide="slide[1]"
+        :key="slide.id"
+        :name="$route.params.name"
+        :slide="slide"
       />
     </VueSlickCarousel>
   </div>
@@ -14,20 +15,19 @@
 import VueSlickCarousel from "vue-slick-carousel";
 import "vue-slick-carousel/dist/vue-slick-carousel.css";
 import "vue-slick-carousel/dist/vue-slick-carousel-theme.css";
-import SlickSlideTemplate from "@/components/SlickSlideTemplate";
+import SequenceSlide from "@/components/SequenceSlide";
 
-import * as service from "../services";
+import { observatoriesService } from "../services";
 
 export default {
   name: "ObservatorySequence",
   components: {
     VueSlickCarousel,
-    SlickSlideTemplate,
+    SequenceSlide,
   },
   data() {
-    const sequence = service.fetchSequenceById(this.$route.params.id);
     return {
-      sequence,
+      sequence: [],
       slickSettings: {
         arrows: false,
         dots: true,
@@ -39,6 +39,21 @@ export default {
         slidesToScroll: 1,
       },
     };
+  },
+  created() {
+    this.fetchSequenceById();
+  },
+  watch: {
+    $route: "fetchSequenceById",
+  },
+  methods: {
+    fetchSequenceById() {
+      observatoriesService
+        .fetchByName(this.$route.params.name)
+        .then(({ sequence }) => {
+          this.sequence = sequence;
+        });
+    },
   },
 };
 </script>

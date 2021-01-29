@@ -1,27 +1,31 @@
 <template>
   <Container>
     <header>
-      <img :src="getImgPath(`${observatory.logoFileName}`)" alt="#" />
+      <img :src="getImgPath(observatory.logoFileName)" alt="#" />
     </header>
     <div class="observatory-copy">
       <div class="text-top">
         <p>
           <GradientText>
-            {{ observatory.copyTextTop }}
+            {{ observatory.copyTop }}
           </GradientText>
         </p>
       </div>
     </div>
-    <VideoTemplate :url_id="`${observatory.videoUrlId}`" />
+    <VideoTemplate :urlId="`${observatory.videoUrlId}`" />
     <div class="observatory-copy">
       <p>
         <GradientText>
-          {{ observatory.copyLineBottom }}
+          {{ observatory.copyBottom }}
         </GradientText>
       </p>
     </div>
     <nav>
-      <CustomLink to="i/sequence">Explore Further</CustomLink>
+      <CustomLink
+        theme="ul-scorpion"
+        :to="`${this.$route.params.name}/sequence`"
+        >Explore Further</CustomLink
+      >
     </nav>
   </Container>
 </template>
@@ -32,7 +36,7 @@ import GradientText from "@/components/GradientText";
 import CustomLink from "@/components/CustomLink";
 import VideoTemplate from "@/components/VideoTemplate";
 
-import * as service from "../services";
+import { observatoriesService } from "../services";
 
 export default {
   name: "Observatory",
@@ -43,19 +47,31 @@ export default {
     VideoTemplate,
   },
   data() {
-    const observatory = service.fetchById(this.$route.params.observatory);
     return {
-      observatory,
+      observatory: {},
     };
   },
+  created() {
+    this.fetchObservatoryById();
+  },
+  watch: {
+    $route: "fetchObservatoryById",
+  },
   methods: {
+    fetchObservatoryById() {
+      observatoriesService
+        .fetchByName(this.$route.params.name)
+        .then((observatory) => {
+          this.observatory = observatory;
+        });
+    },
     getImgPath(imgName) {
       return imgName
-        ? require(`@/assets/observatories/${this.$route.params.observatory}/images/${imgName}`)
+        ? require(`@/assets/observatories/${this.$route.params.name}/images/${imgName}`)
         : "";
     },
-    getVideoUrl(url_id) {
-      return url_id ? require(`${url_id}`) : "";
+    getVideoUrl(urlId) {
+      return urlId ? require(urlId) : "";
     },
   },
 };
@@ -105,6 +121,7 @@ header {
     }
   }
 }
+
 nav {
   @include largeBody;
   margin-top: rem(80px);
