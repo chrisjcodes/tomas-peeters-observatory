@@ -224,7 +224,7 @@ export const allObservatories = [
       },
       {
         copyA: "",
-        copyB: "space i am looking out from",
+        copyB: "",
         image: "f.jpg",
       },
     ],
