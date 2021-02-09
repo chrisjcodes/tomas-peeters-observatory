@@ -1,19 +1,20 @@
 <template>
   <div class="video-loop">
     <iframe
-      :src="`https://player.vimeo.com/video/${urlId}?background=1`"
+      :src="`https://player.vimeo.com/video/${videoId}?background=0`"
       frameborder="0"
       allow="autoplay; fullscreen; picture-in-picture"
       allowfullscreen
+      controls="true"
     ></iframe>
   </div>
 </template>
 
 <script>
 export default {
-  name: "VideoTemplate",
+  name: "VimeoPlayer",
   props: {
-    urlId: { type: String, default: "" },
+    videoId: { type: String, default: "" },
   },
 };
 </script>
@@ -24,7 +25,6 @@ export default {
   overflow: hidden;
   width: 100%;
   padding-top: 56.25%;
-  z-index: -1;
 
   iframe {
     position: absolute;

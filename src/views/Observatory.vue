@@ -8,7 +8,7 @@
         {{ observatory.copyTop }}
       </p>
     </div>
-    <VideoTemplate :urlId="observatory.videoUrlId || ''" />
+    <VimeoPlayer :videoId="observatory.videoUrlId || ''" />
     <div class="observatory-copy bottom">
       <p>
         {{ observatory.copyBottom }}
@@ -27,7 +27,7 @@
 <script>
 import Container from "@/components/Container";
 import CustomLink from "@/components/CustomLink";
-import VideoTemplate from "@/components/VideoTemplate";
+import VimeoPlayer from "@/components/VimeoPlayer";
 
 import { observatoriesService } from "../services";
 
@@ -36,7 +36,7 @@ export default {
   components: {
     Container,
     CustomLink,
-    VideoTemplate,
+    VimeoPlayer,
   },
   data() {
     return {

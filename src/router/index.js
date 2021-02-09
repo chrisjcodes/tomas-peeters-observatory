@@ -33,6 +33,7 @@ const routes = [
       import(
         /* webpackChunkName: "ObservatorySequence" */ "@/views/ObservatorySequence.vue"
       ),
+    meta: { bodyClass: "scroll-lock" },
   },
 ];
 

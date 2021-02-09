@@ -51,6 +51,10 @@ body {
 //   z-index: -9999;
 // }
 
+body.scroll-lock {
+  overflow: hidden;
+}
+
 body.gradient-dark .background {
   background-image: linear-gradient(to bottom, $black, $cod-gray);
   background-color: $cod-gray;
