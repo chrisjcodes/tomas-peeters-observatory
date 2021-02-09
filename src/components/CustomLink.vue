@@ -9,7 +9,7 @@ export default {
   name: "CustomLink",
   props: {
     to: { type: String, default: "" },
-    theme: { type: String, default: "ul-white" },
+    theme: { type: String, default: "ul-light-primary" },
   },
 };
 </script>
@@ -29,29 +29,43 @@ export default {
   bottom: -15px;
   height: 1px;
   width: 100%;
+  transition: transform 500ms ease;
+  transform: scaleX(0.5);
 }
 
-.theme-ul-white {
-  color: $white;
+%underline-hover {
+  transform: scaleX(1);
+}
+
+.theme-ul-light-primary {
+  color: map-get($typeface-colors, "light-primary");
   position: relative;
 
   &:after {
     @extend %underline;
-    background-color: white;
+    background-color: map-get($typeface-colors, "light-primary");
+  }
+
+  &:hover {
+    &:after {
+      @extend %underline-hover;
+    }
   }
 }
 
-.theme-ul-scorpion {
-  color: $scorpion;
+.theme-ul-dark-primary {
+  color: map-get($typeface-colors, "dark-primary");
   position: relative;
 
   &:after {
     @extend %underline;
-    background-color: $scorpion;
+    background-color: map-get($typeface-colors, "dark-primary");
   }
-}
 
-nav {
-  cursor: pointer;
+  &:hover {
+    &:after {
+      @extend %underline-hover;
+    }
+  }
 }
 </style>

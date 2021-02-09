@@ -1,5 +1,5 @@
-$baseFontSize: 10px;
+$base-rem-size: 10px;
 
 @function rem($size) {
-  @return $size / $baseFontSize * 1rem;
+  @return $size / $base-rem-size * 1rem;
 }

@@ -46,23 +46,23 @@ export default {
   padding-top: 5vh;
 
   p {
-    font-size: rem(16px);
-    text-transform: uppercase;
+    font-size: map-get($font-sizing, "sm");
+    letter-spacing: map-get($letter-spacing, "xs");
+
     text-align: center;
     margin-top: 0;
     margin-bottom: 15px;
-    letter-spacing: rem(2px);
     line-height: 1.5;
-    color: $scorpion;
+    color: map-get($typeface-colors, "dark-primary");
 
     @include media(">=tablet") {
-      font-size: rem(18px);
-      letter-spacing: rem(5px);
+      font-size: map-get($font-sizing, "md");
+      letter-spacing: map-get($letter-spacing, "sm");
     }
 
     @include media(">=desktop") {
-      font-size: rem(20px);
-      letter-spacing: rem(6px);
+      font-size: map-get($font-sizing, "lg");
+      letter-spacing: map-get($letter-spacing, "md");
     }
   }
 }
@@ -88,7 +88,7 @@ export default {
   img {
     max-width: 90vw;
     max-height: 40vh;
-    box-shadow: rgba(0, 0, 0, 0.349) 0px 0px 45px;
+    box-shadow: rgba(0, 0, 0, 0.65) 0px 0px 35px;
   }
 
   @include media(">=tablet") {

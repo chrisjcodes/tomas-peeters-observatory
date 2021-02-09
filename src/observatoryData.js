@@ -8,7 +8,7 @@ function createObservatoryEntry({
   videoUrlId,
   copyTop,
   copyBottom,
-  sequence,
+  sequence = [],
 }) {
   return {
     id: cuid(),
@@ -27,8 +27,8 @@ export const allObservatories = [
     name: "i",
     logoFileName: "logo.svg",
     thumbFileName: "thumb.jpeg",
-    videoUrlId: "288344114",
-    copyTop: "The Art Of Using Form To See Emptiness",
+    videoUrlId: "505813463",
+    copyTop: "The Art Of Using Form To See I Am Empty",
     copyBottom:
       "At Zero Distance From My Center My Face Is Completely Transparent",
     sequence: [
@@ -68,7 +68,7 @@ export const allObservatories = [
     name: "ii",
     logoFileName: "logo.svg",
     thumbFileName: "thumb.jpeg",
-    videoUrlId: "288344114",
+    videoUrlId: "505814653",
     copyTop: "the art of using form to see i am everywhere",
     copyBottom:
       "at zero distance all of empty space is looking out of my centerless eye",
@@ -110,7 +110,7 @@ export const allObservatories = [
     name: "iii",
     logoFileName: "logo.svg",
     thumbFileName: "thumb.jpeg",
-    videoUrlId: "288344114",
+    videoUrlId: "507250856",
     copyTop: "the art of using form to see i am everything",
     copyBottom:
       "at zero distance the whole world is looking out of my faceless space",
@@ -198,36 +198,39 @@ export const allObservatories = [
       "At Zero Distance From My Center My Face Is Completely Transparent",
     sequence: [
       {
-        copyA: "",
-        copyB: "",
+        copyA: "in observatory v sunlight is emanating from a spherical lens",
+        copyB: "illuminating my face",
         image: "a.jpg",
       },
       {
-        copyA: "",
-        copyB: "",
+        copyA: "in the space between my hands",
+        copyB: "i see the finite image of my face",
         image: "b.jpg",
       },
       {
-        copyA: "",
-        copyB: "",
+        copyA: "this fleeting face between my hands",
+        copyB: "is appearing in my experience",
         image: "c.jpg",
       },
       {
-        copyA: "",
-        copyB: "",
+        copyA: "this ever present space between my palms",
+        copyB: "is not appearing in my experience",
         image: "d.jpg",
       },
       {
-        copyA: "",
-        copyB: "",
+        copyA: "suddenly i see no end",
+        copyB: "to this faceless  space between my palms",
         image: "e.jpg",
       },
       {
-        copyA: "",
-        copyB: "",
+        copyA: "being infinite",
+        copyB: "is my direct experience of myself",
         image: "f.jpg",
       },
     ],
+  }),
+  createObservatoryEntry({
+    name: "vi",
   }),
 ];
 

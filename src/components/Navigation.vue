@@ -93,7 +93,7 @@ nav {
   a {
     color: black;
     text-decoration: none;
-    font-size: rem(20px);
+    font-size: map-get($font-sizing, "lg");
   }
 
   li {

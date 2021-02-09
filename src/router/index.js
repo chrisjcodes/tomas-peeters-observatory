@@ -24,7 +24,7 @@ const routes = [
     name: "Observatory",
     component: () =>
       import(/* webpackChunkName: "Observatory" */ "@/views/Observatory.vue"),
-    meta: { bodyClass: "light" },
+    meta: { bodyClass: "gradient-dark" },
   },
   {
     path: "/observatory/:name/sequence",

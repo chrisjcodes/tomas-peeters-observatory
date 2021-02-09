@@ -40,7 +40,6 @@ export default {
 header {
   display: flex;
   justify-content: center;
-  margin-bottom: rem(60px);
 
   img {
     height: 100%;
@@ -49,21 +48,32 @@ header {
 
   @include media(">=tablet") {
     img {
-      width: 80%;
+      width: 70%;
     }
   }
 
   @include media(">=desktop") {
     img {
-      width: 60%;
+      width: 50%;
     }
   }
 }
 
 .landing-copy {
-  @include largeBody;
-  color: $silver;
   margin-bottom: rem(50px);
+  text-align: center;
+  letter-spacing: map-get($letter-spacing, "xs");
+  font-size: map-get($font-sizing, "sm");
+
+  @include media(">=tablet") {
+    letter-spacing: map-get($letter-spacing, "md");
+    font-size: map-get($font-sizing, "lg");
+  }
+
+  @include media(">=desktop") {
+    letter-spacing: map-get($letter-spacing, "xl");
+    font-size: map-get($font-sizing, "xl");
+  }
 }
 
 .video-loop {
@@ -75,11 +85,37 @@ header {
     max-width: 100%;
     height: auto;
   }
+
+  @include media(">=tablet") {
+    video {
+      max-width: 80%;
+      height: auto;
+    }
+  }
+
+  @include media(">=desktop") {
+    video {
+      max-width: 100%;
+      height: auto;
+    }
+  }
 }
 
 nav {
-  @include largeBody;
   display: flex;
   justify-content: center;
+  text-align: center;
+  letter-spacing: map-get($letter-spacing, "xs");
+  font-size: map-get($font-sizing, "sm");
+
+  @include media(">=tablet") {
+    letter-spacing: map-get($letter-spacing, "md");
+    font-size: map-get($font-sizing, "lg");
+  }
+
+  @include media(">=desktop") {
+    letter-spacing: map-get($letter-spacing, "xl");
+    font-size: map-get($font-sizing, "xl");
+  }
 }
 </style>

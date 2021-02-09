@@ -4,25 +4,19 @@
       <img :src="this.logoSrc" :alt="`observatory ${observatory.name} logo`" />
     </header>
     <div class="observatory-copy">
-      <div class="text-top">
-        <p>
-          <GradientText>
-            {{ observatory.copyTop }}
-          </GradientText>
-        </p>
-      </div>
+      <p>
+        {{ observatory.copyTop }}
+      </p>
     </div>
     <VideoTemplate :urlId="observatory.videoUrlId || ''" />
-    <div class="observatory-copy">
+    <div class="observatory-copy bottom">
       <p>
-        <GradientText>
-          {{ observatory.copyBottom }}
-        </GradientText>
+        {{ observatory.copyBottom }}
       </p>
     </div>
     <nav>
       <CustomLink
-        theme="ul-scorpion"
+        theme="ul-light-primary"
         :to="`${this.$route.params.name}/sequence`"
         >Explore Further</CustomLink
       >
@@ -32,7 +26,6 @@
 
 <script>
 import Container from "@/components/Container";
-import GradientText from "@/components/GradientText";
 import CustomLink from "@/components/CustomLink";
 import VideoTemplate from "@/components/VideoTemplate";
 
@@ -43,7 +36,6 @@ export default {
   components: {
     Container,
     CustomLink,
-    GradientText,
     VideoTemplate,
   },
   data() {
@@ -81,58 +73,62 @@ export default {
 @import "@/theme/media.scss";
 @import "@/theme/sizing.scss";
 @import "@/theme/typography.scss";
+
 header {
   display: flex;
   justify-content: center;
   margin-bottom: rem(60px);
+
   img {
     height: 100%;
     width: 100%;
   }
+
   @include media(">=tablet") {
     img {
       width: 80%;
     }
   }
+
   @include media(">=desktop") {
     img {
       width: 60%;
     }
   }
 }
+
 .observatory-copy {
-  @include papyrus;
-  font-size: rem(16px);
-  text-transform: uppercase;
-  letter-spacing: rem(4px);
+  @include primary-cursive;
+
+  font-size: map-get($font-sizing, "sm");
+  letter-spacing: map-get($letter-spacing, "md");
   text-align: center;
 
   @include media(">=tablet") {
-    font-size: rem(30px);
-    letter-spacing: rem(8px);
+    font-size: map-get($font-sizing, "lg");
+    letter-spacing: map-get($letter-spacing, "xl");
   }
-  p {
-    color: $silver;
-    line-height: rem(30px);
 
-    @include media(">=tablet") {
-      line-height: rem(40px);
-    }
+  @include media(">=desktop") {
+    font-size: map-get($font-sizing, "jumbo");
+    letter-spacing: map-get($letter-spacing, "xl");
   }
 }
 
 nav {
-  @include largeBody;
-  margin-top: rem(80px);
-}
-
-.text-top {
-  width: 100%;
-  margin-right: auto;
-  margin-left: auto;
+  text-align: center;
+  font-size: map-get($font-sizing, "sm");
+  letter-spacing: map-get($letter-spacing, "md");
+  margin-top: rem(60px);
 
   @include media(">=tablet") {
-    width: 85%;
+    font-size: map-get($font-sizing, "lg");
+    letter-spacing: map-get($letter-spacing, "xl");
+  }
+
+  @include media(">=desktop") {
+    font-size: map-get($font-sizing, "jumbo");
+    letter-spacing: map-get($letter-spacing, "xl");
   }
 }
 </style>

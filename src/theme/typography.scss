@@ -1,54 +1,42 @@
+@import "./colors.scss";
 @import "./media.scss";
 @import "./sizing.scss";
 
 $roboto: "Roboto";
-$robotoSlab: "Roboto Slab";
+$roboto-slab: "Roboto Slab";
+$papyrus: "Papyrus";
 
-@mixin robotoThin {
+$font-sizing: (
+  "xs": 8px,
+  "sm": 16px,
+  "md": 18px,
+  "lg": 20px,
+  "jumbo": 30px,
+);
+
+$letter-spacing: (
+  "xs": rem(2px),
+  "sm": rem(4px),
+  "md": rem(6px),
+  "lg": rem(8px),
+  "xl": rem(10px),
+);
+
+$typeface-colors: (
+  "light-primary": $silver,
+  "dark-primary": $scorpion,
+);
+
+@mixin primary-sans-serif {
   font-family: $roboto, sans-serif;
   font-weight: 100;
 }
 
-@mixin robotoLight {
-  font-family: $roboto, sans-serif;
-  font-weight: 300;
-}
-
-@mixin robotoRegular {
-  font-family: $roboto, sans-serif;
+@mixin primary-serif {
+  font-family: $roboto-slab, serif;
   font-weight: 400;
 }
 
-@mixin robotoSlabLight {
-  font-family: $robotoSlab, serif;
-  font-weight: 300;
-}
-
-@mixin robotoSlabRegular {
-  font-family: $robotoSlab, serif;
-  font-weight: 400;
-}
-
-@mixin robotoSlabMedium {
-  font-family: $robotoSlab, serif;
-  font-weight: 500;
-}
-
-@mixin papyrus {
-  font-family: Papyrus;
-}
-
-@mixin largeBody {
-  @include robotoLight;
-
-  font-size: rem(16px);
-  letter-spacing: rem(3px);
-  text-align: center;
-  text-transform: uppercase;
-  line-height: 1.5;
-
-  @include media(">=tablet") {
-    letter-spacing: rem(10px);
-    font-size: rem(30px);
-  }
+@mixin primary-cursive {
+  font-family: $papyrus;
 }

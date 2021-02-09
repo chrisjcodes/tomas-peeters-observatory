@@ -36,15 +36,13 @@ export default {
 @import "@/theme/typography.scss";
 
 .menu-item {
-  @include robotoSlabRegular;
-  margin: rem(24px);
+  @include primary-serif;
   text-align: center;
-  text-transform: uppercase;
 }
 
 .menu-item-image {
   margin: rem(10px) auto 0 auto;
-  border: rem(2px) solid white;
+  border: rem(2px) solid $silver;
   width: rem(300px);
   height: rem(300px);
 

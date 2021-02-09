@@ -92,7 +92,7 @@ export default {
 
 .container-base {
   @include media(">desktop") {
-    max-width: rem(1200px);
+    max-width: rem(950px);
     margin-right: auto;
     margin-left: auto;
   }

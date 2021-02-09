@@ -1,6 +1,9 @@
 <template>
-  <div id="app">
-    <router-view />
+  <div>
+    <div class="background" />
+    <div id="app">
+      <router-view />
+    </div>
   </div>
 </template>
 
@@ -21,20 +24,35 @@ export default {
 @include normalize();
 
 html {
-  font-size: $baseFontSize;
+  font-size: $base-rem-size;
 }
 
 body {
-  @include robotoLight;
+  @include primary-sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-size: rem(22px);
+  text-transform: uppercase;
   background-color: $black;
-  color: $white;
+  color: map-get($typeface-colors, "light-primary");
 }
 
-.light {
-  background-color: $silver;
-  color: $black;
+html,
+body {
+  min-height: 100%;
+}
+
+// .background {
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   right: 0;
+//   bottom: 0;
+//   background: #fb1;
+//   z-index: -9999;
+// }
+
+body.gradient-dark .background {
+  background-image: linear-gradient(to bottom, $black, $cod-gray);
+  background-color: $cod-gray;
 }
 </style>
