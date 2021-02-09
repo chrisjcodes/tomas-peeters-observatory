@@ -29,8 +29,8 @@ html {
 
 body {
   @include primary-sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  // -webkit-font-smoothing: antialiased;
+  // -moz-osx-font-smoothing: grayscale;
   text-transform: uppercase;
   background-color: $black;
   color: map-get($typeface-colors, "light-primary");
