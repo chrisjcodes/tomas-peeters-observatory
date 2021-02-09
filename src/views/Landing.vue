@@ -54,7 +54,7 @@ header {
 
   @include media(">=desktop") {
     img {
-      width: 50%;
+      width: 70%;
     }
   }
 }
