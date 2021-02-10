@@ -1,22 +1,26 @@
 <template>
-  <Container>
-    <header>
-      <img src="@/assets/landing/images/logo.svg" />
-    </header>
-    <div class="content">
-      <p class="landing-copy">
-        The Art Of Using Form To See Emptiness
-      </p>
+  <div class="center">
+    <div class="inner">
+      <Container containOn="x">
+        <header>
+          <img src="@/assets/landing/images/logo.svg" />
+        </header>
+        <p class="landing-copy">
+          The Art Of Using Form To See Emptiness
+        </p>
+      </Container>
       <div class="video-loop">
         <video src="@/assets/landing/videos/loop.mp4" autoplay loop muted />
       </div>
-      <nav>
-        <CustomLink to="/explore-observatories">
-          Explore The Observatories
-        </CustomLink>
-      </nav>
+      <Container containOn="x">
+        <nav>
+          <CustomLink to="/explore-observatories">
+            Explore The Observatories
+          </CustomLink>
+        </nav>
+      </Container>
     </div>
-  </Container>
+  </div>
 </template>
 
 <script>
@@ -36,6 +40,16 @@ export default {
 @import "@/theme/colors.scss";
 @import "@/theme/sizing.scss";
 @import "@/theme/typography.scss";
+
+.center {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+}
+
+.inner {
+  width: 100vw;
+}
 
 header {
   display: flex;
@@ -60,7 +74,7 @@ header {
 }
 
 .landing-copy {
-  margin-bottom: rem(50px);
+  margin-bottom: rem(30px);
   text-align: center;
   letter-spacing: map-get($letter-spacing, "xs");
   font-size: map-get($font-sizing, "sm");
@@ -72,14 +86,14 @@ header {
 
   @include media(">=desktop") {
     letter-spacing: map-get($letter-spacing, "xl");
-    font-size: map-get($font-sizing, "xl");
+    font-size: map-get($font-sizing, "md");
   }
 }
 
 .video-loop {
   display: flex;
   justify-content: center;
-  margin-bottom: rem(50px);
+  margin-bottom: rem(30px);
 
   video {
     max-width: 100%;
@@ -88,15 +102,15 @@ header {
 
   @include media(">=tablet") {
     video {
-      max-width: 80%;
-      height: auto;
+      width: 100%;
+      height: 40vh;
     }
   }
 
   @include media(">=desktop") {
     video {
-      max-width: 100%;
-      height: auto;
+      width: 80%;
+      height: 60vh;
     }
   }
 }
