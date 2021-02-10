@@ -10,6 +10,7 @@
         </p>
       </Container>
       <div class="video-loop">
+        <!-- <VimeoPlayer videoId="504637617" /> -->
         <video src="@/assets/landing/videos/loop.mp4" autoplay loop muted />
       </div>
       <Container containOn="x">
@@ -26,12 +27,14 @@
 <script>
 import Container from "@/components/Container";
 import CustomLink from "@/components/CustomLink";
+// import VimeoPlayer from "@/components/VimeoPlayer";
 
 export default {
   name: "Landing",
   components: {
     Container,
     CustomLink,
+    // VimeoPlayer,
   },
 };
 </script>
@@ -129,7 +132,7 @@ nav {
 
   @include media(">=desktop") {
     letter-spacing: map-get($letter-spacing, "xl");
-    font-size: map-get($font-sizing, "xl");
+    font-size: map-get($font-sizing, "md");
   }
 }
 </style>
