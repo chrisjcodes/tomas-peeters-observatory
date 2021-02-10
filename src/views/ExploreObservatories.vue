@@ -79,7 +79,7 @@ header {
   font-size: map-get($font-sizing, "sm");
   letter-spacing: map-get($letter-spacing, "sm");
   text-align: center;
-  margin-bottom: rem(80px);
+  margin-bottom: rem(60px);
 
   @include media(">=tablet") {
     font-size: map-get($font-sizing, "lg");
@@ -87,7 +87,7 @@ header {
   }
 
   @include media(">=desktop") {
-    font-size: map-get($font-sizing, "sm");
+    font-size: map-get($font-sizing, "xl");
     letter-spacing: map-get($letter-spacing, "xl");
   }
 }

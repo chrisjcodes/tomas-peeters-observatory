@@ -42,7 +42,7 @@ export default {
 
 .menu-item-image {
   margin: rem(10px) auto 0 auto;
-  border: rem(2px) solid $silver;
+  border: rem(2px) solid map-get($typeface-colors, "light-primary");
   width: rem(300px);
   height: rem(300px);
 
