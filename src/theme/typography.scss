@@ -8,6 +8,7 @@ $papyrus: "Papyrus";
 
 $font-sizing: (
   "xs": 8px,
+  "body": 14px,
   "sm": 16px,
   "md": 18px,
   "lg": 20px,
@@ -23,7 +24,9 @@ $letter-spacing: (
 );
 
 $typeface-colors: (
-  "light-primary": rgba($silver, 0.5),
+  "light-primary": rgba($silver, 1),
+  "light-primary-25": rgba($silver, 0.5),
+  "light-primary-5": rgba($silver, 0.25),
   "dark-primary": $scorpion,
 );
 
@@ -38,5 +41,6 @@ $typeface-colors: (
 }
 
 @mixin primary-cursive {
-  font-family: $papyrus;
+  font-family: $roboto, sans-serif;
+  font-weight: 100;
 }

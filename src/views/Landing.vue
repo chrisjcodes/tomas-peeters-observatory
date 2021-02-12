@@ -6,6 +6,7 @@
           <img src="@/assets/landing/images/logo.svg" />
         </header>
         <p class="landing-copy">
+          <!-- Attempt a hard break on this text at "See" -->
           The Art Of Using Form To See Emptiness
         </p>
       </Container>
@@ -71,32 +72,32 @@ header {
 
   @include media(">=desktop") {
     img {
-      width: 70%;
+      width: 42%;
     }
   }
 }
 
 .landing-copy {
-  margin-bottom: rem(30px);
+  margin-bottom: rem(20px);
   text-align: center;
   letter-spacing: map-get($letter-spacing, "xs");
   font-size: map-get($font-sizing, "sm");
 
   @include media(">=tablet") {
     letter-spacing: map-get($letter-spacing, "md");
-    font-size: map-get($font-sizing, "lg");
+    font-size: map-get($font-sizing, "body");
   }
 
-  @include media(">=desktop") {
-    letter-spacing: map-get($letter-spacing, "xl");
-    font-size: map-get($font-sizing, "md");
-  }
+  // @include media(">=desktop") {
+  //   letter-spacing: map-get($letter-spacing, "xl");
+  //   font-size: map-get($font-sizing, "md");
+  // }
 }
 
 .video-loop {
   display: flex;
   justify-content: center;
-  margin-bottom: rem(30px);
+  margin-bottom: rem(20px);
 
   video {
     max-width: 100%;
@@ -127,12 +128,12 @@ nav {
 
   @include media(">=tablet") {
     letter-spacing: map-get($letter-spacing, "md");
-    font-size: map-get($font-sizing, "lg");
+    font-size: map-get($font-sizing, "body");
   }
 
-  @include media(">=desktop") {
-    letter-spacing: map-get($letter-spacing, "xl");
-    font-size: map-get($font-sizing, "md");
-  }
+  //   @include media(">=desktop") {
+  //     letter-spacing: map-get($letter-spacing, "xl");
+  //     font-size: map-get($font-sizing, "md");
+  //   }
 }
 </style>

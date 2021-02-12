@@ -44,6 +44,7 @@ export default {
   &:after {
     @extend %underline;
     background-color: map-get($typeface-colors, "light-primary");
+    opacity: 0.25;
   }
 
   &:hover {

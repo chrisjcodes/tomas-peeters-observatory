@@ -61,7 +61,7 @@ export default {
 header {
   display: flex;
   justify-content: center;
-  margin-bottom: rem(80px);
+  margin-bottom: rem(60px);
 
   img {
     height: 100%;
@@ -69,6 +69,8 @@ header {
   }
 
   @include media(">=tablet") {
+    margin-bottom: rem(80px);
+
     img {
       width: 90%;
     }
@@ -79,11 +81,12 @@ header {
   font-size: map-get($font-sizing, "sm");
   letter-spacing: map-get($letter-spacing, "sm");
   text-align: center;
-  margin-bottom: rem(60px);
+  margin-bottom: rem(30px);
 
   @include media(">=tablet") {
     font-size: map-get($font-sizing, "lg");
     letter-spacing: map-get($letter-spacing, "xl");
+    margin-bottom: rem(60px);
   }
 
   @include media(">=desktop") {
