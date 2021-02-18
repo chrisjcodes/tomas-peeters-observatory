@@ -12,6 +12,12 @@ const routes = [
     component: Landing,
   },
   {
+    path: "/Journal",
+    name: "Journal",
+    component: () =>
+      import(/* webpackChunkName: "Journal" */ "@/views/Journal.vue"),
+  },
+  {
     path: "/explore-observatories",
     name: "ExploreObservatories",
     component: () =>
