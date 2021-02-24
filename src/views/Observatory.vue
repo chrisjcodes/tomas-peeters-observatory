@@ -18,8 +18,8 @@
       <CustomLink
         theme="ul-light-primary"
         :to="`${this.$route.params.name}/sequence`"
-        >Explore Further</CustomLink
-      >
+        ><img src="@/assets/chevron-down.svg"
+      /></CustomLink>
     </nav>
   </Container>
 </template>
@@ -99,6 +99,7 @@ header {
 
 .observatory-copy {
   @include primary-cursive;
+  color: rgba($white, 0.55);
 
   font-size: map-get($font-sizing, "sm");
   letter-spacing: map-get($letter-spacing, "md");
