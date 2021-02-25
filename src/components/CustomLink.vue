@@ -54,6 +54,16 @@ export default {
   }
 }
 
+.theme-spotlight-light-primary {
+  color: map-get($typeface-colors, "light-primary");
+  transition: opacity 0.65s ease-in-out;
+  opacity: 0.5;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
 .theme-ul-dark-primary {
   color: map-get($typeface-colors, "dark-primary");
   position: relative;

@@ -1,5 +1,6 @@
 <template>
   <div>
+    <GlobalNavigation />
     <div id="app">
       <router-view />
     </div>
@@ -7,9 +8,13 @@
 </template>
 
 <script>
+import GlobalNavigation from "@/components/GlobalNavigation";
+
 export default {
   name: "App",
-  components: {},
+  components: {
+    GlobalNavigation,
+  },
 };
 </script>
 
@@ -100,5 +105,9 @@ body.gradient-dark {
 body.emperor {
   background-color: $emperor;
   color: rgba(0, 0, 0, 0.5);
+}
+
+#app {
+  z-index: 0;
 }
 </style>
