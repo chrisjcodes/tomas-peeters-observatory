@@ -33,7 +33,11 @@ const routes = [
       import(
         /* webpackChunkName: "ObservatorySequence" */ "@/views/ObservatorySequence.vue"
       ),
-    meta: { bodyClass: "scroll-lock" },
+    meta: {
+      bodyClass: "scroll-lock",
+      // transitionName: "slide",
+      // transitionMode: "in-out",
+    },
   },
 ];
 
@@ -42,7 +46,7 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes,
   scrollBehavior() {
-    return { x: 0, y: 0 };
+    // return { x: 0, y: 0 };
   },
 });
 

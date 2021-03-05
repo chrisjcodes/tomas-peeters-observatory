@@ -1,5 +1,6 @@
 <template>
   <Container>
+    <div class="gradient" />
     <header>
       <img :src="this.logoSrc" :alt="`observatory ${observatory.name} logo`" />
     </header>
@@ -95,6 +96,35 @@ header {
       width: 60%;
     }
   }
+}
+
+.gradient {
+  min-height: 100%;
+  position: fixed;
+  z-index: -9999;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-image: linear-gradient(
+    to bottom,
+    hsl(0, 0%, 0%) 0%,
+    hsl(0, 0%, 1.65%) 18.7%,
+    hsl(0, 0%, 4.67%) 34.9%,
+    hsl(0, 0%, 8.59%) 48.8%,
+    hsl(0, 0%, 13.22%) 60.6%,
+    hsl(0, 0%, 18.48%) 70.4%,
+    hsl(0, 0%, 24.29%) 78.4%,
+    hsl(0, 0%, 30.6%) 84.8%,
+    hsl(0, 0%, 37.39%) 89.8%,
+    hsl(0, 0%, 44.62%) 93.6%,
+    hsl(0, 0%, 52.26%) 96.3%,
+    hsl(0, 0%, 60.29%) 98.1%,
+    hsl(0, 0%, 68.69%) 99.2%,
+    hsl(0, 0%, 77.45%) 99.8%,
+    hsl(0, 0%, 86.56%) 100%,
+    hsl(0, 0%, 96%) 100%
+  );
 }
 
 .observatory-copy {
