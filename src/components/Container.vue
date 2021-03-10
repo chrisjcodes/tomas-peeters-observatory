@@ -35,7 +35,11 @@ export default {
 @import "@/theme/sizing.scss";
 
 @mixin container-t {
-  margin-top: rem(45px);
+  margin-top: rem(75px);
+
+  @include media(">desktop") {
+    margin-top: rem(45px);
+  }
 }
 
 @mixin container-r {

@@ -28,19 +28,7 @@
             <CustomLink theme="spotlight-light-primary">The Film</CustomLink>
           </li>
           <li>
-            <CustomLink theme="spotlight-light-primary">Contact</CustomLink>
-          </li>
-          <li>
-            <CustomLink theme="spotlight-light-primary">Link</CustomLink>
-          </li>
-          <li>
-            <CustomLink theme="spotlight-light-primary">Link</CustomLink>
-          </li>
-          <li>
-            <CustomLink theme="spotlight-light-primary">Link</CustomLink>
-          </li>
-          <li>
-            <CustomLink theme="spotlight-light-primary">Link</CustomLink>
+            <CustomLink theme="spotlight-light-primary">Connect</CustomLink>
           </li>
         </ul>
       </nav>
@@ -49,8 +37,12 @@
 </template>
 
 <script>
+import * as R from "ramda";
 import CustomLink from "@/components/CustomLink";
-const HIDDEN_ROUTE_PATHS = ["/"];
+const HIDDEN_ROUTE_PATH_REGEXPS = [/^\/$/, /^\/observatory\/.+\/sequence$/];
+const hiddenRouteMatchers = R.map(R.test, HIDDEN_ROUTE_PATH_REGEXPS);
+const isMatchingHiddenRoute = R.anyPass(hiddenRouteMatchers);
+
 export default {
   data() {
     return {
@@ -66,18 +58,23 @@ export default {
   },
   methods: {
     toggleOpen() {
-      this.isOpen = !this.isOpen;
+      if (!this.isOpen) {
+        this.open();
+      } else {
+        this.close();
+      }
     },
     open() {
       this.isOpen = true;
+      document.body.classList.add("scroll-lock");
     },
     close() {
       this.isOpen = false;
+      document.body.classList.remove("scroll-lock");
     },
     toggleHidden() {
       const currentRoutePath = this.$route.path;
-
-      if (HIDDEN_ROUTE_PATHS.includes(currentRoutePath)) {
+      if (isMatchingHiddenRoute(currentRoutePath)) {
         this.isShowing = false;
       } else {
         this.isShowing = true;
@@ -96,19 +93,26 @@ export default {
 
 <style lang="scss" scoped>
 @import "@/theme/colors.scss";
+@import "@/theme/media.scss";
 @import "@/theme/sizing.scss";
 @import "@/theme/typography.scss";
 
 .root {
-  position: fixed;
   z-index: 9999;
   top: 0;
   bottom: 0;
   height: 100%;
-  display: none;
+  transition: opacity 500ms ease;
+  opacity: 0;
+  pointer-events: none;
 
   &.show {
-    display: block;
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  @include media(">desktop") {
+    position: fixed;
   }
 }
 
@@ -127,8 +131,8 @@ export default {
   top: 15px;
   left: 15px;
   z-index: 9999;
-  width: rem(60px);
-  height: rem(60px);
+  width: rem(40px);
+  height: rem(40px);
   background-image: url("../assets/menu-icon.png");
   background-size: contain;
   background-repeat: no-repeat;
@@ -143,50 +147,47 @@ export default {
   &:hover {
     opacity: 1;
   }
+
+  @include media(">=tablet") {
+    top: rem(20px);
+    left: rem(20px);
+    width: rem(50px);
+    height: rem(50px);
+  }
+
+  @include media(">desktop") {
+    width: rem(60px);
+    height: rem(60px);
+    top: 40px;
+    left: 30px;
+  }
 }
 
-// .menu-bar-partial {
-//   position: absolute;
-//   z-index: 1000;
-//   top: 0;
-//   bottom: 0;
-//   height: 100%;
-//   width: 350px;
-//   background-image: url("http://api.thumbr.it/whitenoise-361x370.png?background=00000000&noise=ffffff&density=50&opacity=5");
-//   transition: all 2s cubic-bezier(0.37, 0, 0.63, 1);
-//   opacity: 0;
-//   transform: translateX(-100%);
-
-//   &.open {
-//     transform: translateX(0);
-//     opacity: 1;
-//   }
-// }
-
 .menu-bar-full {
-  position: absolute;
+  position: fixed;
   z-index: 1000;
   top: 0;
   bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 100%;
   width: 100vw;
-  //   width: 350px;
-  //   background-image: url("http://api.thumbr.it/whitenoise-361x370.png?background=00000000&noise=ffffff&density=50&opacity=5");
   background: rgba($black, 0.98);
   transition: opacity 1.25s cubic-bezier(0.37, 0, 0.63, 1);
   opacity: 0;
   pointer-events: none;
-  //   transform: translateX(-100%);
 
   &.open {
-    // transform: translateX(0);
     opacity: 0.98;
     pointer-events: all;
   }
 }
 
 .menu-items {
-  padding-top: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .menu-list {

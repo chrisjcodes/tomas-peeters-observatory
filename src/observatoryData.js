@@ -229,9 +229,6 @@ export const allObservatories = [
       },
     ],
   }),
-  createObservatoryEntry({
-    name: "vi",
-  }),
 ];
 
 export const observatoriesByName = R.indexBy(R.prop("name"), allObservatories);
