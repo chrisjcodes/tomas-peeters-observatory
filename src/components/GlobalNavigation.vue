@@ -1,6 +1,10 @@
 <template>
   <div class="root" :class="{ show: isShowing }">
-    <div class="menu-icon" @click="toggleOpen"></div>
+    <div
+      class="menu-icon"
+      :class="{ inverted: isInverted }"
+      @click="toggleOpen"
+    ></div>
     <div class="menu-bar-full" :class="{ open: isOpen }">
       <nav class="menu-items">
         <ul class="menu-list">
@@ -15,7 +19,7 @@
             <CustomLink theme="spotlight-light-primary">Triptychs</CustomLink>
           </li>
           <li>
-            <CustomLink theme="spotlight-light-primary"
+            <CustomLink to="/writing" theme="spotlight-light-primary"
               >About The Artist</CustomLink
             >
           </li>
@@ -43,11 +47,16 @@ const HIDDEN_ROUTE_PATH_REGEXPS = [/^\/$/, /^\/observatory\/.+\/sequence$/];
 const hiddenRouteMatchers = R.map(R.test, HIDDEN_ROUTE_PATH_REGEXPS);
 const isMatchingHiddenRoute = R.anyPass(hiddenRouteMatchers);
 
+const INVERTED_ROUTE_PATH_REGEXPS = [/^\/writing$/];
+const invertedRouteMatchers = R.map(R.test, INVERTED_ROUTE_PATH_REGEXPS);
+const isInvertedRoute = R.anyPass(invertedRouteMatchers);
+
 export default {
   data() {
     return {
       isShowing: true,
       isOpen: false,
+      isInverted: false,
     };
   },
   components: {
@@ -55,6 +64,7 @@ export default {
   },
   created() {
     this.toggleHidden();
+    this.toggleInversion();
   },
   methods: {
     toggleOpen() {
@@ -80,8 +90,17 @@ export default {
         this.isShowing = true;
       }
     },
+    toggleInversion() {
+      const currentRoutePath = this.$route.path;
+      if (isInvertedRoute(currentRoutePath)) {
+        this.isInverted = true;
+      } else {
+        this.isInverted = false;
+      }
+    },
     onRouteChange() {
       this.toggleHidden();
+      this.toggleInversion();
       this.close();
     },
   },
@@ -109,10 +128,6 @@ export default {
   &.show {
     opacity: 1;
     pointer-events: all;
-  }
-
-  @include media(">desktop") {
-    position: fixed;
   }
 }
 
@@ -161,6 +176,10 @@ export default {
     top: 40px;
     left: 30px;
   }
+}
+
+.menu-icon.inverted {
+  filter: invert(1);
 }
 
 .menu-bar-full {

@@ -1,9 +1,12 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import VueBodyClass from "vue-body-class";
+import VueSimpleMarkdown from "vue-simple-markdown";
 import Landing from "@/views/Landing.vue";
+import "vue-simple-markdown/dist/vue-simple-markdown.css";
 
 Vue.use(VueRouter);
+Vue.use(VueSimpleMarkdown);
 
 const routes = [
   {
@@ -24,7 +27,13 @@ const routes = [
     name: "Observatory",
     component: () =>
       import(/* webpackChunkName: "Observatory" */ "@/views/Observatory.vue"),
-    meta: { bodyClass: "gradient-dark" },
+  },
+  {
+    path: "/writing/",
+    name: "WritingPage",
+    component: () =>
+      import(/* webpackChunkName: "WritingPage" */ "@/views/WritingPage.vue"),
+    meta: { bodyClass: "alto" },
   },
   {
     path: "/observatory/:name/sequence",
@@ -35,8 +44,6 @@ const routes = [
       ),
     meta: {
       bodyClass: "scroll-lock",
-      // transitionName: "slide",
-      // transitionMode: "in-out",
     },
   },
 ];
