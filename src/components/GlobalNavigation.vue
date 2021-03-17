@@ -2,7 +2,7 @@
   <div class="root" :class="{ show: isShowing }">
     <div
       class="menu-icon"
-      :class="{ inverted: isInverted }"
+      :class="{ inverted: isInverted, open: isOpen }"
       @click="toggleOpen"
     ></div>
     <div class="menu-bar-full" :class="{ open: isOpen }">
@@ -179,7 +179,16 @@ export default {
 }
 
 .menu-icon.inverted {
+  opacity: 1;
   filter: invert(1);
+
+  &.open {
+    filter: none;
+  }
+
+  &:hover {
+    opacity: 0.5;
+  }
 }
 
 .menu-bar-full {

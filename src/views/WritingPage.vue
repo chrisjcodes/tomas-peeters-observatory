@@ -76,20 +76,30 @@ export default {
 
 .root {
   margin-top: rem(70px);
-  color: rgba(0, 0, 0, 0.5);
+  color: rgba(0, 0, 0, 1);
 }
 
 .title {
   text-align: center;
+  font-weight: 300;
   font-size: map-get($font-sizing, "xl");
   letter-spacing: map-get($letter-spacing, "xl");
 
   &.top {
-    margin-bottom: rem(30px);
+    @include media(">=tablet") {
+      margin-bottom: rem(30px);
+    }
   }
 
   &.bottom {
-    margin-top: rem(30px);
+    @include media(">=tablet") {
+      margin-top: rem(30px);
+    }
+  }
+
+  @include media(">=tablet") {
+    font-size: map-get($font-sizing, "jumbo");
+    letter-spacing: map-get($letter-spacing, "jumbo");
   }
 }
 
@@ -97,15 +107,19 @@ export default {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  height: rem(150px);
+  height: rem(100px);
   width: 100vw;
 
   @include media(">=tablet") {
-    height: rem(250px);
+    height: rem(230px);
   }
 
   @include media(">=desktop") {
-    height: rem(350px);
+    height: rem(300px);
+  }
+
+  @include media(">=1350px") {
+    height: rem(450px);
   }
 }
 
@@ -116,13 +130,10 @@ export default {
 }
 
 .body-copy {
-  font-size: map-get($font-sizing, "md");
+  font-size: map-get($font-sizing, "lg");
   text-transform: none;
   color: $black;
   line-height: 1.75;
-
-  @include media(">=tablet") {
-    width: 60%;
-  }
+  text-align: justify;
 }
 </style>
