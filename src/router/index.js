@@ -1,12 +1,9 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import VueBodyClass from "vue-body-class";
-import VueSimpleMarkdown from "vue-simple-markdown";
 import Landing from "@/views/Landing.vue";
-import "vue-simple-markdown/dist/vue-simple-markdown.css";
 
 Vue.use(VueRouter);
-Vue.use(VueSimpleMarkdown);
 
 const routes = [
   {
@@ -29,10 +26,45 @@ const routes = [
       import(/* webpackChunkName: "Observatory" */ "@/views/Observatory.vue"),
   },
   {
-    path: "/writing/",
-    name: "WritingPage",
+    path: "/biography/",
+    name: "Biography",
     component: () =>
-      import(/* webpackChunkName: "WritingPage" */ "@/views/WritingPage.vue"),
+      import(/* webpackChunkName: "Biography" */ "@/views/Biography.vue"),
+    meta: { bodyClass: "alto" },
+  },
+  {
+    path: "/art-statement/",
+    name: "ArtStatement",
+    component: () =>
+      import(/* webpackChunkName: "ArtStatement" */ "@/views/ArtStatement.vue"),
+    meta: { bodyClass: "alto" },
+  },
+  {
+    path: "/connect/",
+    name: "Connect",
+    component: () =>
+      import(/* webpackChunkName: "Connect" */ "@/views/Connect.vue"),
+    meta: { bodyClass: "alto" },
+  },
+  {
+    path: "/inspiration/",
+    name: "Inspiration",
+    component: () =>
+      import(/* webpackChunkName: "Inspiration" */ "@/views/Inspiration.vue"),
+    meta: { bodyClass: "alto" },
+  },
+  {
+    path: "/the-film/",
+    name: "TheFilm",
+    component: () =>
+      import(/* webpackChunkName: "TheFilm" */ "@/views/TheFilm.vue"),
+    meta: { bodyClass: "alto" },
+  },
+  {
+    path: "/film-reviews/",
+    name: "Reviews",
+    component: () =>
+      import(/* webpackChunkName: "Reviews" */ "@/views/Reviews.vue"),
     meta: { bodyClass: "alto" },
   },
   {
