@@ -26,6 +26,14 @@ const routes = [
       import(/* webpackChunkName: "Observatory" */ "@/views/Observatory.vue"),
   },
   {
+    path: "/observatoryV2/:name",
+    name: "ObservatoryV2",
+    component: () =>
+      import(
+        /* webpackChunkName: "ObservatoryV2" */ "@/views/ObservatoryV2.vue"
+      ),
+  },
+  {
     path: "/writing/biography/",
     name: "Biography",
     component: () =>
@@ -84,6 +92,7 @@ const router = new VueRouter({
 });
 
 const vueBodyClass = new VueBodyClass(routes);
+
 router.beforeEach((to, from, next) => {
   vueBodyClass.guard(to, next);
 });
