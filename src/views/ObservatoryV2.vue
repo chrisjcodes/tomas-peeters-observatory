@@ -53,7 +53,27 @@
           <div class="image-grid-image">
             <img src="@/assets/observatories/i/images/thumb.jpeg" />
           </div>
+          <div class="image-grid-image">
+            <img src="@/assets/observatories/i/images/thumb.jpeg" />
+          </div>
+          <div class="image-grid-image">
+            <img src="@/assets/observatories/i/images/thumb.jpeg" />
+          </div>
+          <div class="image-grid-image">
+            <img src="@/assets/observatories/i/images/thumb.jpeg" />
+          </div>
         </div>
+      </Container>
+    </section>
+    <section class="writing-2 snap">
+      <div
+        class="main-image"
+        :style="{
+          'background-image':
+            'url(' + require('@/assets/writing-pages/bio/main.jpg') + ')',
+        }"
+      />
+      <Container>
         <div class="long-copy">
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius
@@ -108,7 +128,7 @@ export default {
         dots: true,
         dotsClass: "slick-dots custom-dots",
         infinite: true,
-        fade: true,
+        fade: false,
         speed: 900,
         slidesToShow: 1,
         slidesToScroll: 1,
@@ -227,6 +247,33 @@ section {
     padding-top: rem(35px);
     padding-bottom: rem(250px);
   }
+
+  &.writing-2 {
+    color: black;
+    background: hsl(0, 0%, 72%) 100%;
+    padding-top: rem(35px);
+    padding-bottom: rem(250px);
+  }
+}
+
+.main-image {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: rem(100px);
+  width: 100vw;
+
+  @include media(">=tablet") {
+    height: rem(230px);
+  }
+
+  @include media(">=desktop") {
+    height: rem(300px);
+  }
+
+  @include media(">=1350px") {
+    height: rem(450px);
+  }
 }
 
 .observatory-copy {
@@ -255,7 +302,7 @@ section {
 .image-grid {
   display: grid;
   gap: rem(30px);
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   margin-bottom: rem(50px);
 
   &-image {

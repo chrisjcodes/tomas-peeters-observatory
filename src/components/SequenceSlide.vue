@@ -53,7 +53,7 @@ export default {
     margin-top: 0;
     margin-bottom: 15px;
     line-height: 1.5;
-    color: map-get($typeface-colors, "dark-primary");
+    color: black;
 
     @include media(">=tablet") {
       font-size: map-get($font-sizing, "md");
