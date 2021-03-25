@@ -26,46 +26,40 @@ const routes = [
       import(/* webpackChunkName: "Observatory" */ "@/views/Observatory.vue"),
   },
   {
-    path: "/biography/",
+    path: "/writing/biography/",
     name: "Biography",
     component: () =>
       import(/* webpackChunkName: "Biography" */ "@/views/Biography.vue"),
-    meta: { bodyClass: "alto" },
   },
   {
-    path: "/art-statement/",
+    path: "/writing/art-statement/",
     name: "ArtStatement",
     component: () =>
       import(/* webpackChunkName: "ArtStatement" */ "@/views/ArtStatement.vue"),
-    meta: { bodyClass: "alto" },
   },
   {
-    path: "/connect/",
+    path: "/writing/connect/",
     name: "Connect",
     component: () =>
       import(/* webpackChunkName: "Connect" */ "@/views/Connect.vue"),
-    meta: { bodyClass: "alto" },
   },
   {
-    path: "/inspiration/",
+    path: "/writing/inspiration/",
     name: "Inspiration",
     component: () =>
       import(/* webpackChunkName: "Inspiration" */ "@/views/Inspiration.vue"),
-    meta: { bodyClass: "alto" },
   },
   {
-    path: "/the-film/",
+    path: "/writing/the-film/",
     name: "TheFilm",
     component: () =>
       import(/* webpackChunkName: "TheFilm" */ "@/views/TheFilm.vue"),
-    meta: { bodyClass: "alto" },
   },
   {
-    path: "/film-reviews/",
+    path: "/writing/film-reviews/",
     name: "Reviews",
     component: () =>
       import(/* webpackChunkName: "Reviews" */ "@/views/Reviews.vue"),
-    meta: { bodyClass: "alto" },
   },
   {
     path: "/observatory/:name/sequence",

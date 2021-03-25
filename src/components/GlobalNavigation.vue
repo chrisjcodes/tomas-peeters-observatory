@@ -47,7 +47,7 @@ const HIDDEN_ROUTE_PATH_REGEXPS = [/^\/$/, /^\/observatory\/.+\/sequence$/];
 const hiddenRouteMatchers = R.map(R.test, HIDDEN_ROUTE_PATH_REGEXPS);
 const isMatchingHiddenRoute = R.anyPass(hiddenRouteMatchers);
 
-const INVERTED_ROUTE_PATH_REGEXPS = [/^\/writing$/];
+const INVERTED_ROUTE_PATH_REGEXPS = [/^\/writing/];
 const invertedRouteMatchers = R.map(R.test, INVERTED_ROUTE_PATH_REGEXPS);
 const isInvertedRoute = R.anyPass(invertedRouteMatchers);
 
