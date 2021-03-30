@@ -1,5 +1,5 @@
 <template>
-  <WritingPage mainImagePath="@/assets/writing-pages/bio/main.jpg">
+  <WritingPage imageFileName="the-film.jpeg">
     <template v-slot:titleA>ZERODISTANCE</template>
     <template v-slot:titleB>THE FILM</template>
     <template v-slot:copy>

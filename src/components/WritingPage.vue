@@ -8,8 +8,7 @@
       <div
         class="main-image"
         :style="{
-          'background-image':
-            'url(' + require('@/assets/writing-pages/bio/main.jpg') + ')',
+          'background-image': 'url(' + this.imagePath + ')',
         }"
       />
       <Container containOn="x">
@@ -33,7 +32,14 @@ export default {
     Container,
   },
   props: {
-    mainImagePath: String,
+    imageFileName: String,
+  },
+  computed: {
+    imagePath() {
+      return this.$props.imageFileName
+        ? require(`@/assets/writing-pages/${this.$props.imageFileName}`)
+        : "";
+    },
   },
 };
 </script>
@@ -89,20 +95,8 @@ export default {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    height: rem(100px);
+    height: 29.8vw;
     width: 100vw;
-
-    @include media(">=tablet") {
-      height: rem(230px);
-    }
-
-    @include media(">=desktop") {
-      height: rem(300px);
-    }
-
-    @include media(">=1350px") {
-      height: rem(450px);
-    }
   }
 
   .copy-container {

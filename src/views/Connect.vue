@@ -1,5 +1,5 @@
 <template>
-  <WritingPage mainImagePath="@/assets/writing-pages/bio/main.jpg">
+  <WritingPage imageFileName="connect.jpeg">
     <template v-slot:titleA>CONNECT</template>
     <template v-slot:titleB>COLLABORATE</template>
     <template v-slot:copy>
