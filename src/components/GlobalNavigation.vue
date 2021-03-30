@@ -19,20 +19,40 @@
             <CustomLink theme="spotlight-light-primary">Triptychs</CustomLink>
           </li>
           <li>
-            <CustomLink to="/writing" theme="spotlight-light-primary"
-              >About The Artist</CustomLink
+            <CustomLink to="/writing/biography" theme="spotlight-light-primary"
+              >Biography</CustomLink
             >
           </li>
           <li>
-            <CustomLink theme="spotlight-light-primary"
+            <CustomLink
+              to="/writing/art-statement"
+              theme="spotlight-light-primary"
               >Art Statement</CustomLink
             >
           </li>
           <li>
-            <CustomLink theme="spotlight-light-primary">The Film</CustomLink>
+            <CustomLink
+              to="/writing/inspiration"
+              theme="spotlight-light-primary"
+              >Inspiration</CustomLink
+            >
           </li>
           <li>
-            <CustomLink theme="spotlight-light-primary">Connect</CustomLink>
+            <CustomLink to="/writing/the-film" theme="spotlight-light-primary"
+              >The Film</CustomLink
+            >
+          </li>
+          <li>
+            <CustomLink
+              to="/writing/film-reviews"
+              theme="spotlight-light-primary"
+              >Film Reviews</CustomLink
+            >
+          </li>
+          <li>
+            <CustomLink to="/writing/connect" theme="spotlight-light-primary"
+              >Connect</CustomLink
+            >
           </li>
         </ul>
       </nav>
@@ -225,7 +245,7 @@ export default {
 
   li {
     display: block;
-    margin-bottom: 45px;
+    margin-bottom: 35px;
     text-align: center;
     letter-spacing: map-get($letter-spacing, "md");
     font-size: map-get($font-sizing, "lg");
