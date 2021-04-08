@@ -21,7 +21,7 @@
       <div class="slick-container">
         <VueSlickCarousel
           v-if="observatory.sequence && observatory.sequence.length > 0"
-          v-bind="slickSettings"
+          v-bind="sequenceSettings"
         >
           <SequenceSlide
             v-for="slide in observatory.sequence"
@@ -32,40 +32,45 @@
         </VueSlickCarousel>
       </div>
     </section>
-    <section class="writing snap">
-      <Container>
-        <div class="image-grid">
-          <div class="image-grid-image">
-            <img src="@/assets/observatories/i/images/thumb.jpeg" />
+    <section class="making snap">
+      <div :style="{ width: '100vw' }">
+        <VueSlickCarousel v-bind="makingSettings">
+          <div class="making-slide">
+            <h1 class="making-title top">The Making Of</h1>
+            <div class="making-slide-inner">
+              <img src="@/assets/observatories/i/images/making/4.jpeg" />
+            </div>
+            <!-- <h1 class="making-title bottom">Observatory I</h1> -->
           </div>
-          <div class="image-grid-image">
-            <img src="@/assets/observatories/i/images/thumb.jpeg" />
+          <div class="making-slide">
+            <div class="making-slide-inner">
+              <img src="@/assets/observatories/i/images/making/2.jpeg" />
+            </div>
           </div>
-          <div class="image-grid-image">
-            <img src="@/assets/observatories/i/images/thumb.jpeg" />
+          <div class="making-slide">
+            <div class="making-slide-inner">
+              <img src="@/assets/observatories/i/images/making/3.jpeg" />
+            </div>
           </div>
-          <div class="image-grid-image">
-            <img src="@/assets/observatories/i/images/thumb.jpeg" />
+          <div class="making-slide">
+            <div class="making-slide-inner">
+              <img src="@/assets/observatories/i/images/making/1.jpeg" />
+            </div>
           </div>
-          <div class="image-grid-image">
-            <img src="@/assets/observatories/i/images/thumb.jpeg" />
+          <div class="making-slide">
+            <div class="making-slide-inner">
+              <img src="@/assets/observatories/i/images/making/5.jpeg" />
+            </div>
           </div>
-          <div class="image-grid-image">
-            <img src="@/assets/observatories/i/images/thumb.jpeg" />
+          <div class="making-slide">
+            <div class="making-slide-inner">
+              <img src="@/assets/observatories/i/images/making/6.jpeg" />
+            </div>
           </div>
-          <div class="image-grid-image">
-            <img src="@/assets/observatories/i/images/thumb.jpeg" />
-          </div>
-          <div class="image-grid-image">
-            <img src="@/assets/observatories/i/images/thumb.jpeg" />
-          </div>
-          <div class="image-grid-image">
-            <img src="@/assets/observatories/i/images/thumb.jpeg" />
-          </div>
-        </div>
-      </Container>
+        </VueSlickCarousel>
+      </div>
     </section>
-    <section class="writing-2 snap">
+    <section class="writing snap">
       <div
         class="main-image"
         :style="{
@@ -73,26 +78,31 @@
             'url(' + require('@/assets/writing-pages/bio/main.jpg') + ')',
         }"
       />
-      <Container>
-        <div class="long-copy">
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius
-            doloribus rerum nobis laborum officiis explicabo, quam excepturi!
-            Cum fuga minima accusantium pariatur nesciunt accusamus corporis ea,
-            rerum neque cumque similique?
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius
-            doloribus rerum nobis laborum officiis explicabo, quam excepturi!
-            Cum fuga minima accusantium pariatur nesciunt accusamus corporis ea,
-            rerum neque cumque similique?
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius
-            doloribus rerum nobis laborum officiis explicabo, quam excepturi!
-            Cum fuga minima accusantium pariatur nesciunt accusamus corporis ea,
-            rerum neque cumque similique?
-          </p>
+      <Container containOn="x">
+        <div class="long-copy-container">
+          <div class="long-copy-inner">
+            <h1 class="long-copy-title">Explored</h1>
+            <div class="long-copy">
+              <p>
+                Observatory I turns around the arrow of attention<FancyBreak />
+                from what you are looking at to where you are seeing from.
+              </p>
+              <p>
+                This Observatory allows you to see that at zero distance from
+                yourself, you are<FancyBreak />
+                utterly empty.
+              </p>
+              <p>
+                When all distance collapses, you are no longer appearing in your
+                experience—and<FancyBreak />
+                yet, you are here.
+              </p>
+              <p>
+                Only seeing is present, and seeing is empty.<FancyBreak />
+                You are this empty seeing.
+              </p>
+            </div>
+          </div>
         </div>
       </Container>
     </section>
@@ -100,6 +110,7 @@
 </template>
 
 <script>
+import FancyBreak from "@/components/FancyBreak";
 import Container from "@/components/Container";
 import SequenceSlide from "@/components/SequenceSlide";
 import VimeoPlayer from "@/components/VimeoPlayer";
@@ -114,6 +125,7 @@ import { observatoriesService } from "../services";
 export default {
   name: "Observatory",
   components: {
+    FancyBreak,
     Container,
     SequenceSlide,
     VimeoPlayer,
@@ -123,12 +135,22 @@ export default {
     return {
       panelSnapInstance: null,
       observatory: {},
-      slickSettings: {
+      sequenceSettings: {
         arrows: false,
         dots: true,
-        dotsClass: "slick-dots custom-dots",
+        dotsClass: "slick-dots sequence-dots",
         infinite: true,
-        fade: false,
+        fade: true,
+        speed: 900,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+      },
+      makingSettings: {
+        arrows: false,
+        dots: true,
+        dotsClass: "slick-dots making-dots",
+        infinite: true,
+        fade: true,
         speed: 900,
         slidesToShow: 1,
         slidesToScroll: 1,
@@ -173,12 +195,30 @@ export default {
 .slick-slide * {
   outline: none;
 }
-.custom-dots {
+.sequence-dots {
   display: flex;
   position: relative !important;
   bottom: 55px !important;
 
   & li button:before {
+    font-size: 8px;
+  }
+}
+
+.making-dots {
+  display: flex;
+  position: absolute !important;
+  bottom: -10vh !important;
+  bottom: -8vh !important;
+
+  & li.slick-active button:before {
+    opacity: 0.55;
+    color: white;
+  }
+
+  & li button:before {
+    opacity: 0.15;
+    color: white;
     font-size: 8px;
   }
 }
@@ -239,28 +279,74 @@ section {
     );
   }
 
-  // &.sequence {
-  // }
+  &.sequence {
+    margin-top: -1px;
+    background: #b8b8b8;
+  }
+
+  &.making {
+    background: $black;
+    display: flex;
+    align-items: center;
+  }
 
   &.writing {
-    background: $black;
-    padding-top: rem(35px);
-    padding-bottom: rem(250px);
-  }
-
-  &.writing-2 {
     color: black;
     background: hsl(0, 0%, 72%) 100%;
-    padding-top: rem(35px);
     padding-bottom: rem(250px);
   }
+}
+
+.making-slide {
+  &-inner {
+    display: flex;
+    justify-content: center;
+
+    img {
+      object-fit: contain;
+      height: 40vh;
+      width: 100vw;
+
+      @include media(">=tablet") {
+        height: 50vh;
+      }
+
+      @include media(">=desktop") {
+        height: 60vh;
+      }
+    }
+  }
+}
+
+.making-title {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  font-weight: 100;
+  font-size: map-get($font-sizing, "lg");
+  letter-spacing: map-get($letter-spacing, "lg");
+
+  &.top {
+    margin-bottom: rem(20px);
+  }
+  &.bottom {
+    margin-top: rem(20px);
+  }
+
+  @include media(">=tablet") {
+    font-size: map-get($font-sizing, "jumbo");
+    letter-spacing: map-get($letter-spacing, "jumbo");
+  }
+
+  // @include media(">=desktop") {
+  // }
 }
 
 .main-image {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  height: rem(100px);
+  height: rem(160px);
   width: 100vw;
 
   @include media(">=tablet") {
@@ -299,22 +385,34 @@ section {
   position: relative;
 }
 
-.image-grid {
-  display: grid;
-  gap: rem(30px);
-  grid-template-columns: repeat(4, 1fr);
-  margin-bottom: rem(50px);
+.long-copy-container {
+  display: flex;
+  justify-content: center;
+}
 
-  &-image {
-    border: 1px solid white;
-    img {
-      max-width: 100%;
-    }
+.long-copy-inner {
+  margin-top: rem(30px);
+}
+
+.long-copy-title {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  font-weight: 300;
+  font-size: map-get($font-sizing, "lg");
+  letter-spacing: map-get($letter-spacing, "lg");
+
+  @include media(">=tablet") {
+    font-size: map-get($font-sizing, "jumbo");
+    letter-spacing: map-get($letter-spacing, "jumbo");
   }
 }
 
 .long-copy {
   font-size: map-get($font-sizing, "lg");
-  letter-spacing: map-get($letter-spacing, "md");
+  text-transform: none;
+  color: $black;
+  line-height: 1.75;
+  text-align: justify;
 }
 </style>

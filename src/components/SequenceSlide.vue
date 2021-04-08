@@ -17,7 +17,7 @@
 
 <script>
 export default {
-  name: "SlickSlideTemplate",
+  name: "SequenceSlide",
   props: {
     slide: Object,
     name: String,
@@ -111,6 +111,6 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: $silver;
+  // background-color: $silver;
 }
 </style>
