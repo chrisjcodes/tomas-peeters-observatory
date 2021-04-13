@@ -17,7 +17,7 @@
 
 <script>
 export default {
-  name: "SlickSlideTemplate",
+  name: "SequenceSlide",
   props: {
     slide: Object,
     name: String,
@@ -53,7 +53,7 @@ export default {
     margin-top: 0;
     margin-bottom: 15px;
     line-height: 1.5;
-    color: map-get($typeface-colors, "dark-primary");
+    color: black;
 
     @include media(">=tablet") {
       font-size: map-get($font-sizing, "md");
@@ -111,6 +111,6 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: $silver;
+  // background-color: $silver;
 }
 </style>

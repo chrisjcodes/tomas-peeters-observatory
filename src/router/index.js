@@ -23,7 +23,7 @@ const routes = [
     path: "/observatory/:name",
     name: "Observatory",
     component: () =>
-      import(/* webpackChunkName: "Observatory" */ "@/views/Observatory.vue"),
+      import(/* webpackChunkName: "Observatory" */ "@/views/Observatory"),
   },
   {
     path: "/writing/biography/",
@@ -61,17 +61,6 @@ const routes = [
     component: () =>
       import(/* webpackChunkName: "Reviews" */ "@/views/Reviews.vue"),
   },
-  {
-    path: "/observatory/:name/sequence",
-    name: "ObservatorySequence",
-    component: () =>
-      import(
-        /* webpackChunkName: "ObservatorySequence" */ "@/views/ObservatorySequence.vue"
-      ),
-    meta: {
-      bodyClass: "scroll-lock",
-    },
-  },
 ];
 
 const router = new VueRouter({
@@ -84,6 +73,7 @@ const router = new VueRouter({
 });
 
 const vueBodyClass = new VueBodyClass(routes);
+
 router.beforeEach((to, from, next) => {
   vueBodyClass.guard(to, next);
 });
