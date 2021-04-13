@@ -23,15 +23,7 @@ const routes = [
     path: "/observatory/:name",
     name: "Observatory",
     component: () =>
-      import(/* webpackChunkName: "Observatory" */ "@/views/Observatory.vue"),
-  },
-  {
-    path: "/observatoryV2/:name",
-    name: "ObservatoryV2",
-    component: () =>
-      import(
-        /* webpackChunkName: "ObservatoryV2" */ "@/views/ObservatoryV2.vue"
-      ),
+      import(/* webpackChunkName: "Observatory" */ "@/views/Observatory"),
   },
   {
     path: "/writing/biography/",
@@ -68,17 +60,6 @@ const routes = [
     name: "Reviews",
     component: () =>
       import(/* webpackChunkName: "Reviews" */ "@/views/Reviews.vue"),
-  },
-  {
-    path: "/observatory/:name/sequence",
-    name: "ObservatorySequence",
-    component: () =>
-      import(
-        /* webpackChunkName: "ObservatorySequence" */ "@/views/ObservatorySequence.vue"
-      ),
-    meta: {
-      bodyClass: "scroll-lock",
-    },
   },
 ];
 

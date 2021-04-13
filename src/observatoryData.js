@@ -9,6 +9,7 @@ function createObservatoryEntry({
   copyTop,
   copyBottom,
   sequence = [],
+  makingOf = [],
 }) {
   return {
     id: cuid(),
@@ -19,6 +20,7 @@ function createObservatoryEntry({
     copyTop,
     copyBottom,
     sequence: sequence.map((sequenceItem) => ({ id: cuid(), ...sequenceItem })),
+    makingOf: makingOf.map((makingOfItem) => ({ id: cuid(), ...makingOfItem })),
   };
 }
 
@@ -63,6 +65,26 @@ export const allObservatories = [
         image: "f.jpg",
       },
     ],
+    makingOf: [
+      {
+        image: "1.jpeg",
+      },
+      {
+        image: "2.jpeg",
+      },
+      {
+        image: "3.jpeg",
+      },
+      {
+        image: "4.jpeg",
+      },
+      {
+        image: "5.jpeg",
+      },
+      {
+        image: "6.jpeg",
+      },
+    ],
   }),
   createObservatoryEntry({
     name: "ii",
@@ -103,6 +125,26 @@ export const allObservatories = [
         copyA: "being everywhere",
         copyB: "is my direct experience of myself",
         image: "f.jpg",
+      },
+    ],
+    makingOf: [
+      {
+        image: "1.jpeg",
+      },
+      {
+        image: "2.jpeg",
+      },
+      {
+        image: "3.jpeg",
+      },
+      {
+        image: "4.jpeg",
+      },
+      {
+        image: "5.jpeg",
+      },
+      {
+        image: "6.jpeg",
       },
     ],
   }),
@@ -147,6 +189,26 @@ export const allObservatories = [
         image: "f.jpg",
       },
     ],
+    makingOf: [
+      {
+        image: "1.jpeg",
+      },
+      {
+        image: "2.jpeg",
+      },
+      {
+        image: "3.jpeg",
+      },
+      {
+        image: "4.jpeg",
+      },
+      {
+        image: "5.jpeg",
+      },
+      {
+        image: "6.jpeg",
+      },
+    ],
   }),
   createObservatoryEntry({
     name: "iv",
@@ -185,6 +247,26 @@ export const allObservatories = [
         copyA: "being nonexistent",
         copyB: "is my direct experience of myself",
         image: "f.jpg",
+      },
+    ],
+    makingOf: [
+      {
+        image: "1.jpeg",
+      },
+      {
+        image: "2.jpeg",
+      },
+      {
+        image: "3.jpeg",
+      },
+      {
+        image: "4.jpeg",
+      },
+      {
+        image: "5.jpeg",
+      },
+      {
+        image: "6.jpeg",
       },
     ],
   }),
@@ -226,6 +308,26 @@ export const allObservatories = [
         copyA: "being infinite",
         copyB: "is my direct experience of myself",
         image: "f.jpg",
+      },
+    ],
+    makingOf: [
+      {
+        image: "1.jpeg",
+      },
+      {
+        image: "2.jpeg",
+      },
+      {
+        image: "3.jpeg",
+      },
+      {
+        image: "4.jpeg",
+      },
+      {
+        image: "5.jpeg",
+      },
+      {
+        image: "6.jpeg",
       },
     ],
   }),
