@@ -20,6 +20,12 @@ const routes = [
       ),
   },
   {
+    path: "/triptychs",
+    name: "Triptychs",
+    component: () =>
+      import(/* webpackChunkName: "Observatory" */ "@/views/Triptychs.vue"),
+  },
+  {
     path: "/observatory/:name",
     name: "Observatory",
     component: () =>

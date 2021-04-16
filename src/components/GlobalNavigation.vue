@@ -16,7 +16,9 @@
             >
           </li>
           <li>
-            <CustomLink theme="spotlight-light-primary">Triptychs</CustomLink>
+            <CustomLink theme="spotlight-light-primary" to="/triptychs"
+              >Triptychs</CustomLink
+            >
           </li>
           <li>
             <CustomLink to="/writing/biography" theme="spotlight-light-primary"
