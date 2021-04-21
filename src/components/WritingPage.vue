@@ -58,7 +58,11 @@ export default {
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: $alto;
+    background: linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 1) 0%,
+      rgb(119, 119, 119) 70%
+    );
   }
 
   .root {

@@ -48,12 +48,15 @@ export default {
   data() {
     return {
       slickSettings: {
+        autoplay: true,
+        autoplaySpeed: 3000,
         arrows: false,
         dots: true,
         dotsClass: "slick-dots triptych-dots",
         infinite: true,
         fade: true,
-        speed: 3500,
+        speed: 5000,
+        cssEase: "ease-in-out",
         slidesToShow: 1,
         slidesToScroll: 1,
       },
@@ -116,18 +119,18 @@ section {
 header {
   display: flex;
   justify-content: center;
-  margin-bottom: rem(60px);
+  margin-bottom: rem(45px);
 
   img {
     height: 100%;
-    width: 40%;
+    width: 35%;
   }
 }
 
 .panel-container {
   display: grid;
   grid-template-columns: repeat(3, 3fr);
-  grid-gap: 5px;
+  grid-gap: 25px;
   margin-left: 10vw;
   margin-right: 10vw;
   margin-bottom: rem(40px);
@@ -148,7 +151,7 @@ header {
     text-align: center;
     color: rgba($white, 0.55);
 
-    font-size: map-get($font-sizing, "lg");
+    font-size: map-get($font-sizing, "lg2");
     letter-spacing: map-get($letter-spacing, "lg");
   }
 }

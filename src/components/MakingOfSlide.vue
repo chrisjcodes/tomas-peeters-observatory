@@ -1,6 +1,8 @@
 <template>
   <div class="making-slide">
-    <h1 v-if="showTitle" class="making-title top">The Making Of</h1>
+    <div class="making-title-container">
+      <h1 class="making-title top">The Making</h1>
+    </div>
     <div class="making-slide-inner">
       <img :src="this.slideImageSrc" />
     </div>
@@ -39,7 +41,7 @@ export default {
     img {
       object-fit: contain;
       height: 40vh;
-      width: 100vw;
+      border: solid rgba($white, 0.25) 1px;
 
       @include media(">=tablet") {
         height: 50vh;
@@ -51,6 +53,10 @@ export default {
     }
   }
 }
+.making-title-container {
+  display: flex;
+  justify-content: center;
+}
 
 .making-title {
   margin: 0;
@@ -60,15 +66,12 @@ export default {
   font-size: map-get($font-sizing, "lg");
   letter-spacing: map-get($letter-spacing, "lg");
 
-  &.top {
-    margin-bottom: rem(20px);
-  }
-  &.bottom {
-    margin-top: rem(20px);
-  }
+  margin-left: map-get($letter-spacing, "lg");
+  margin-bottom: rem(20px);
 
   @include media(">=tablet") {
-    font-size: map-get($font-sizing, "jumbo");
+    margin-left: map-get($letter-spacing, "jumbo");
+    font-size: map-get($font-sizing, "jumbo2");
     letter-spacing: map-get($letter-spacing, "jumbo");
   }
 }

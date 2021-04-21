@@ -58,7 +58,7 @@
       <Container containOn="x">
         <div class="long-copy-container">
           <div class="long-copy-inner">
-            <h1 class="long-copy-title">Explored</h1>
+            <h1 class="long-copy-title">The Writing</h1>
             <div class="long-copy">
               <component :is="this.writingBlockComponent"></component>
             </div>
@@ -275,8 +275,11 @@ section {
 
   &.writing {
     color: black;
-    background: hsl(0, 0%, 72%) 100%;
-    padding-bottom: rem(250px);
+    background: linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 1) 0%,
+      rgb(119, 119, 119) 70%
+    );
   }
 }
 
