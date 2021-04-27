@@ -1,6 +1,15 @@
 <template>
   <div>
     <VueSlickCarousel v-bind="slickSettings">
+      <!-- <div
+        :style="{
+          height: '891px',
+        }"
+      >
+        <div class="intro">
+          <p>WHEN SPACE COLLAPSES<FancyBreak />SEE WITHOUT LOOKING</p>
+        </div>
+      </div> -->
       <section v-for="triptych in triptychs" :key="triptych.name">
         <header>
           <img
@@ -29,7 +38,7 @@
           </div>
         </div>
         <div class="copy-container">
-          <p>What you are looking for is your single eye</p>
+          <p>{{ triptych.copy }}</p>
         </div>
       </section>
     </VueSlickCarousel>
@@ -40,15 +49,17 @@
 import VueSlickCarousel from "vue-slick-carousel";
 import "vue-slick-carousel/dist/vue-slick-carousel.css";
 import "vue-slick-carousel/dist/vue-slick-carousel-theme.css";
+// import FancyBreak from "../components/FancyBreak.vue";
 
 export default {
   components: {
     VueSlickCarousel,
+    // FancyBreak,
   },
   data() {
     return {
       slickSettings: {
-        autoplay: true,
+        autoplay: false,
         autoplaySpeed: 3000,
         arrows: false,
         dots: true,
@@ -63,19 +74,51 @@ export default {
       triptychs: [
         {
           name: "i",
-          copy: "WHAT YOU ARE LOOKING FOR IS YOUR SINGLE EYE",
+          copy: "I LOOK FOR MY INFINITE EYE",
         },
         {
           name: "ii",
-          copy: "WHAT YOU ARE LOOKING FOR IS YOUR SINGLE EYE",
+          copy: "I CAN NOT SEE MY INFINITE EYE",
         },
         {
           name: "iii",
-          copy: "WHAT YOU ARE LOOKING FOR IS YOUR SINGLE EYE",
+          copy: "I AM THIS INFINITE EYE",
         },
         {
           name: "iv",
-          copy: "WHAT YOU ARE LOOKING FOR IS YOUR SINGLE EYE",
+          copy: "I LOOK FOR MY EMPTY EYE",
+        },
+        {
+          name: "v",
+          copy: "I CAN NOT SEE MY EMPTY EYE",
+        },
+        {
+          name: "vi",
+          copy: "MY EMPTY EYE IS THIS WORLD",
+        },
+        {
+          name: "vii",
+          copy: "I LOOK FOR MY ABSENT EYE",
+        },
+        {
+          name: "viii",
+          copy: "I CAN NOT SEE MY ABSENT EYE",
+        },
+        {
+          name: "ix",
+          copy: "I AM THIS ABSENT EYE",
+        },
+        {
+          name: "x",
+          copy: "I LOOK FOR THIS BOUNDLESS WORLD",
+        },
+        {
+          name: "xi",
+          copy: "I CAN NOT SEE THIS BOUNDLESS WORLD",
+        },
+        {
+          name: "xii",
+          copy: "MY INFINITE EYE IS THIS BOUNDLESS WORLD",
         },
       ],
     };
@@ -84,6 +127,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import "@/theme/media.scss";
+
 .slick-slide * {
   outline: none;
 }
@@ -92,6 +137,13 @@ export default {
   display: flex;
   position: absolute !important;
   bottom: -30px;
+
+  & li {
+    margin: 0 1px;
+    @include media(">=tablet") {
+      margin: 0 5px;
+    }
+  }
 
   & li.slick-active button:before {
     opacity: 0.55;
@@ -112,8 +164,24 @@ export default {
 @import "@/theme/sizing.scss";
 @import "@/theme/typography.scss";
 
+.intro {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  p {
+    text-align: center;
+    font-size: map-get($font-sizing, "lg2");
+    letter-spacing: map-get($letter-spacing, "lg");
+  }
+}
+
 section {
-  padding-top: rem(50px);
+  padding-top: 20vh;
+
+  @include media(">=desktop") {
+    padding-top: rem(80px);
+  }
 }
 
 header {
@@ -122,18 +190,35 @@ header {
   margin-bottom: rem(45px);
 
   img {
-    height: 100%;
-    width: 35%;
+    width: 85%;
+  }
+
+  @include media(">=tablet") {
+    img {
+      width: 55%;
+    }
+  }
+
+  @include media(">=desktop") {
+    img {
+      width: 35%;
+    }
   }
 }
 
 .panel-container {
   display: grid;
   grid-template-columns: repeat(3, 3fr);
-  grid-gap: 25px;
-  margin-left: 10vw;
-  margin-right: 10vw;
+  grid-gap: 2px;
+  margin-left: 0;
+  margin-right: 0;
   margin-bottom: rem(40px);
+
+  @include media(">=tablet") {
+    grid-gap: 25px;
+    margin-left: 10vw;
+    margin-right: 10vw;
+  }
 }
 
 .panel-item {
@@ -150,9 +235,13 @@ header {
     @include primary-sans-serif;
     text-align: center;
     color: rgba($white, 0.55);
+    font-size: map-get($font-sizing, "md");
+    letter-spacing: map-get($letter-spacing, "sm");
 
-    font-size: map-get($font-sizing, "lg2");
-    letter-spacing: map-get($letter-spacing, "lg");
+    @include media(">=tablet") {
+      font-size: map-get($font-sizing, "lg2");
+      letter-spacing: map-get($letter-spacing, "lg");
+    }
   }
 }
 </style>
