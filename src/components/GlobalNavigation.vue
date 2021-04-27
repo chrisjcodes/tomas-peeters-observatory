@@ -52,6 +52,11 @@
             >
           </li>
           <li>
+            <CustomLink to="/writing/odyssey" theme="spotlight-light-primary"
+              >Observatory Odyssey</CustomLink
+            >
+          </li>
+          <li>
             <CustomLink to="/writing/connect" theme="spotlight-light-primary"
               >Connect</CustomLink
             >

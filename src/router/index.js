@@ -32,6 +32,12 @@ const routes = [
       import(/* webpackChunkName: "Observatory" */ "@/views/Observatory"),
   },
   {
+    path: "/writing/odyssey/",
+    name: "Odyssey",
+    component: () =>
+      import(/* webpackChunkName: "Biography" */ "@/views/Odyssey.vue"),
+  },
+  {
     path: "/writing/biography/",
     name: "Biography",
     component: () =>
