@@ -1,46 +1,16 @@
 <template>
   <div>
     <VueSlickCarousel v-bind="slickSettings">
-      <!-- <div
-        :style="{
-          height: '891px',
-        }"
-      >
+      <div>
         <div class="intro">
-          <p>WHEN SPACE COLLAPSES<FancyBreak />SEE WITHOUT LOOKING</p>
+          <p>WHEN SPACE COLLAPSES<FancyBreak /> SEE WITHOUT LOOKING</p>
         </div>
-      </div> -->
-      <section v-for="triptych in triptychs" :key="triptych.name">
-        <header>
-          <img
-            draggable="false"
-            :src="require(`@/assets/triptychs/${triptych.name}/logo.svg`)"
-          />
-        </header>
-        <div class="panel-container">
-          <div class="panel-item">
-            <img
-              draggable="false"
-              :src="require(`@/assets/triptychs/${triptych.name}/a.jpg`)"
-            />
-          </div>
-          <div class="panel-item">
-            <img
-              draggable="false"
-              :src="require(`@/assets/triptychs/${triptych.name}/b.jpg`)"
-            />
-          </div>
-          <div class="panel-item">
-            <img
-              draggable="false"
-              :src="require(`@/assets/triptychs/${triptych.name}/c.jpg`)"
-            />
-          </div>
-        </div>
-        <div class="copy-container">
-          <p>{{ triptych.copy }}</p>
-        </div>
-      </section>
+      </div>
+      <TriptychsSlide
+        v-for="triptych in triptychs"
+        :triptych="triptych"
+        :key="triptych.name"
+      />
     </VueSlickCarousel>
   </div>
 </template>
@@ -49,12 +19,14 @@
 import VueSlickCarousel from "vue-slick-carousel";
 import "vue-slick-carousel/dist/vue-slick-carousel.css";
 import "vue-slick-carousel/dist/vue-slick-carousel-theme.css";
-// import FancyBreak from "../components/FancyBreak.vue";
+import TriptychsSlide from "../components/TriptychsSlide.vue";
+import FancyBreak from "../components/FancyBreak.vue";
 
 export default {
   components: {
     VueSlickCarousel,
-    // FancyBreak,
+    TriptychsSlide,
+    FancyBreak,
   },
   data() {
     return {
@@ -166,82 +138,17 @@ export default {
 
 .intro {
   display: flex;
-  align-items: center;
+  align-items: stretch;
   justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+  position: absolute;
+  width: 100%;
 
   p {
     text-align: center;
     font-size: map-get($font-sizing, "lg2");
     letter-spacing: map-get($letter-spacing, "lg");
-  }
-}
-
-section {
-  padding-top: 20vh;
-
-  @include media(">=desktop") {
-    padding-top: rem(80px);
-  }
-}
-
-header {
-  display: flex;
-  justify-content: center;
-  margin-bottom: rem(45px);
-
-  img {
-    width: 85%;
-  }
-
-  @include media(">=tablet") {
-    img {
-      width: 55%;
-    }
-  }
-
-  @include media(">=desktop") {
-    img {
-      width: 35%;
-    }
-  }
-}
-
-.panel-container {
-  display: grid;
-  grid-template-columns: repeat(3, 3fr);
-  grid-gap: 2px;
-  margin-left: 0;
-  margin-right: 0;
-  margin-bottom: rem(40px);
-
-  @include media(">=tablet") {
-    grid-gap: 25px;
-    margin-left: 10vw;
-    margin-right: 10vw;
-  }
-}
-
-.panel-item {
-  grid-column: auto;
-
-  img {
-    height: 100%;
-    width: 100%;
-  }
-}
-
-.copy-container {
-  p {
-    @include primary-sans-serif;
-    text-align: center;
-    color: rgba($white, 0.55);
-    font-size: map-get($font-sizing, "md");
-    letter-spacing: map-get($letter-spacing, "sm");
-
-    @include media(">=tablet") {
-      font-size: map-get($font-sizing, "lg2");
-      letter-spacing: map-get($letter-spacing, "lg");
-    }
   }
 }
 </style>
