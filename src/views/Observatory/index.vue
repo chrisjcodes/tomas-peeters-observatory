@@ -312,6 +312,7 @@ section {
 
   font-size: map-get($font-sizing, "sm");
   letter-spacing: map-get($letter-spacing, "md");
+  line-height: 1.5;
   text-align: center;
 
   @include media(">=tablet") {

@@ -275,7 +275,7 @@ export const allObservatories = [
     logoFileName: "logo.svg",
     thumbFileName: "thumb.jpeg",
     videoUrlId: "288344114",
-    copyTop: "The Art Of Using Form To See Emptiness",
+    copyTop: "THE ART OF USING FORM TO SEE I AM INFINITE",
     copyBottom:
       "At Zero Distance From My Center My Face Is Completely Transparent",
     sequence: [
