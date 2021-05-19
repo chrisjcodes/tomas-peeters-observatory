@@ -24,14 +24,18 @@ export default {
   },
   data() {
     return {
+      player: null,
       isLoaded: false,
     };
   },
   mounted() {
-    const player = new Player(this.$refs.player);
-    player.on("loaded", () => {
+    this.player = new Player(this.$refs.player);
+    this.player?.on("loaded", () => {
       this.$data.isLoaded = true;
     });
+  },
+  beforeDestroy() {
+    this.player?.off("loaded");
   },
   computed: {
     videoOptionsQuery() {
