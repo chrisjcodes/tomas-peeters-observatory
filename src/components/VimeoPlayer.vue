@@ -1,6 +1,7 @@
 <template>
-  <div :class="$props.theme">
+  <div class="base" :class="[$props.theme, { loaded: isLoaded }]">
     <iframe
+      ref="player"
       :src="`https://player.vimeo.com/video/${videoId}?${videoOptionsQuery}`"
       frameborder="0"
       allow="autoplay; fullscreen; picture-in-picture"
@@ -12,6 +13,7 @@
 
 <script>
 import qs from "query-string";
+import Player from "@vimeo/player";
 
 export default {
   name: "VimeoPlayer",
@@ -19,6 +21,17 @@ export default {
     videoId: { type: String, default: "" },
     theme: { type: String, default: "" },
     options: { type: Object, default: () => ({ background: 0 }) },
+  },
+  data() {
+    return {
+      isLoaded: false,
+    };
+  },
+  mounted() {
+    const player = new Player(this.$refs.player);
+    player.on("loaded", () => {
+      this.$data.isLoaded = true;
+    });
   },
   computed: {
     videoOptionsQuery() {
@@ -32,6 +45,15 @@ export default {
 @import "@/theme/colors.scss";
 @import "@/theme/sizing.scss";
 @import "@/theme/typography.scss";
+
+.base {
+  transition: opacity 3000ms ease;
+  opacity: 0;
+
+  &.loaded {
+    opacity: 1;
+  }
+}
 
 .landing-loop {
   display: flex;
