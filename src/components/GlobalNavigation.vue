@@ -21,6 +21,16 @@
             >
           </li>
           <li>
+            <CustomLink to="/writing/the-film" theme="spotlight-light-primary"
+              >Zero Distance The Film</CustomLink
+            >
+          </li>
+          <li>
+            <CustomLink to="/writing/odyssey" theme="spotlight-light-primary"
+              >Observatory Odyssey</CustomLink
+            >
+          </li>
+          <li>
             <CustomLink to="/writing/biography" theme="spotlight-light-primary"
               >Biography</CustomLink
             >
@@ -37,23 +47,6 @@
               to="/writing/inspiration"
               theme="spotlight-light-primary"
               >Inspiration</CustomLink
-            >
-          </li>
-          <li>
-            <CustomLink to="/writing/the-film" theme="spotlight-light-primary"
-              >The Film</CustomLink
-            >
-          </li>
-          <li>
-            <CustomLink
-              to="/writing/film-reviews"
-              theme="spotlight-light-primary"
-              >Film Reviews</CustomLink
-            >
-          </li>
-          <li>
-            <CustomLink to="/writing/odyssey" theme="spotlight-light-primary"
-              >Observatory Odyssey</CustomLink
             >
           </li>
           <li>
