@@ -14,7 +14,10 @@
             {{ observatory.copyTop }}
           </p>
         </div>
-        <VimeoPlayer :videoId="observatory.videoUrlId || ''" />
+        <VimeoPlayer
+          theme="observatory"
+          :videoId="observatory.videoUrlId || ''"
+        />
       </Container>
     </section>
     <section class="sequence snap">

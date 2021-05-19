@@ -1,7 +1,7 @@
 <template>
-  <div class="video-loop">
+  <div :class="$props.theme">
     <iframe
-      :src="`https://player.vimeo.com/video/${videoId}?background=0`"
+      :src="`https://player.vimeo.com/video/${videoId}?${videoOptionsQuery}`"
       frameborder="0"
       allow="autoplay; fullscreen; picture-in-picture"
       allowfullscreen
@@ -11,16 +11,54 @@
 </template>
 
 <script>
+import qs from "query-string";
+
 export default {
   name: "VimeoPlayer",
   props: {
     videoId: { type: String, default: "" },
+    theme: { type: String, default: "" },
+    options: { type: Object, default: () => ({ background: 0 }) },
+  },
+  computed: {
+    videoOptionsQuery() {
+      return qs.stringify(this.$props.options);
+    },
   },
 };
 </script>
 
 <style lang="scss" scoped>
-.video-loop {
+@import "@/theme/colors.scss";
+@import "@/theme/sizing.scss";
+@import "@/theme/typography.scss";
+
+.landing-loop {
+  display: flex;
+  justify-content: center;
+  margin-bottom: rem(20px);
+
+  iframe {
+    max-width: 100%;
+    height: auto;
+  }
+
+  @include media(">=tablet") {
+    iframe {
+      width: 100%;
+      height: 40vh;
+    }
+  }
+
+  @include media(">=desktop") {
+    iframe {
+      width: 80%;
+      height: 60vh;
+    }
+  }
+}
+
+.observatory {
   position: relative;
   overflow: hidden;
   width: 100%;

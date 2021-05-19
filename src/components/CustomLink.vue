@@ -22,6 +22,18 @@ export default {
   text-decoration: none;
 }
 
+@keyframes pulseOpacity {
+  0% {
+    opacity: 0.25;
+  }
+  50% {
+    opacity: 0.65;
+  }
+  100% {
+    opacity: 0.25;
+  }
+}
+
 %underline {
   content: "";
   position: absolute;
@@ -35,6 +47,25 @@ export default {
 
 %underline-hover {
   transform: scaleX(1);
+}
+
+.theme-ul-light-primary-pulse {
+  color: map-get($typeface-colors, "light-primary");
+  position: relative;
+
+  &:after {
+    @extend %underline;
+    animation: pulseOpacity 3000ms ease;
+    animation-iteration-count: infinite;
+    background-color: map-get($typeface-colors, "light-primary");
+    opacity: 0.25;
+  }
+
+  &:hover {
+    &:after {
+      @extend %underline-hover;
+    }
+  }
 }
 
 .theme-ul-light-primary {

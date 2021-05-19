@@ -10,13 +10,23 @@
           The Art Of Using Form To See Emptiness
         </p>
       </Container>
-      <div class="video-loop">
-        <!-- <VimeoPlayer videoId="504637617" /> -->
-        <video src="@/assets/landing/videos/loop.mp4" autoplay loop muted />
-      </div>
+      <VimeoPlayer
+        theme="landing-loop"
+        videoId="504637617"
+        :options="{
+          background: 0,
+          autoplay: 1,
+          controls: 0,
+          loop: 1,
+          muted: 1,
+        }"
+      />
       <Container containOn="x">
         <nav>
-          <CustomLink to="/explore-observatories">
+          <CustomLink
+            theme="ul-light-primary-pulse"
+            to="/explore-observatories"
+          >
             Explore The Observatories
           </CustomLink>
         </nav>
@@ -28,14 +38,14 @@
 <script>
 import Container from "@/components/Container";
 import CustomLink from "@/components/CustomLink";
-// import VimeoPlayer from "@/components/VimeoPlayer";
+import VimeoPlayer from "@/components/VimeoPlayer";
 
 export default {
   name: "Landing",
   components: {
     Container,
     CustomLink,
-    // VimeoPlayer,
+    VimeoPlayer,
   },
 };
 </script>
@@ -45,10 +55,22 @@ export default {
 @import "@/theme/sizing.scss";
 @import "@/theme/typography.scss";
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 .center {
   display: flex;
   align-items: center;
   height: 100vh;
+  animation-name: fadeIn;
+  animation-duration: 3000ms;
+  animation-timing-function: ease-in-out;
 }
 
 .inner {
@@ -92,31 +114,6 @@ header {
   //   letter-spacing: map-get($letter-spacing, "xl");
   //   font-size: map-get($font-sizing, "md");
   // }
-}
-
-.video-loop {
-  display: flex;
-  justify-content: center;
-  margin-bottom: rem(20px);
-
-  video {
-    max-width: 100%;
-    height: auto;
-  }
-
-  @include media(">=tablet") {
-    video {
-      width: 100%;
-      height: 40vh;
-    }
-  }
-
-  @include media(">=desktop") {
-    video {
-      width: 80%;
-      height: 60vh;
-    }
-  }
 }
 
 nav {
