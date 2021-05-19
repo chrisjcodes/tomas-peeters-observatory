@@ -37,11 +37,11 @@ export default {
 
 .yellow-to-gold {
   background-color: rgb(153, 114, 6);
-  background-image: linear-gradient(
-    to bottom,
-    rgb(233, 193, 63) 0%,
-    rgb(212, 175, 55) 50%,
-    rgb(92, 76, 22) 100%
+  background-image: radial-gradient(
+    ellipse at top right,
+    #b49f59 0% 10px,
+    #6c5d30,
+    #524721 100%
   );
 }
 </style>
