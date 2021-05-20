@@ -1,11 +1,6 @@
 <template>
   <div>
     <VueSlickCarousel v-bind="slickSettings">
-      <div>
-        <div class="intro">
-          <p>WHEN SPACE COLLAPSES<FancyBreak /> SEE WITHOUT LOOKING</p>
-        </div>
-      </div>
       <TriptychsSlide
         v-for="triptych in triptychs"
         :triptych="triptych"
@@ -20,13 +15,11 @@ import VueSlickCarousel from "vue-slick-carousel";
 import "vue-slick-carousel/dist/vue-slick-carousel.css";
 import "vue-slick-carousel/dist/vue-slick-carousel-theme.css";
 import TriptychsSlide from "../components/TriptychsSlide.vue";
-import FancyBreak from "../components/FancyBreak.vue";
 
 export default {
   components: {
     VueSlickCarousel,
     TriptychsSlide,
-    FancyBreak,
   },
   data() {
     return {

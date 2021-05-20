@@ -240,7 +240,7 @@ header {
 }
 
 section {
-  height: 100vh;
+  min-height: 100vh;
 
   &.intro {
     padding-top: rem(30px);

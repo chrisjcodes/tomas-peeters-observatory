@@ -22,7 +22,7 @@
           </li>
           <li>
             <CustomLink to="/writing/the-film" theme="spotlight-light-primary"
-              >Zero Distance The Film</CustomLink
+              >The Film</CustomLink
             >
           </li>
           <li>

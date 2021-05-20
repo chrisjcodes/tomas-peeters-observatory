@@ -69,7 +69,7 @@ export default {
   align-items: center;
   height: 100vh;
   animation-name: fadeIn;
-  animation-duration: 3000ms;
+  animation-duration: 5000ms;
   animation-timing-function: ease-in-out;
 }
 
@@ -94,7 +94,7 @@ header {
 
   @include media(">=desktop") {
     img {
-      width: 42%;
+      width: 50%;
     }
   }
 }
@@ -102,12 +102,12 @@ header {
 .landing-copy {
   margin-bottom: rem(20px);
   text-align: center;
-  letter-spacing: map-get($letter-spacing, "xs");
+  letter-spacing: map-get($letter-spacing, "lg");
   font-size: map-get($font-sizing, "sm");
 
   @include media(">=tablet") {
     letter-spacing: map-get($letter-spacing, "md");
-    font-size: map-get($font-sizing, "body");
+    font-size: map-get($font-sizing, "lg");
   }
 
   // @include media(">=desktop") {
@@ -125,7 +125,7 @@ nav {
 
   @include media(">=tablet") {
     letter-spacing: map-get($letter-spacing, "md");
-    font-size: map-get($font-sizing, "body");
+    font-size: map-get($font-sizing, "lg");
   }
 
   //   @include media(">=desktop") {
