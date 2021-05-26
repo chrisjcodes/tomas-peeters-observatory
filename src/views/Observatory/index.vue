@@ -178,13 +178,19 @@ export default {
 </script>
 
 <style lang="scss">
+@import "@/theme/media.scss";
+
 .slick-slide * {
   outline: none;
 }
 .sequence-dots {
   display: flex;
   position: relative !important;
-  bottom: 55px !important;
+  bottom: 25vh !important;
+
+  @include media(">=desktop") {
+    bottom: 7vh !important;
+  }
 
   & li button:before {
     font-size: 8px;

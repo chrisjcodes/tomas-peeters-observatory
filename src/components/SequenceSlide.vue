@@ -39,11 +39,9 @@ export default {
 @import "@/theme/typography.scss";
 
 .copy {
-  display: flex;
-  flex-direction: column;
-  height: 15vh;
   max-width: 95vw;
   padding-top: 5vh;
+  padding-bottom: 5vh;
 
   p {
     font-size: map-get($font-sizing, "sm");
@@ -51,7 +49,6 @@ export default {
 
     text-align: center;
     margin-top: 0;
-    margin-bottom: 15px;
     line-height: 1.5;
     color: black;
 
@@ -83,7 +80,6 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 50vh;
 
   img {
     max-width: 90vw;
@@ -92,13 +88,11 @@ export default {
   }
 
   @include media(">=tablet") {
-    height: 60vh;
     img {
       max-height: 50vh;
     }
   }
   @include media(">=desktop") {
-    height: 70vh;
     img {
       max-height: 65vh;
     }
