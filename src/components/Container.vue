@@ -35,27 +35,27 @@ export default {
 @import "@/theme/sizing.scss";
 
 @mixin container-t {
-  margin-top: rem(75px);
+  padding-top: rem(75px);
 
   @include media(">desktop") {
-    margin-top: rem(45px);
+    padding-top: rem(45px);
   }
 }
 
 @mixin container-r {
-  margin-right: rem(25px);
+  padding-right: rem(25px);
 }
 
 @mixin container-b {
-  margin-bottom: rem(45px);
+  padding-bottom: rem(45px);
 }
 
 @mixin container-l {
-  margin-left: rem(25px);
+  padding-left: rem(25px);
 }
 
 @mixin container-none {
-  margin: 0;
+  padding: 0;
 }
 
 .container-t {
