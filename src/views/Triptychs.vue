@@ -1,12 +1,71 @@
 <template>
   <div>
-    <VueSlickCarousel v-bind="slickSettings">
-      <TriptychsSlide
-        v-for="triptych in triptychs"
-        :triptych="triptych"
-        :key="triptych.name"
-      />
-    </VueSlickCarousel>
+    <section class="intro">
+      <VueSlickCarousel v-bind="slickSettings">
+        <TriptychsSlide
+          v-for="triptych in triptychs"
+          :triptych="triptych"
+          :key="triptych.name"
+        />
+      </VueSlickCarousel>
+    </section>
+    <section class="writing">
+      <div class="root">
+        <div class="background" />
+        <Container containOn="x">
+          <h1 class="title top">Transparent</h1>
+        </Container>
+        <div class="main-image">
+          <div class="panel-container">
+            <div class="panel-item">
+              <img
+                draggable="false"
+                :src="require(`@/assets/triptychs/writing/a.jpg`)"
+              />
+            </div>
+            <div class="panel-item">
+              <img
+                draggable="false"
+                :src="require(`@/assets/triptychs/writing/b.jpg`)"
+              />
+            </div>
+            <div class="panel-item">
+              <img
+                draggable="false"
+                :src="require(`@/assets/triptychs/writing/c.jpg`)"
+              />
+            </div>
+          </div>
+        </div>
+        <Container containOn="x">
+          <h1 class="title bottom">Illuminations</h1>
+        </Container>
+        <Container containOn="x">
+          <div class="copy-container">
+            <div class="body-copy">
+              <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic
+                quibusdam libero ex cum aliquam iure aut natus rerum eaque
+                deserunt molestiae molestias non ipsum doloribus vitae,
+                voluptatum repudiandae magni consectetur?
+              </p>
+              <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic
+                quibusdam libero ex cum aliquam iure aut natus rerum eaque
+                deserunt molestiae molestias non ipsum doloribus vitae,
+                voluptatum repudiandae magni consectetur?
+              </p>
+              <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic
+                quibusdam libero ex cum aliquam iure aut natus rerum eaque
+                deserunt molestiae molestias non ipsum doloribus vitae,
+                voluptatum repudiandae magni consectetur?
+              </p>
+            </div>
+          </div>
+        </Container>
+      </div>
+    </section>
   </div>
 </template>
 
@@ -14,12 +73,14 @@
 import VueSlickCarousel from "vue-slick-carousel";
 import "vue-slick-carousel/dist/vue-slick-carousel.css";
 import "vue-slick-carousel/dist/vue-slick-carousel-theme.css";
+import Container from "../components/Container.vue";
 import TriptychsSlide from "../components/TriptychsSlide.vue";
 
 export default {
   components: {
     VueSlickCarousel,
     TriptychsSlide,
+    Container,
   },
   data() {
     return {
@@ -129,19 +190,108 @@ export default {
 @import "@/theme/sizing.scss";
 @import "@/theme/typography.scss";
 
-.intro {
-  display: flex;
-  align-items: stretch;
-  justify-content: center;
-  flex-direction: column;
-  height: 100vh;
-  position: absolute;
-  width: 100%;
+section {
+  &.intro {
+    height: 100vh;
+  }
 
-  p {
-    text-align: center;
-    font-size: map-get($font-sizing, "lg2");
-    letter-spacing: map-get($letter-spacing, "lg");
+  &.writing {
+    padding-top: 10px;
+    padding-bottom: 50px;
+    min-height: 100vh;
+    color: black;
+    background: linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 1) 0%,
+      rgb(119, 119, 119) 70%
+    );
+
+    @include media(">=tablet") {
+      padding-top: 50px;
+    }
+  }
+}
+
+.panel-container {
+  display: grid;
+  grid-template-columns: repeat(3, 3fr);
+  grid-gap: 2px;
+  margin-left: 0;
+  margin-right: 0;
+
+  @include media(">=tablet") {
+    grid-gap: 25px;
+    margin-left: 10vw;
+    margin-right: 10vw;
+  }
+}
+
+.panel-item {
+  grid-column: auto;
+
+  img {
+    height: 100%;
+    width: 100%;
+    border: black 3px solid;
+    box-sizing: border-box;
+
+    @include media(">=tablet") {
+      border: black 10px solid;
+    }
+  }
+}
+
+.root {
+  margin-top: rem(40px);
+  color: rgba(0, 0, 0, 1);
+}
+
+.title {
+  text-align: center;
+  font-weight: 300;
+  font-size: map-get($font-sizing, "xl");
+  letter-spacing: map-get($letter-spacing, "xl");
+
+  &.top {
+    @include media(">=tablet") {
+      margin-bottom: rem(30px);
+    }
+  }
+
+  &.bottom {
+    @include media(">=tablet") {
+      margin-top: rem(30px);
+      margin-bottom: rem(30px);
+    }
+  }
+
+  @include media(">=tablet") {
+    font-size: map-get($font-sizing, "jumbo2");
+    letter-spacing: map-get($letter-spacing, "jumbo");
+  }
+}
+
+.copy-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  margin-bottom: rem(20px);
+}
+
+.body-copy {
+  font-size: map-get($font-sizing, "lg");
+  text-transform: none;
+  color: $black;
+  line-height: 1.75;
+  text-align: justify;
+
+  p:first-child {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+
+  @include media(">=desktop") {
+    width: 90%;
   }
 }
 </style>
