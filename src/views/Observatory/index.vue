@@ -249,7 +249,6 @@ section {
   min-height: 100vh;
 
   &.intro {
-    padding-top: rem(30px);
     background-image: linear-gradient(
       to bottom,
       hsl(0, 0%, 0%) 0%,
