@@ -66,8 +66,12 @@ export default {
   }
 
   .root {
-    margin-top: rem(40px);
+    margin-top: rem(65px);
     color: rgba(0, 0, 0, 1);
+
+    @include media(">=tablet") {
+      margin-top: rem(40px);
+    }
   }
 
   .title {
