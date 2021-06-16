@@ -81,7 +81,7 @@ export default {
   data() {
     return {
       slickSettings: {
-        autoplay: false,
+        autoplay: true,
         autoplaySpeed: 3000,
         arrows: false,
         dots: true,
