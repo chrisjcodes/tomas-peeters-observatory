@@ -44,22 +44,16 @@
           <div class="copy-container">
             <div class="body-copy">
               <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic
-                quibusdam libero ex cum aliquam iure aut natus rerum eaque
-                deserunt molestiae molestias non ipsum doloribus vitae,
-                voluptatum repudiandae magni consectetur?
+                THE TRIPTYCHS CAPTURE THE COLLAPSE OF SPACE<FancyBreak />
+                AS I LOOK THROUGH THE OBSERVATORIES
               </p>
               <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic
-                quibusdam libero ex cum aliquam iure aut natus rerum eaque
-                deserunt molestiae molestias non ipsum doloribus vitae,
-                voluptatum repudiandae magni consectetur?
+                WHEN I NO LONGER LOOK FROM INSIDE A SKULL<FancyBreak />
+                THE WORLD IS SEEN AS LUMINOUS
               </p>
               <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic
-                quibusdam libero ex cum aliquam iure aut natus rerum eaque
-                deserunt molestiae molestias non ipsum doloribus vitae,
-                voluptatum repudiandae magni consectetur?
+                THESE IMAGES REVEAL WHAT THE WORLD LOOKS LIKE<FancyBreak />
+                AT ZERO DISTANCE FROM MY TRANSPARENT EYE
               </p>
             </div>
           </div>
@@ -75,12 +69,14 @@ import "vue-slick-carousel/dist/vue-slick-carousel.css";
 import "vue-slick-carousel/dist/vue-slick-carousel-theme.css";
 import Container from "../components/Container.vue";
 import TriptychsSlide from "../components/TriptychsSlide.vue";
+import FancyBreak from "../components/FancyBreak.vue";
 
 export default {
   components: {
-    VueSlickCarousel,
-    TriptychsSlide,
     Container,
+    FancyBreak,
+    TriptychsSlide,
+    VueSlickCarousel,
   },
   data() {
     return {
@@ -284,6 +280,11 @@ section {
   color: $black;
   line-height: 1.75;
   text-align: justify;
+  text-transform: uppercase;
+
+  @include media(">=tablet") {
+    letter-spacing: map-get($letter-spacing, "md");
+  }
 
   p:first-child {
     margin-top: 0 !important;
