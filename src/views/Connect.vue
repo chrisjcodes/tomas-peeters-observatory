@@ -115,12 +115,12 @@ h1 {
   &.value {
     a {
       text-decoration: none;
-      color: inherit;
+      color: $gold;
       position: relative;
 
       &:after {
         transition: opacity 500ms ease;
-        background: black;
+        background: $gold;
         opacity: 0.5;
         content: "";
         position: absolute;

@@ -17,6 +17,9 @@
       <Container containOn="x">
         <div class="copy-container">
           <div class="body-copy">
+            <div class="link-menu">
+              <slot name="link-menu"></slot>
+            </div>
             <slot name="copy"></slot>
           </div>
         </div>
@@ -112,6 +115,38 @@ export default {
     align-items: flex-start;
     justify-content: center;
     margin-bottom: rem(20px);
+  }
+
+  .link-menu {
+    @include media(">=tablet") {
+      display: flex;
+      justify-content: space-around;
+    }
+
+    a {
+      display: inline-block;
+      text-decoration: none;
+      color: $gold;
+      position: relative;
+
+      &:after {
+        transition: opacity 500ms ease;
+        background: $gold;
+        opacity: 0.5;
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0px;
+        height: 1px;
+        width: 100%;
+      }
+
+      &:hover {
+        &:after {
+          opacity: 1;
+        }
+      }
+    }
   }
 
   .body-copy {

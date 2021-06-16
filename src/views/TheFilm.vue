@@ -2,6 +2,12 @@
   <WritingPage imageFileName="the-film.jpeg">
     <template v-slot:titleA>ZERODISTANCE</template>
     <template v-slot:titleB>THE FILM</template>
+    <template v-slot:link-menu>
+      <div><a href="#">Trailer</a></div>
+      <div><a href="#">Zerodistance</a></div>
+      <div><a href="#">Glimpse</a></div>
+      <router-link to="/writing/film-reviews/">Reviews</router-link>
+    </template>
     <template v-slot:copy>
       <p>
         Zero Distance captures the immersion of an observer, Hannah, within
@@ -25,11 +31,6 @@
         What she is looking for is that which is seeing.<br />
         What is seeing, she cannot find by looking.<br />
         What she is looking at is where she is seeing from.
-      </p>
-      <p>
-        Watch ZeroDistance -Film<br />
-        Watch ZeroDistance -Trailer<br />
-        Watch A First Glimpse -Trailer
       </p>
     </template>
   </WritingPage>

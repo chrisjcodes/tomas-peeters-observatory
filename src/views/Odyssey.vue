@@ -2,6 +2,9 @@
   <WritingPage imageFileName="odyssey.jpeg">
     <template v-slot:titleA>Observatory</template>
     <template v-slot:titleB>Odyssey</template>
+    <template v-slot:link-menu>
+      <a href="#">Observatory Odyssey</a>
+    </template>
     <template v-slot:copy>
       <p>
         The Observatories collapse the space between what I am looking at and
