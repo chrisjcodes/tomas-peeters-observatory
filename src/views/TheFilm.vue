@@ -3,9 +3,9 @@
     <template v-slot:titleA>ZERODISTANCE</template>
     <template v-slot:titleB>THE FILM</template>
     <template v-slot:link-menu>
-      <div><a href="#">Trailer</a></div>
-      <div><a href="#">Zerodistance</a></div>
-      <div><a href="#">Glimpse</a></div>
+      <div><a href="https://vimeo.com/507280995" target="_blank">Trailer</a></div>
+      <div><a href="https://vimeo.com/504619551/74ebd36317" target="_blank">Zerodistance</a></div>
+      <div><a href="https://vimeo.com/505809908" target="_blank">Glimpse</a></div>
       <router-link to="/writing/film-reviews/">Reviews</router-link>
     </template>
     <template v-slot:copy>

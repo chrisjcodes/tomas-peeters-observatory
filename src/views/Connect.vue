@@ -14,21 +14,15 @@
         </div>
         <div class="contact-row">
           <div class="contact-cell label">Instagram</div>
-          <div class="contact-cell value">@zero_distance_</div>
+          <div class="contact-cell value">
+            <a target="_blank" href="https://www.instagram.com/zero_distance_/"
+              >@zero_distance_</a></div>
         </div>
         <div class="contact-row">
           <div class="contact-cell label">Vimeo</div>
           <div class="contact-cell value">
             <a target="_blank" href="https://vimeo.com/zerodistance"
-              >https://vimeo.com/zerodistance</a
-            >
-          </div>
-        </div>
-        <div class="contact-row">
-          <div class="contact-cell label">Website</div>
-          <div class="contact-cell value">
-            <a target="_blank" href="https://zerodistance.space"
-              >http://zerodistance.space</a
+              >zerodistance</a
             >
           </div>
         </div>
@@ -88,9 +82,14 @@ export default {
 
 h1 {
   font-weight: 200;
-  font-size: map-get($font-sizing, "jumbo2");
-  letter-spacing: map-get($letter-spacing, "xl");
+  font-size: map-get($font-sizing, "lg");
+  letter-spacing: map-get($letter-spacing, "md");
   text-align: center;
+
+  @include media(">=tablet"){
+    font-size: map-get($font-sizing, "jumbo2");
+    letter-spacing: map-get($letter-spacing, "xl");
+  }
 }
 
 .contact {
@@ -108,11 +107,23 @@ h1 {
   display: flex;
 
   &.label {
-    letter-spacing: map-get($letter-spacing, "md");
+    font-size: map-get($font-sizing, "sm");
+    letter-spacing: map-get($letter-spacing, "sm");
     text-transform: uppercase;
+
+    @include media(">=tablet"){
+        font-size: map-get($font-sizing, "md");
+        letter-spacing: map-get($letter-spacing, "xl");
+    }
   }
 
   &.value {
+    font-size: map-get($font-sizing, "sm");
+
+    @include media(">=tablet"){
+        font-size: map-get($font-sizing, "md");
+    }
+
     a {
       text-decoration: none;
       color: $gold;

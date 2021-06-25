@@ -3,7 +3,7 @@
     <template v-slot:titleA>Observatory</template>
     <template v-slot:titleB>Odyssey</template>
     <template v-slot:link-menu>
-      <a href="#">Observatory Odyssey</a>
+      <a href="https://vimeo.com/508683222/6c5f9e7d39" target="_blank">Observatory Odyssey</a>
     </template>
     <template v-slot:copy>
       <p>
@@ -16,9 +16,6 @@
       </p>
       <p>
         What I am looking at is where I am seeing from.
-      </p>
-      <p>
-        Watch Observatory Odyssey
       </p>
     </template>
   </WritingPage>
@@ -33,4 +30,27 @@ export default {
 };
 </script>
 
-<style></style>
+<style lang="scss" scoped>
+@import "@/theme/colors.scss";
+@import "@/theme/media.scss";
+@import "@/theme/sizing.scss";
+@import "@/theme/typography.scss";
+
+p {
+  font-size: map-get($font-sizing, "lg");
+  text-transform: none;
+  color: $black;
+  line-height: 1.75;
+  text-align: center;
+  text-transform: uppercase;
+
+  @include media(">=tablet") {
+    letter-spacing: map-get($letter-spacing, "md");
+  }
+
+  p:first-child {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+}
+</style>

@@ -221,13 +221,13 @@ export default {
   justify-content: center;
   height: 100%;
   width: 100vw;
-  background: rgba($black, 0.98);
+  background: rgba($black, 0.93);
   transition: opacity 1.25s cubic-bezier(0.37, 0, 0.63, 1);
   opacity: 0;
   pointer-events: none;
 
   &.open {
-    opacity: 0.98;
+    opacity: 1;
     pointer-events: all;
   }
 }
@@ -244,6 +244,7 @@ export default {
   padding: 0;
 
   li {
+    color: white;
     display: block;
     margin-bottom: 35px;
     text-align: center;

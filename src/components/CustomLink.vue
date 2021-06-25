@@ -88,7 +88,7 @@ export default {
 .theme-spotlight-light-primary {
   color: map-get($typeface-colors, "light-primary");
   transition: opacity 0.65s ease-in-out;
-  opacity: 0.5;
+  opacity: 0.8;
 
   &:hover {
     opacity: 1;

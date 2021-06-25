@@ -279,7 +279,7 @@ section {
   text-transform: none;
   color: $black;
   line-height: 1.75;
-  text-align: justify;
+  text-align: center;
   text-transform: uppercase;
 
   @include media(">=tablet") {
