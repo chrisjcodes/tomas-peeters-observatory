@@ -214,7 +214,7 @@ export const allObservatories = [
     name: "iv",
     logoFileName: "logo.svg",
     thumbFileName: "thumb.jpeg",
-    videoUrlId: "288344114",
+    videoUrlId: "529757226",
     copyTop: "the art of using form to see i am non existent",
     copyBottom: "at zero distance from my center my faceless space is absent",
     sequence: [
@@ -274,7 +274,7 @@ export const allObservatories = [
     name: "v",
     logoFileName: "logo.svg",
     thumbFileName: "thumb.jpeg",
-    videoUrlId: "288344114",
+    videoUrlId: "529571904",
     copyTop: "THE ART OF USING FORM TO SEE I AM INFINITE",
     copyBottom:
       "At Zero Distance From My Center My Face Is Completely Transparent",
