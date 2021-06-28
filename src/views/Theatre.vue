@@ -22,6 +22,8 @@ export default {
 };
 </script>
 <style lang="scss">
+@import "@/theme/media.scss";
+
 .background {
   min-height: 100%;
   position: fixed;
@@ -62,8 +64,13 @@ export default {
 .player-wrapper {
   display: flex;
   justify-content: center;
-  align-items: center;
-  width: 70vw;
-  height: 70vh;
+  align-items: flex-start;
+  width: 100vw;
+  height: 50vh;
+
+  @include media(">=tablet") {
+    width: 70vw;
+    align-items: center;
+  }
 }
 </style>
