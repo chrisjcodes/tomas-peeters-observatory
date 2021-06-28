@@ -3,7 +3,7 @@
     <template v-slot:titleA>Observatory</template>
     <template v-slot:titleB>Odyssey</template>
     <template v-slot:link-menu>
-      <a href="https://vimeo.com/508683222/6c5f9e7d39" target="_blank">Observatory Odyssey</a>
+      <router-link to="/theatre/508683222">Observatory Odyssey</router-link>
     </template>
     <template v-slot:copy>
       <p>
