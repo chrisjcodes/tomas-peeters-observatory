@@ -73,6 +73,12 @@ const routes = [
     component: () =>
       import(/* webpackChunkName: "Reviews" */ "@/views/Reviews.vue"),
   },
+  {
+    path: "/theatre/:videokey/",
+    name: "Theatre",
+    component: () =>
+      import(/* webpackChunkName: "Theatre" */ "@/views/Theatre.vue"),
+  },
 ];
 
 const router = new VueRouter({
