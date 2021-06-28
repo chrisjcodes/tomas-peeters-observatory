@@ -4,13 +4,13 @@
     <template v-slot:titleB>THE FILM</template>
     <template v-slot:link-menu>
       <div>
-        <a href="https://vimeo.com/507280995" target="_blank">Trailer</a>
+        <router-link to="/theatre/507280995">Trailer</router-link>
       </div>
       <div>
-        <a href="https://vimeo.com/504619551" target="_blank">Zerodistance</a>
+        <router-link to="/theatre/504619551">Zerodistance</router-link>
       </div>
       <div>
-        <a href="https://vimeo.com/505809908" target="_blank">Glimpse</a>
+        <router-link to="/theatre/505809908">Glimpse</router-link>
       </div>
       <router-link to="/writing/film-reviews/">Reviews</router-link>
     </template>
